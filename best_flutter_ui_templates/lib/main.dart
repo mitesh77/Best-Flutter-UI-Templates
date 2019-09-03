@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         textTheme: AppTheme.textTheme,
         platform: TargetPlatform.iOS,
       ),
-      home: MyHomePage(title: 'Flutter UI'),
+      home: MyHomePage(),
     );
   }
 }
