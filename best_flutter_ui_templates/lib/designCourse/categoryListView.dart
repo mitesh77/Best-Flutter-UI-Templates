@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:best_flutter_ui_templates/designCourse/designCourseAppTheme.dart';
 import 'package:best_flutter_ui_templates/designCourse/models/category.dart';
 import 'package:best_flutter_ui_templates/main.dart';
