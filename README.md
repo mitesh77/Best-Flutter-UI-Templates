@@ -6,4 +6,4 @@ completely free for everyone. Its build-in Flutter Dart.
 
 ### Some Screenshots
 
- <img src="images/fitness_app_gif.gif" height="300em" /> <img src="images/design_course.gif" height="300em" />
+ <img src="images/fitness_app.gif" height="300em" /> <img src="images/design_course.gif" height="300em" />
