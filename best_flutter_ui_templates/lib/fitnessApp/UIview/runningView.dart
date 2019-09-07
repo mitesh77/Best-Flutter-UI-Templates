@@ -129,6 +129,5 @@ class RunningView extends StatelessWidget {
         );
       },
     );
-    ;
   }
 }
