@@ -315,6 +315,7 @@ class MediterranesnDietView extends StatelessWidget {
                                       painter: CurvePainter(
                                           colors: [
                                             FintnessAppTheme.nearlyDarkBlue,
+                                            HexColor("#8A98E8"),
                                             HexColor("#8A98E8")
                                           ],
                                           angle: 140 +
@@ -582,6 +583,58 @@ class CurvePainter extends CustomPainter {
     } else {
       colorsList.addAll([Colors.white, Colors.white]);
     }
+
+    final shdowPaint = new Paint()
+      ..color = Colors.black.withOpacity(0.5)
+      ..strokeCap = StrokeCap.round
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 14;
+    final shdowPaintCenter = new Offset(size.width / 2, size.height / 2);
+    final shdowPaintRadius =
+        math.min(size.width / 2, size.height / 2) - (12 / 2);
+    canvas.drawArc(
+        new Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
+        degreeToRadians(278),
+        degreeToRadians(360 - (365 - angle)),
+        false,
+        shdowPaint);
+
+    shdowPaint.color = Colors.grey.withOpacity(0.4);
+    shdowPaint.strokeWidth = 16;
+    canvas.drawArc(
+        new Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
+        degreeToRadians(278),
+        degreeToRadians(360 - (365 - angle)),
+        false,
+        shdowPaint);
+
+    shdowPaint.color = Colors.grey.withOpacity(0.3);
+    shdowPaint.strokeWidth = 18;
+    canvas.drawArc(
+        new Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
+        degreeToRadians(278),
+        degreeToRadians(360 - (365 - angle)),
+        false,
+        shdowPaint);
+
+    shdowPaint.color = Colors.grey.withOpacity(0.2);
+    shdowPaint.strokeWidth = 20;
+    canvas.drawArc(
+        new Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
+        degreeToRadians(278),
+        degreeToRadians(360 - (365 - angle)),
+        false,
+        shdowPaint);
+
+    shdowPaint.color = Colors.grey.withOpacity(0.1);
+    shdowPaint.strokeWidth = 22;
+    canvas.drawArc(
+        new Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
+        degreeToRadians(278),
+        degreeToRadians(360 - (365 - angle)),
+        false,
+        shdowPaint);
+
     final rect = new Rect.fromLTWH(0.0, 0.0, size.width, size.width);
     final gradient = new SweepGradient(
       startAngle: degreeToRadians(270),
@@ -623,7 +676,7 @@ class CurvePainter extends CustomPainter {
 
     canvas.save();
     canvas.translate(0.0, -centerToCircle + 12 / 2);
-    canvas.drawCircle(new Offset(0, 0), 12 / 4, cPaint);
+    canvas.drawCircle(new Offset(0, 0), 12 / 5, cPaint);
 
     canvas.restore();
     canvas.restore();
