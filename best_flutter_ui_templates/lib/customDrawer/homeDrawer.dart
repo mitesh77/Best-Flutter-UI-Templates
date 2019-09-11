@@ -40,7 +40,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
         icon: new Icon(Icons.help),
       ),
       DrawerList(
-        index: DrawerIndex.Refferal,
+        index: DrawerIndex.Invite,
         labelName: 'Invite Friend',
         icon: new Icon(Icons.group),
       ),
@@ -179,7 +179,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        splashColor: Colors.blue.withOpacity(0.2),
+        splashColor: Colors.grey.withOpacity(0.1),
         highlightColor: Colors.transparent,
         onTap: () {
           navigationtoScreen(listData.index);
@@ -278,50 +278,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
   }
 
   void navigationtoScreen(DrawerIndex indexScreen) async {
-    // Navigator.of(context).pop();
     widget.callBackIndex(indexScreen);
-    if (indexScreen != widget.screenIndex) {
-      switch (indexScreen) {
-        case DrawerIndex.HOME:
-          {
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(
-            //     builder: (context) => RiderHomeScreen(),
-            //   ),
-            // );
-          }
-          break;
-
-        case DrawerIndex.Help:
-          {}
-          break;
-
-        case DrawerIndex.FeedBack:
-          {}
-          break;
-
-        case DrawerIndex.Refferal:
-          {}
-          break;
-
-        case DrawerIndex.Share:
-          {}
-          break;
-
-        case DrawerIndex.About:
-          {}
-          break;
-
-        case DrawerIndex.Testing:
-          {}
-          break;
-
-        default:
-          {}
-          break;
-      }
-    }
   }
 }
 
@@ -331,7 +288,7 @@ enum DrawerIndex {
   Help,
   Share,
   About,
-  Refferal,
+  Invite,
   Testing,
 }
 

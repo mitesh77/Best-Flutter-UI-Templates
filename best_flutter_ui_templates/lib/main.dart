@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'package:best_flutter_ui_templates/appTheme.dart';
-import 'package:best_flutter_ui_templates/homeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'navigationHomeScreen.dart';
 
 void main() {
   SystemChrome.setPreferredOrientations(
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         textTheme: AppTheme.textTheme,
         platform: TargetPlatform.iOS,
       ),
-      home: MyHomePage(),
+      home: NavigationHomeScreen(),
     );
   }
 }
