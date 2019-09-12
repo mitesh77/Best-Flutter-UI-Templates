@@ -49,110 +49,124 @@ class _BottomBarViewState extends State<BottomBarView>
                                 curve: Curves.fastOutSlowIn))
                             .value *
                         38.0),
-                child: SizedBox(
-                  height: 62,
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 8, right: 8, top: 4),
-                    child: Row(
-                      children: <Widget>[
-                        Expanded(
-                          child: TabIcons(
-                              tabIconData: widget.tabIconsList[0],
-                              removeAllSelect: () {
-                                setRemoveAllSelection(widget.tabIconsList[0]);
-                                widget.changeIndex(0);
-                              }),
+                child: Column(
+                  children: <Widget>[
+                    SizedBox(
+                      height: 62,
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 8, right: 8, top: 4),
+                        child: Row(
+                          children: <Widget>[
+                            Expanded(
+                              child: TabIcons(
+                                  tabIconData: widget.tabIconsList[0],
+                                  removeAllSelect: () {
+                                    setRemoveAllSelection(
+                                        widget.tabIconsList[0]);
+                                    widget.changeIndex(0);
+                                  }),
+                            ),
+                            Expanded(
+                              child: TabIcons(
+                                  tabIconData: widget.tabIconsList[1],
+                                  removeAllSelect: () {
+                                    setRemoveAllSelection(
+                                        widget.tabIconsList[1]);
+                                    widget.changeIndex(1);
+                                  }),
+                            ),
+                            SizedBox(
+                              width: Tween(begin: 0.0, end: 1.0)
+                                      .animate(CurvedAnimation(
+                                          parent: animationController,
+                                          curve: Curves.fastOutSlowIn))
+                                      .value *
+                                  64.0,
+                            ),
+                            Expanded(
+                              child: TabIcons(
+                                  tabIconData: widget.tabIconsList[2],
+                                  removeAllSelect: () {
+                                    setRemoveAllSelection(
+                                        widget.tabIconsList[2]);
+                                    widget.changeIndex(2);
+                                  }),
+                            ),
+                            Expanded(
+                              child: TabIcons(
+                                  tabIconData: widget.tabIconsList[3],
+                                  removeAllSelect: () {
+                                    setRemoveAllSelection(
+                                        widget.tabIconsList[3]);
+                                    widget.changeIndex(3);
+                                  }),
+                            ),
+                          ],
                         ),
-                        Expanded(
-                          child: TabIcons(
-                              tabIconData: widget.tabIconsList[1],
-                              removeAllSelect: () {
-                                setRemoveAllSelection(widget.tabIconsList[1]);
-                                widget.changeIndex(1);
-                              }),
-                        ),
-                        SizedBox(
-                          width: Tween(begin: 0.0, end: 1.0)
-                                  .animate(CurvedAnimation(
-                                      parent: animationController,
-                                      curve: Curves.fastOutSlowIn))
-                                  .value *
-                              64.0,
-                        ),
-                        Expanded(
-                          child: TabIcons(
-                              tabIconData: widget.tabIconsList[2],
-                              removeAllSelect: () {
-                                setRemoveAllSelection(widget.tabIconsList[2]);
-                                widget.changeIndex(2);
-                              }),
-                        ),
-                        Expanded(
-                          child: TabIcons(
-                              tabIconData: widget.tabIconsList[3],
-                              removeAllSelect: () {
-                                setRemoveAllSelection(widget.tabIconsList[3]);
-                                widget.changeIndex(3);
-                              }),
-                        ),
-                      ],
+                      ),
                     ),
-                  ),
+                    SizedBox(
+                      height: MediaQuery.of(context).padding.bottom,
+                    )
+                  ],
                 ),
               ),
             );
           },
         ),
-        SizedBox(
-          width: 38 * 2.0,
-          height: 38 + 62.0,
-          child: Container(
-            alignment: Alignment.topCenter,
-            color: Colors.transparent,
-            child: SizedBox(
-              width: 38 * 2.0,
-              height: 38 * 2.0,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: new ScaleTransition(
-                  alignment: Alignment.center,
-                  scale: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-                      parent: animationController,
-                      curve: Curves.fastOutSlowIn)),
-                  child: Container(
-                    // alignment: Alignment.center,s
-                    decoration: BoxDecoration(
-                      color: FintnessAppTheme.nearlyDarkBlue,
-                      gradient: LinearGradient(
-                        colors: [
-                          FintnessAppTheme.nearlyDarkBlue,
-                          HexColor("#6A88E5"),
+        Padding(
+          padding:
+              EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom),
+          child: SizedBox(
+            width: 38 * 2.0,
+            height: 38 + 62.0,
+            child: Container(
+              alignment: Alignment.topCenter,
+              color: Colors.transparent,
+              child: SizedBox(
+                width: 38 * 2.0,
+                height: 38 * 2.0,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: new ScaleTransition(
+                    alignment: Alignment.center,
+                    scale: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+                        parent: animationController,
+                        curve: Curves.fastOutSlowIn)),
+                    child: Container(
+                      // alignment: Alignment.center,s
+                      decoration: BoxDecoration(
+                        color: FintnessAppTheme.nearlyDarkBlue,
+                        gradient: LinearGradient(
+                            colors: [
+                              FintnessAppTheme.nearlyDarkBlue,
+                              HexColor("#6A88E5"),
+                            ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight),
+                        shape: BoxShape.circle,
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                              color: FintnessAppTheme.nearlyDarkBlue
+                                  .withOpacity(0.4),
+                              offset: Offset(8.0, 16.0),
+                              blurRadius: 16.0),
                         ],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight
                       ),
-                      shape: BoxShape.circle,
-                      boxShadow: <BoxShadow>[
-                        BoxShadow(
-                            color: FintnessAppTheme.nearlyDarkBlue
-                                .withOpacity(0.4),
-                            offset: Offset(8.0, 16.0),
-                            blurRadius: 16.0),
-                      ],
-                    ),
-                    child: Material(
-                      color: Colors.transparent,
-                      child: InkWell(
-                        splashColor: Colors.white.withOpacity(0.1),
-                        highlightColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        onTap: () {
-                          widget.addClick();
-                        },
-                        child: Icon(
-                          Icons.add,
-                          color: FintnessAppTheme.white,
-                          size: 32,
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          splashColor: Colors.white.withOpacity(0.1),
+                          highlightColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          onTap: () {
+                            widget.addClick();
+                          },
+                          child: Icon(
+                            Icons.add,
+                            color: FintnessAppTheme.white,
+                            size: 32,
+                          ),
                         ),
                       ),
                     ),

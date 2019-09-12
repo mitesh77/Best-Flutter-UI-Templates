@@ -250,6 +250,9 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                               ),
                             ),
                           ),
+                          SizedBox(
+              height: MediaQuery.of(context).padding.bottom,
+            )
                         ],
                       ),
                     ),

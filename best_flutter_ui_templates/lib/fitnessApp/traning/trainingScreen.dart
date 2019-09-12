@@ -150,7 +150,7 @@ class _TrainingScreenState extends State<TrainingScreen>
               top: AppBar().preferredSize.height +
                   MediaQuery.of(context).padding.top +
                   24,
-              bottom: 62,
+              bottom: 62 + MediaQuery.of(context).padding.bottom,
             ),
             itemCount: listViews.length,
             scrollDirection: Axis.vertical,

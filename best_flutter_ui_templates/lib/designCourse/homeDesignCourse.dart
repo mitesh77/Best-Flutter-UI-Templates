@@ -41,9 +41,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
                 ),
               ),
             ),
-            SizedBox(
-              height: MediaQuery.of(context).padding.bottom,
-            )
+            
           ],
         ),
       ),
