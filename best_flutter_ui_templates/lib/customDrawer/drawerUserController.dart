@@ -44,13 +44,14 @@ class _DrawerUserControllerState extends State<DrawerUserController>
         AnimationController(vsync: this, duration: Duration(milliseconds: 0));
     iconAnimationController.animateTo(1.0,
         duration: Duration(milliseconds: 0), curve: Curves.fastOutSlowIn);
-    scrollController = ScrollController(
-        initialScrollOffset: widget.drawerWidth, keepScrollOffset: true)
+    scrollController =
+        ScrollController(initialScrollOffset: widget.drawerWidth);
+    scrollController
       ..addListener(() {
         if (scrollController.offset <= 0) {
-          if (scrolloffset != 1) {
+          if (scrolloffset != 1.0) {
             setState(() {
-              scrolloffset = 1;
+              scrolloffset = 1.0;
               try {
                 widget.drawerIsOpen(true);
               } catch (e) {}
@@ -65,9 +66,9 @@ class _DrawerUserControllerState extends State<DrawerUserController>
               duration: Duration(milliseconds: 0),
               curve: Curves.linear);
         } else if (scrollController.offset <= widget.drawerWidth) {
-          if (scrolloffset != 0) {
+          if (scrolloffset != 0.0) {
             setState(() {
-              scrolloffset = 0;
+              scrolloffset = 0.0;
               try {
                 widget.drawerIsOpen(false);
               } catch (e) {}
@@ -96,136 +97,120 @@ class _DrawerUserControllerState extends State<DrawerUserController>
     return true;
   }
 
-  Future<bool> getWait() async {
-    await Future.delayed(const Duration(milliseconds: 150));
-    return true;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppTheme.white,
-      body: FutureBuilder(
-        future: getWait(),
-        builder: (context, snapshot) {
-          if (!snapshot.hasData) {
-            return SizedBox();
-          } else {
-            return SingleChildScrollView(
-              controller: scrollController,
-              scrollDirection: Axis.horizontal,
-              physics: scrolloffset == 1
-                  ? PageScrollPhysics(parent: ClampingScrollPhysics())
-                  : NeverScrollableScrollPhysics(),
-              child: Opacity(
-                opacity: isSetDawer ? 1 : 0,
-                child: SizedBox(
+      body: SingleChildScrollView(
+        controller: scrollController,
+        scrollDirection: Axis.horizontal,
+        physics: PageScrollPhysics(parent: ClampingScrollPhysics()),
+        // scrolloffset == 1.0
+        //     ? PageScrollPhysics(parent: ClampingScrollPhysics())
+        //     : PageScrollPhysics(parent: NeverScrollableScrollPhysics()),
+        child: Opacity(
+          opacity: isSetDawer ? 1 : 0,
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width + widget.drawerWidth,
+            child: Row(
+              children: <Widget>[
+                SizedBox(
+                  width: widget.drawerWidth,
                   height: MediaQuery.of(context).size.height,
-                  width: MediaQuery.of(context).size.width + widget.drawerWidth,
-                  child: Row(
-                    children: <Widget>[
-                      SizedBox(
-                        width: widget.drawerWidth,
-                        height: MediaQuery.of(context).size.height,
-                        child: AnimatedBuilder(
-                          animation: iconAnimationController,
-                          builder: (BuildContext context, Widget child) {
-                            return new Transform(
-                              transform: new Matrix4.translationValues(
-                                  scrollController.offset, 0.0, 0.0),
-                              child: SizedBox(
-                                height: MediaQuery.of(context).size.height,
-                                width: widget.drawerWidth,
-                                child: HomeDrawer(
-                                  screenIndex: widget.screenIndex == null
-                                      ? DrawerIndex.HOME
-                                      : widget.screenIndex,
-                                  iconAnimationController:
-                                      iconAnimationController,
-                                  callBackIndex: (DrawerIndex indexType) {
-                                    onDrawerClick();
-                                    try {
-                                      widget.onDrawerCall(indexType);
-                                    } catch (e) {}
-                                  },
-                                ),
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: AppTheme.white,
-                            boxShadow: <BoxShadow>[
-                              BoxShadow(
-                                  color: AppTheme.grey.withOpacity(0.6),
-                                  blurRadius: 24),
-                            ],
-                          ),
-                          child: Stack(
-                            children: <Widget>[
-                              IgnorePointer(
-                                ignoring: scrolloffset == 1 ? true : false,
-                                child: widget.screenView == null
-                                    ? Container(
-                                        color: Colors.white,
-                                      )
-                                    : widget.screenView,
-                              ),
-                              scrolloffset == 1
-                                  ? InkWell(
-                                      onTap: () {
-                                        onDrawerClick();
-                                      },
-                                    )
-                                  : SizedBox(),
-                              Padding(
-                                padding: EdgeInsets.only(
-                                    top: MediaQuery.of(context).padding.top + 8,
-                                    left: 8),
-                                child: SizedBox(
-                                  width: AppBar().preferredSize.height - 8,
-                                  height: AppBar().preferredSize.height - 8,
-                                  child: Material(
-                                    color: Colors.transparent,
-                                    child: InkWell(
-                                      borderRadius: new BorderRadius.circular(
-                                          AppBar().preferredSize.height),
-                                      child: Center(
-                                        child: widget.menuView != null
-                                            ? widget.menuView
-                                            : AnimatedIcon(
-                                                icon: widget.animatedIconData !=
-                                                        null
-                                                    ? widget.animatedIconData
-                                                    : AnimatedIcons.arrow_menu,
-                                                progress:
-                                                    iconAnimationController),
-                                      ),
-                                      onTap: () {
-                                        FocusScope.of(context)
-                                            .requestFocus(FocusNode());
-                                        onDrawerClick();
-                                      },
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
+                  child: AnimatedBuilder(
+                    animation: iconAnimationController,
+                    builder: (BuildContext context, Widget child) {
+                      return new Transform(
+                        transform: new Matrix4.translationValues(
+                            scrollController.offset, 0.0, 0.0),
+                        child: SizedBox(
+                          height: MediaQuery.of(context).size.height,
+                          width: widget.drawerWidth,
+                          child: HomeDrawer(
+                            screenIndex: widget.screenIndex == null
+                                ? DrawerIndex.HOME
+                                : widget.screenIndex,
+                            iconAnimationController: iconAnimationController,
+                            callBackIndex: (DrawerIndex indexType) {
+                              onDrawerClick();
+                              try {
+                                widget.onDrawerCall(indexType);
+                              } catch (e) {}
+                            },
                           ),
                         ),
-                      ),
-                    ],
+                      );
+                    },
                   ),
                 ),
-              ),
-            );
-          }
-        },
+                SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: AppTheme.white,
+                      boxShadow: <BoxShadow>[
+                        BoxShadow(
+                            color: AppTheme.grey.withOpacity(0.6),
+                            blurRadius: 24),
+                      ],
+                    ),
+                    child: Stack(
+                      children: <Widget>[
+                        IgnorePointer(
+                          ignoring: scrolloffset == 1 ? true : false,
+                          child: widget.screenView == null
+                              ? Container(
+                                  color: Colors.white,
+                                )
+                              : widget.screenView,
+                        ),
+                        scrolloffset == 1.0
+                            ? InkWell(
+                                onTap: () {
+                                  onDrawerClick();
+                                },
+                              )
+                            : SizedBox(),
+                        Padding(
+                          padding: EdgeInsets.only(
+                              top: MediaQuery.of(context).padding.top + 8,
+                              left: 8),
+                          child: SizedBox(
+                            width: AppBar().preferredSize.height - 8,
+                            height: AppBar().preferredSize.height - 8,
+                            child: Material(
+                              color: Colors.transparent,
+                              child: InkWell(
+                                borderRadius: new BorderRadius.circular(
+                                    AppBar().preferredSize.height),
+                                child: Center(
+                                  child: widget.menuView != null
+                                      ? widget.menuView
+                                      : AnimatedIcon(
+                                          icon: widget.animatedIconData != null
+                                              ? widget.animatedIconData
+                                              : AnimatedIcons.arrow_menu,
+                                          progress: iconAnimationController),
+                                ),
+                                onTap: () {
+                                  FocusScope.of(context)
+                                      .requestFocus(FocusNode());
+                                  onDrawerClick();
+                                },
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
