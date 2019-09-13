@@ -1,4 +1,4 @@
-package bestflutteruitemplates.best_flutter_ui_templates
+package com.example.best_flutter_ui_templates
 
 import android.os.Bundle
 

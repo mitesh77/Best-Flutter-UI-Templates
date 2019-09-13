@@ -1,5 +1,5 @@
 name: best_flutter_ui_templates
-description: A new Flutter application.
+description: A new Flutter project.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -73,6 +73,6 @@ flutter:
         - asset: assets/fonts/Roboto-Regular.ttf
         - asset: assets/fonts/Roboto-Medium.ttf
           weight: 400
-        
+  #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
