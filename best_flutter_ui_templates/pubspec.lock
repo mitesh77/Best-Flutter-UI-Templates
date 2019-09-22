@@ -53,6 +53,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "8.5.0"
+  intl:
+    dependency: "direct main"
+    description:
+      name: intl
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.16.0"
   matcher:
     dependency: transitive
     description:
