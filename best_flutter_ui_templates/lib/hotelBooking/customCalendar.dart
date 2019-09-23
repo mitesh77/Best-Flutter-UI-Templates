@@ -191,7 +191,7 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                             decoration: BoxDecoration(
                               color: startDate != null && endDate != null
                                   ? getIsItStartAndEndDate(date) || getIsInRange(date)
-                                      ? HotelAppTheme.buildLightTheme().primaryColor.withOpacity(0.6)
+                                      ? HotelAppTheme.buildLightTheme().primaryColor.withOpacity(0.4)
                                       : Colors.transparent
                                   : Colors.transparent,
                               borderRadius: BorderRadius.only(
@@ -244,7 +244,7 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                                     color: getIsItStartAndEndDate(date)
                                         ? Colors.white
                                         : currentMonthDate.month == date.month ? Colors.black : Colors.grey.withOpacity(0.6),
-                                    fontSize: 18,
+                                    fontSize: MediaQuery.of(context).size.width > 360 ? 18 : 16,
                                     fontWeight: getIsItStartAndEndDate(date) ? FontWeight.bold : FontWeight.normal),
                               ),
                             ),
@@ -260,7 +260,7 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                         height: 6,
                         width: 6,
                         decoration: BoxDecoration(
-                            color: DateTime.now().day == date.day && DateTime.now().month == date.month
+                            color: DateTime.now().day == date.day && DateTime.now().month == date.month  && DateTime.now().year == date.year
                                 ? getIsInRange(date) ? Colors.white : HotelAppTheme.buildLightTheme().primaryColor
                                 : Colors.transparent,
                             shape: BoxShape.circle),
@@ -297,9 +297,9 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
   }
 
   bool getIsItStartAndEndDate(DateTime date) {
-    if (startDate != null && startDate.day == date.day && startDate.month == date.month) {
+    if (startDate != null && startDate.day == date.day && startDate.month == date.month && startDate.year == date.year) {
       return true;
-    } else if (endDate != null && endDate.day == date.day && endDate.month == date.month) {
+    } else if (endDate != null && endDate.day == date.day && endDate.month == date.month && endDate.year == date.year) {
       return true;
     } else {
       return false;

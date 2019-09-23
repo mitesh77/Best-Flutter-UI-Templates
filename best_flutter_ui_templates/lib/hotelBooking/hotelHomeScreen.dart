@@ -5,6 +5,7 @@ import 'package:best_flutter_ui_templates/hotelBooking/model/hotelListData.dart'
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
+import 'filtersScreen.dart';
 import 'hotelAppTheme.dart';
 
 class HotelHomeScreen extends StatefulWidget {
@@ -427,6 +428,10 @@ class _HotelHomeScreenState extends State<HotelHomeScreen> with TickerProviderSt
                     ),
                     onTap: () {
                       FocusScope.of(context).requestFocus(FocusNode());
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => FiltersScreen(), fullscreenDialog: true),
+                      );
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(left: 8),
