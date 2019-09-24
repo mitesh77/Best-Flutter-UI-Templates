@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
 class CustomRangeThumbShape extends RangeSliderThumbShape {
   static const double _thumbSize = 3.0;
@@ -144,3 +145,45 @@ class CustomThumbShape extends SliderComponentShape {
     return radius * 0.57735 + 0.5;
   }
 }
+
+// class DialogBorder extends ShapeBorder {
+//   final double radius;
+//   const DialogBorder({this.radius = 24});
+
+//   @override
+//   EdgeInsetsGeometry get dimensions {
+//     return const EdgeInsets.only();
+//   }
+
+//   @override
+//   Path getInnerPath(Rect rect, {TextDirection textDirection}) {
+//     return getOuterPath(rect, textDirection: textDirection);
+//   }
+
+//   @override
+//   Path getOuterPath(Rect rect, {TextDirection textDirection}) {
+//     final doubleRadius = radius * 2;
+//     final path = Path();
+//     path.lineTo(0, 0);
+//     path.arcTo(Rect.fromLTWH(0, 0, doubleRadius, doubleRadius), degreeToRadians(180), degreeToRadians(90), false);
+//     path.arcTo(Rect.fromLTWH(rect.width - doubleRadius, 0, doubleRadius, doubleRadius), degreeToRadians(270), degreeToRadians(90), false);
+//     path.arcTo(Rect.fromLTWH(rect.width - doubleRadius, rect.height - doubleRadius, doubleRadius, doubleRadius), degreeToRadians(0), degreeToRadians(90), false);
+//     path.arcTo(Rect.fromLTWH(0, rect.height - doubleRadius, doubleRadius, doubleRadius), degreeToRadians(90), degreeToRadians(90), false);
+//     path.close();
+//     return path;
+//   }
+
+//   @override
+//   void paint(Canvas canvas, Rect rect, {TextDirection textDirection}) {}
+
+//   // This border doesn't support scaling.
+//   @override
+//   ShapeBorder scale(double t) {
+//     return null;
+//   }
+
+//   double degreeToRadians(double degree) {
+//     var redian = (math.pi / 180) * degree;
+//     return redian;
+//   }
+// }

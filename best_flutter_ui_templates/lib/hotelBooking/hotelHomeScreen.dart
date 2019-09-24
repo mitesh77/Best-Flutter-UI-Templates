@@ -2,9 +2,11 @@ import 'dart:ui';
 import 'package:best_flutter_ui_templates/hotelBooking/calendarPopupView.dart';
 import 'package:best_flutter_ui_templates/hotelBooking/hotelListView.dart';
 import 'package:best_flutter_ui_templates/hotelBooking/model/hotelListData.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
+import 'SliderCustomShape.dart';
 import 'filtersScreen.dart';
 import 'hotelAppTheme.dart';
 
@@ -20,8 +22,6 @@ class _HotelHomeScreenState extends State<HotelHomeScreen> with TickerProviderSt
 
   DateTime startDate = DateTime.now();
   DateTime endDate = DateTime.now().add(Duration(days: 5));
-
-  bool isDatePopupOpen = false;
 
   @override
   void initState() {
@@ -108,28 +108,6 @@ class _HotelHomeScreenState extends State<HotelHomeScreen> with TickerProviderSt
                   ],
                 ),
               ),
-              isDatePopupOpen
-                  ? Container(
-                      child: CalendarPopupView(
-                        initialEndDate: endDate,
-                        initialStartDate: startDate,
-                        onApplyClick: (DateTime startData, DateTime endData) {
-                          setState(() {
-                            if (startData != null && endData != null) {
-                              startDate = startData;
-                              endDate = endData;
-                            }
-                            isDatePopupOpen = false;
-                          });
-                        },
-                        onCancelClick: () {
-                          setState(() {
-                            isDatePopupOpen = false;
-                          });
-                        },
-                      ),
-                    )
-                  : SizedBox(),
             ],
           ),
         ),
@@ -226,9 +204,10 @@ class _HotelHomeScreenState extends State<HotelHomeScreen> with TickerProviderSt
                     ),
                     onTap: () {
                       FocusScope.of(context).requestFocus(FocusNode());
-                      setState(() {
-                        isDatePopupOpen = true;
-                      });
+                      // setState(() {
+                      //   isDatePopupOpen = true;
+                      // });
+                      showDemoDialog(context: context);
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(left: 8, right: 8, top: 4, bottom: 4),
@@ -466,6 +445,28 @@ class _HotelHomeScreenState extends State<HotelHomeScreen> with TickerProviderSt
           ),
         )
       ],
+    );
+  }
+
+  void showDemoDialog({BuildContext context}) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) => CalendarPopupView(
+        barrierDismissible: true,
+         minimumDate: DateTime.now(),
+        //  maximumDate: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day + 10),
+        initialEndDate: endDate,
+        initialStartDate: startDate,
+        onApplyClick: (DateTime startData, DateTime endData) {
+          setState(() {
+            if (startData != null && endData != null) {
+              startDate = startData;
+              endDate = endData;
+            }
+          });
+        },
+        onCancelClick: () {},
+      ),
     );
   }
 

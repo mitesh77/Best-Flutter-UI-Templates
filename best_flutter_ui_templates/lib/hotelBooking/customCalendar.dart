@@ -4,11 +4,13 @@ import 'package:intl/intl.dart';
 
 class CustomCalendarView extends StatefulWidget {
   final DateTime minimumDate;
+  final DateTime maximumDate;
   final DateTime initialStartDate;
   final DateTime initialEndDate;
   final Function(DateTime, DateTime) startEndDateChange;
 
-  const CustomCalendarView({Key key, this.initialStartDate, this.initialEndDate, this.startEndDateChange, this.minimumDate}) : super(key: key);
+  const CustomCalendarView({Key key, this.initialStartDate, this.initialEndDate, this.startEndDateChange, this.minimumDate, this.maximumDate})
+      : super(key: key);
 
   @override
   _CustomCalendarViewState createState() => _CustomCalendarViewState();
@@ -211,9 +213,20 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                         borderRadius: BorderRadius.all(Radius.circular(32.0)),
                         onTap: () {
                           if (currentMonthDate.month == date.month) {
-                            if (widget.minimumDate != null) {
+                            if (widget.minimumDate != null && widget.maximumDate != null) {
+                              var newminimumDate = DateTime(widget.minimumDate.year, widget.minimumDate.month, widget.minimumDate.day - 1);
+                              var newmaximumDate = DateTime(widget.maximumDate.year, widget.maximumDate.month, widget.maximumDate.day + 1);
+                              if (date.isAfter(newminimumDate) && date.isBefore(newmaximumDate)) {
+                                onDateClick(date);
+                              }
+                            } else if (widget.minimumDate != null) {
                               var newminimumDate = DateTime(widget.minimumDate.year, widget.minimumDate.month, widget.minimumDate.day - 1);
                               if (date.isAfter(newminimumDate)) {
+                                onDateClick(date);
+                              }
+                            } else if (widget.maximumDate != null) {
+                              var newmaximumDate = DateTime(widget.maximumDate.year, widget.maximumDate.month, widget.maximumDate.day + 1);
+                              if (date.isBefore(newmaximumDate)) {
                                 onDateClick(date);
                               }
                             } else {
@@ -260,7 +273,7 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                         height: 6,
                         width: 6,
                         decoration: BoxDecoration(
-                            color: DateTime.now().day == date.day && DateTime.now().month == date.month  && DateTime.now().year == date.year
+                            color: DateTime.now().day == date.day && DateTime.now().month == date.month && DateTime.now().year == date.year
                                 ? getIsInRange(date) ? Colors.white : HotelAppTheme.buildLightTheme().primaryColor
                                 : Colors.transparent,
                             shape: BoxShape.circle),
