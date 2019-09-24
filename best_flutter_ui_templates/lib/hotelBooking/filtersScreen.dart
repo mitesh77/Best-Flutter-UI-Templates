@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'SliderCustomShape.dart';
+import 'RangeSliderView.dart';
+import 'SliderView.dart';
 import 'hotelAppTheme.dart';
 import 'model/popularFilterList.dart';
 
@@ -207,42 +208,11 @@ class _FiltersScreenState extends State<FiltersScreen> {
             style: TextStyle(color: Colors.grey, fontSize: MediaQuery.of(context).size.width > 360 ? 18 : 16, fontWeight: FontWeight.normal),
           ),
         ),
-        Row(
-          children: <Widget>[
-            Expanded(
-              flex: distValue.round(),
-              child: SizedBox(),
-            ),
-            Container(
-              width: 170,
-              child: Text(
-                "Less than ${(distValue / 10).toStringAsFixed(1)} Km",
-                textAlign: TextAlign.center,
-              ),
-            ),
-            Expanded(
-              flex: 100 - distValue.round(),
-              child: SizedBox(),
-            ),
-          ],
-        ),
-        SliderTheme(
-          data: SliderThemeData(
-            thumbShape: CustomThumbShape(),
-          ),
-          child: Slider(
-            onChanged: (value) {
-              setState(() {
-                distValue = value;
-              });
-            },
-            min: 0,
-            max: 100,
-            activeColor: HotelAppTheme.buildLightTheme().primaryColor,
-            inactiveColor: Colors.grey.withOpacity(0.4),
-            divisions: 100,
-            value: distValue,
-          ),
+        SliderView(
+          distValue: distValue,
+          onChnagedistValue: (value) {
+            distValue = value;
+          },
         ),
         SizedBox(
           height: 8,
@@ -348,65 +318,11 @@ class _FiltersScreenState extends State<FiltersScreen> {
             style: TextStyle(color: Colors.grey, fontSize: MediaQuery.of(context).size.width > 360 ? 18 : 16, fontWeight: FontWeight.normal),
           ),
         ),
-        Stack(
-          children: <Widget>[
-            Row(
-              children: <Widget>[
-                Expanded(
-                  flex: _values.start.round(),
-                  child: SizedBox(),
-                ),
-                Container(
-                  width: 54,
-                  child: Text(
-                    "\$${_values.start.round()}",
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                Expanded(
-                  flex: 1000 - _values.start.round(),
-                  child: SizedBox(),
-                ),
-              ],
-            ),
-            Row(
-              children: <Widget>[
-                Expanded(
-                  flex: _values.end.round(),
-                  child: SizedBox(),
-                ),
-                Container(
-                  width: 54,
-                  child: Text(
-                    "\$${_values.end.round()}",
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                Expanded(
-                  flex: 1000 - _values.end.round(),
-                  child: SizedBox(),
-                ),
-              ],
-            ),
-          ],
-        ),
-        SliderTheme(
-          data: SliderThemeData(
-            rangeThumbShape: CustomRangeThumbShape(),
-          ),
-          child: RangeSlider(
-            values: _values,
-            min: 0.0,
-            max: 1000.0,
-            activeColor: HotelAppTheme.buildLightTheme().primaryColor,
-            inactiveColor: Colors.grey.withOpacity(0.4),
-            divisions: 1000,
-            onChanged: (RangeValues values) {
-              setState(() {
-                _values = values;
-              });
-            },
-          ),
+        RangeSliderView(
+          values: _values,
+          onChnageRangeValues: (values) {
+            _values = values;
+          },
         ),
         SizedBox(
           height: 8,

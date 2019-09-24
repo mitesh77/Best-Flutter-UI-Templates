@@ -2,11 +2,9 @@ import 'dart:ui';
 import 'package:best_flutter_ui_templates/hotelBooking/calendarPopupView.dart';
 import 'package:best_flutter_ui_templates/hotelBooking/hotelListView.dart';
 import 'package:best_flutter_ui_templates/hotelBooking/model/hotelListData.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
-import 'SliderCustomShape.dart';
 import 'filtersScreen.dart';
 import 'hotelAppTheme.dart';
 
