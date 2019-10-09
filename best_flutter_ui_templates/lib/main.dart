@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
 class HexColor extends Color {
   static int _getColorFromHex(String hexColor) {
     hexColor = hexColor.toUpperCase().replaceAll("#", "");
