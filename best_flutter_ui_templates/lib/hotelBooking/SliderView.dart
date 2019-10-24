@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'hotelAppTheme.dart';
 
 class SliderView extends StatefulWidget {
-  final Function(double) onChnagedistValue;
+  final Function(double) onChangedDistValue;
   final double distValue;
 
-  const SliderView({Key key, this.onChnagedistValue, this.distValue}) : super(key: key);
+  const SliderView({Key key, this.onChangedDistValue, this.distValue}) : super(key: key);
   @override
   _SliderViewState createState() => _SliderViewState();
 }
@@ -54,7 +54,7 @@ class _SliderViewState extends State<SliderView> {
                   distValue = value;
                 });
                 try {
-                  widget.onChnagedistValue(distValue);
+                  widget.onChangedDistValue(distValue);
                 } catch (e) {}
               },
               min: 0,
