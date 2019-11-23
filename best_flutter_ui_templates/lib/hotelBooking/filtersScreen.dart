@@ -210,7 +210,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
         ),
         SliderView(
           distValue: distValue,
-          onChnagedistValue: (value) {
+          onChangedDistValue: (value) {
             distValue = value;
           },
         ),
