@@ -15,7 +15,6 @@ class NavigationHomeScreen extends StatefulWidget {
 class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
   Widget screenView;
   DrawerIndex drawerIndex;
-  AnimationController sliderAnimationController;
 
   @override
   void initState() {
@@ -36,13 +35,12 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
           body: DrawerUserController(
             screenIndex: drawerIndex,
             drawerWidth: MediaQuery.of(context).size.width * 0.75,
-            animationController: (AnimationController animationController) {
-              sliderAnimationController = animationController;
-            },
             onDrawerCall: (DrawerIndex drawerIndexdata) {
               changeIndex(drawerIndexdata);
+              //callback from drawer for replace screen as user need with passing DrawerIndex(Enum index)
             },
             screenView: screenView,
+            //we replace screen view as we need on navigate starting screens like MyHomePage, HelpScreen, FeedbackScreen, etc...
           ),
         ),
       ),
