@@ -458,7 +458,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                       child: Row(
                         children: <Widget>[
                           Text(
-                            'Filtter',
+                            'Filter',
                             style: TextStyle(
                               fontWeight: FontWeight.w100,
                               fontSize: 16,
