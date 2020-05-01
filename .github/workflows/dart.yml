@@ -19,11 +19,17 @@ jobs:
       image:  google/dart:latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Install dependencies
-      run: pub get
-    - name: Run tests
-      run: pub run test
+    - uses: actions/checkout@v1
+    - uses: actions/setup-java@v1
+      with:
+        java-version: '12.x'
+    - uses: subosito/flutter-action@v1
+      with:
+        flutter-version: '1.12.x' # you can use 1.12
+        channel: 'dev' # optional, default to: 'stable'
+    - run: flutter pub get
+    - run: flutter test
+    - run: flutter build apk
     
     - run: flutter pub get
       working-directory: best_flutter_ui_templates
