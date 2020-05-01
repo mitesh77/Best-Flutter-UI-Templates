@@ -1,10 +1,10 @@
 name: Dart CI
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: push
+#  push:
+#    branches: [ master ]
+#  pull_request:
+#    branches: [ master ]
 
 env:
   flutter_channel: 'stable' # or: 'dev' or 'beta'
@@ -15,23 +15,21 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    container:
-      image:  google/dart:latest
-
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
+
+    - uses: subosito/flutter-action@v1
+      with:
+        channel: ${{ env.flutter_channel }}
+        flutter-version: ${{ env.flutter_version }}
+
     - uses: actions/setup-java@v1
       with:
         java-version: '12.x'
-    - uses: subosito/flutter-action@v1
-      with:
-        channel: 'stable' # or: 'dev' or 'beta'
-    - run: flutter pub get
-    - run: flutter test
-    - run: flutter build apk
-    
+
     - run: flutter pub get
       working-directory: best_flutter_ui_templates
+    # - run: flutter test
 
     - name: build APK
       run: flutter build apk
