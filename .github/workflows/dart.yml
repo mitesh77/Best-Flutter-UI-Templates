@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ master ]
 
+env:
+  flutter_channel: 'stable' # or: 'dev' or 'beta'
+  flutter_version: '1.12.13+hotfix.9'
+
 jobs:
   build:
 
@@ -20,3 +24,16 @@ jobs:
       run: pub get
     - name: Run tests
       run: pub run test
+    
+    - run: flutter pub get
+      working-directory: best_flutter_ui_templates
+
+    - name: build APK
+      run: flutter build apk
+      working-directory: best_flutter_ui_templates
+
+    - name: upload APK
+      uses: actions/upload-artifact@v1
+      with:
+        name: apk
+        path: best_flutter_ui_templates/build/app/outputs/apk/release/app-release.apk
