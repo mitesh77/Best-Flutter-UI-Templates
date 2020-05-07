@@ -8,7 +8,7 @@ on: push
 
 env:
   flutter_channel: 'stable' # or: 'dev' or 'beta'
-  flutter_version: '1.12.13+hotfix.9'
+  flutter_version: '1.17.0'
 
 jobs:
   build:

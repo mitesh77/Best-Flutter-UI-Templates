@@ -21,12 +21,12 @@ class FintnessAppTheme {
   static const String fontName = 'Roboto';
 
   static const TextTheme textTheme = TextTheme(
-    display1: display1,
-    headline: headline,
-    title: title,
-    subtitle: subtitle,
-    body2: body2,
-    body1: body1,
+    headline4: display1,
+    headline5: headline,
+    headline6: title,
+    subtitle2: subtitle,
+    bodyText2: body2,
+    bodyText1: body1,
     caption: caption,
   );
 
