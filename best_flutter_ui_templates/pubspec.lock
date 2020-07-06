@@ -141,7 +141,7 @@ packages:
       name: smooth_star_rating
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.4+2"
+    version: "1.1.1"
   source_span:
     dependency: transitive
     description:
