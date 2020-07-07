@@ -120,6 +120,7 @@ class CustomRangeThumbShape extends RangeSliderThumbShape {
     bool isDiscrete = false,
     bool isEnabled = false,
     bool isOnTop,
+    bool isPressed,
     @required SliderThemeData sliderTheme,
     TextDirection textDirection,
     Thumb thumb,
