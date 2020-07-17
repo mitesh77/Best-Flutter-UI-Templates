@@ -51,10 +51,10 @@ class _DrawerUserControllerState extends State<DrawerUserController> with Ticker
             });
           }
           iconAnimationController.animateTo(0.0, duration: const Duration(milliseconds: 0), curve: Curves.fastOutSlowIn);
-        } else if (scrollController.offset > 0 && scrollController.offset < widget.drawerWidth) {
+        } else if (scrollController.offset > 0 && scrollController.offset < widget.drawerWidth.floor()) {
           iconAnimationController.animateTo((scrollController.offset * 100 / (widget.drawerWidth)) / 100,
               duration: const Duration(milliseconds: 0), curve: Curves.fastOutSlowIn);
-        } else if (scrollController.offset <= widget.drawerWidth) {
+        } else {
           if (scrolloffset != 0.0) {
             setState(() {
               scrolloffset = 0.0;
