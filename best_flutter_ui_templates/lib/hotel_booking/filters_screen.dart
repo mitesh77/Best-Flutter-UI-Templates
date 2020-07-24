@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'range_slider_view.dart';
-import 'slider_view.dart';
 import 'hotel_app_theme.dart';
 import 'model/popular_filter_list.dart';
+import 'range_slider_view.dart';
+import 'slider_view.dart';
 
 class FiltersScreen extends StatefulWidget {
   @override
@@ -76,7 +76,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                     onTap: () {
                       Navigator.pop(context);
                     },
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         'Apply',
                         style: TextStyle(
@@ -146,7 +146,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   Expanded(
                     child: Text(
                       date.titleTxt,
-                      style: TextStyle(color: Colors.black),
+                      style: const TextStyle(color: Colors.black),
                     ),
                   ),
                   CupertinoSwitch(
@@ -178,13 +178,13 @@ class _FiltersScreenState extends State<FiltersScreen> {
   void checkAppPosition(int index) {
     if (index == 0) {
       if (accomodationListData[0].isSelected) {
-        accomodationListData.forEach((d) {
+        for (final d in accomodationListData) {
           d.isSelected = false;
-        });
+        }
       } else {
-        accomodationListData.forEach((d) {
+        for (final d in accomodationListData) {
           d.isSelected = true;
-        });
+        }
       }
     } else {
       accomodationListData[index].isSelected =
@@ -321,7 +321,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
             break;
           }
         } catch (e) {
-          print(e);
+          debugPrint('filters_screen.dart: $e');
         }
       }
       noList.add(Row(

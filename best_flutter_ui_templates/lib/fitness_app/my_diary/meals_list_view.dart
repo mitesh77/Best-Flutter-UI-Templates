@@ -11,7 +11,7 @@ class MealsListView extends StatefulWidget {
       : super(key: key);
 
   final AnimationController mainScreenAnimationController;
-  final Animation<dynamic> mainScreenAnimation;
+  final Animation<double> mainScreenAnimation;
 
   @override
   _MealsListViewState createState() => _MealsListViewState();
@@ -54,8 +54,7 @@ class _MealsListViewState extends State<MealsListView>
               height: 216,
               width: double.infinity,
               child: ListView.builder(
-                padding: const EdgeInsets.only(
-                    top: 0, bottom: 0, right: 16, left: 16),
+                padding: const EdgeInsets.only(right: 16, left: 16),
                 itemCount: mealsListData.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (BuildContext context, int index) {
@@ -91,7 +90,7 @@ class MealsView extends StatelessWidget {
 
   final MealsListData mealsListData;
   final AnimationController animationController;
-  final Animation<dynamic> animation;
+  final Animation<double> animation;
 
   @override
   Widget build(BuildContext context) {
@@ -144,7 +143,7 @@ class MealsView extends StatelessWidget {
                             Text(
                               mealsListData.titleTxt,
                               textAlign: TextAlign.center,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontFamily: FintnessAppTheme.fontName,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16,
@@ -162,7 +161,7 @@ class MealsView extends StatelessWidget {
                                   children: <Widget>[
                                     Text(
                                       mealsListData.meals.join('\n'),
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontFamily: FintnessAppTheme.fontName,
                                         fontWeight: FontWeight.w500,
                                         fontSize: 10,
@@ -174,60 +173,60 @@ class MealsView extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            mealsListData.kacl != 0
-                                ? Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: <Widget>[
-                                      Text(
-                                        mealsListData.kacl.toString(),
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontFamily: FintnessAppTheme.fontName,
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 24,
-                                          letterSpacing: 0.2,
-                                          color: FintnessAppTheme.white,
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 4, bottom: 3),
-                                        child: Text(
-                                          'kcal',
-                                          style: TextStyle(
-                                            fontFamily:
-                                                FintnessAppTheme.fontName,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 10,
-                                            letterSpacing: 0.2,
-                                            color: FintnessAppTheme.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  )
-                                : Container(
-                                    decoration: BoxDecoration(
-                                      color: FintnessAppTheme.nearlyWhite,
-                                      shape: BoxShape.circle,
-                                      boxShadow: <BoxShadow>[
-                                        BoxShadow(
-                                            color: FintnessAppTheme.nearlyBlack
-                                                .withOpacity(0.4),
-                                            offset: Offset(8.0, 8.0),
-                                            blurRadius: 8.0),
-                                      ],
+                            if (mealsListData.kcal != 0)
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: <Widget>[
+                                  Text(
+                                    mealsListData.kcal.toString(),
+                                    textAlign: TextAlign.center,
+                                    style: const TextStyle(
+                                      fontFamily: FintnessAppTheme.fontName,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 24,
+                                      letterSpacing: 0.2,
+                                      color: FintnessAppTheme.white,
                                     ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(6.0),
-                                      child: Icon(
-                                        Icons.add,
-                                        color: HexColor(mealsListData.endColor),
-                                        size: 24,
+                                  ),
+                                  const Padding(
+                                    padding:
+                                        EdgeInsets.only(left: 4, bottom: 3),
+                                    child: Text(
+                                      'kcal',
+                                      style: TextStyle(
+                                        fontFamily: FintnessAppTheme.fontName,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 10,
+                                        letterSpacing: 0.2,
+                                        color: FintnessAppTheme.white,
                                       ),
                                     ),
                                   ),
+                                ],
+                              )
+                            else
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: FintnessAppTheme.nearlyWhite,
+                                  shape: BoxShape.circle,
+                                  boxShadow: <BoxShadow>[
+                                    BoxShadow(
+                                        color: FintnessAppTheme.nearlyBlack
+                                            .withOpacity(0.4),
+                                        offset: const Offset(8.0, 8.0),
+                                        blurRadius: 8.0),
+                                  ],
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(6.0),
+                                  child: Icon(
+                                    Icons.add,
+                                    color: HexColor(mealsListData.endColor),
+                                    size: 24,
+                                  ),
+                                ),
+                              ),
                           ],
                         ),
                       ),

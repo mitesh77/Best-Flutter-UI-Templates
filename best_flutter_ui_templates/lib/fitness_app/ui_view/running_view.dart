@@ -3,7 +3,7 @@ import '../fintness_app_theme.dart';
 
 class RunningView extends StatelessWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
   const RunningView({Key key, this.animationController, this.animation})
       : super(key: key);
@@ -15,14 +15,13 @@ class RunningView extends StatelessWidget {
       builder: (BuildContext context, Widget child) {
         return FadeTransition(
           opacity: animation,
-          child: new Transform(
-            transform: new Matrix4.translationValues(
+          child: Transform(
+            transform: Matrix4.translationValues(
                 0.0, 30 * (1.0 - animation.value), 0.0),
             child: Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.only(
-                      left: 24, right: 24, top: 0, bottom: 0),
+                  padding: const EdgeInsets.only(left: 24, right: 24),
                   child: Stack(
                     overflow: Overflow.visible,
                     children: <Widget>[
@@ -31,7 +30,7 @@ class RunningView extends StatelessWidget {
                         child: Container(
                           decoration: BoxDecoration(
                             color: FintnessAppTheme.white,
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(8.0),
                                 bottomLeft: Radius.circular(8.0),
                                 bottomRight: Radius.circular(8.0),
@@ -39,7 +38,7 @@ class RunningView extends StatelessWidget {
                             boxShadow: <BoxShadow>[
                               BoxShadow(
                                   color: FintnessAppTheme.grey.withOpacity(0.4),
-                                  offset: Offset(1.1, 1.1),
+                                  offset: const Offset(1.1, 1.1),
                                   blurRadius: 10.0),
                             ],
                           ),
@@ -47,8 +46,8 @@ class RunningView extends StatelessWidget {
                             alignment: Alignment.topLeft,
                             children: <Widget>[
                               ClipRRect(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8.0)),
+                                borderRadius: const BorderRadius.all(
+                                    Radius.circular(8.0)),
                                 child: SizedBox(
                                   height: 74,
                                   child: AspectRatio(
@@ -62,9 +61,9 @@ class RunningView extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   Row(
-                                    children: <Widget>[
+                                    children: const <Widget>[
                                       Padding(
-                                        padding: const EdgeInsets.only(
+                                        padding: EdgeInsets.only(
                                           left: 100,
                                           right: 16,
                                           top: 16,

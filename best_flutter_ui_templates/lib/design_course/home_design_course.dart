@@ -72,17 +72,18 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
           padding: const EdgeInsets.only(left: 16, right: 16),
           child: Row(
             children: <Widget>[
-              getButtonUI(CategoryType.ui, categoryType == CategoryType.ui),
+              getButtonUI(CategoryType.ui,
+                  isSelected: categoryType == CategoryType.ui),
               const SizedBox(
                 width: 16,
               ),
-              getButtonUI(
-                  CategoryType.coding, categoryType == CategoryType.coding),
+              getButtonUI(CategoryType.coding,
+                  isSelected: categoryType == CategoryType.coding),
               const SizedBox(
                 width: 16,
               ),
-              getButtonUI(
-                  CategoryType.basic, categoryType == CategoryType.basic),
+              getButtonUI(CategoryType.basic,
+                  isSelected: categoryType == CategoryType.basic),
             ],
           ),
         ),
@@ -136,7 +137,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
     );
   }
 
-  Widget getButtonUI(CategoryType categoryTypeData, bool isSelected) {
+  Widget getButtonUI(CategoryType categoryTypeData, {bool isSelected}) {
     String txt = '';
     if (CategoryType.ui == categoryTypeData) {
       txt = 'Ui/Ux';
@@ -215,7 +216,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
                       child: Container(
                         padding: const EdgeInsets.only(left: 16, right: 16),
                         child: TextFormField(
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontFamily: 'WorkSans',
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
@@ -268,7 +269,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
+              children: const <Widget>[
                 Text(
                   'Choose your',
                   textAlign: TextAlign.left,

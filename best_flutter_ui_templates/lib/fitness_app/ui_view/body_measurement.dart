@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class BodyMeasurementView extends StatelessWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
   const BodyMeasurementView({Key key, this.animationController, this.animation})
       : super(key: key);
@@ -15,8 +15,8 @@ class BodyMeasurementView extends StatelessWidget {
       builder: (BuildContext context, Widget child) {
         return FadeTransition(
           opacity: animation,
-          child: new Transform(
-            transform: new Matrix4.translationValues(
+          child: Transform(
+            transform: Matrix4.translationValues(
                 0.0, 30 * (1.0 - animation.value), 0.0),
             child: Padding(
               padding: const EdgeInsets.only(
@@ -24,7 +24,7 @@ class BodyMeasurementView extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   color: FintnessAppTheme.white,
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(8.0),
                       bottomLeft: Radius.circular(8.0),
                       bottomRight: Radius.circular(8.0),
@@ -32,7 +32,7 @@ class BodyMeasurementView extends StatelessWidget {
                   boxShadow: <BoxShadow>[
                     BoxShadow(
                         color: FintnessAppTheme.grey.withOpacity(0.2),
-                        offset: Offset(1.1, 1.1),
+                        offset: const Offset(1.1, 1.1),
                         blurRadius: 10.0),
                   ],
                 ),
@@ -45,9 +45,9 @@ class BodyMeasurementView extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: 4, bottom: 8, top: 16),
+                          const Padding(
+                            padding:
+                                EdgeInsets.only(left: 4, bottom: 8, top: 16),
                             child: Text(
                               'Weight',
                               textAlign: TextAlign.center,
@@ -81,9 +81,9 @@ class BodyMeasurementView extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 8, bottom: 8),
+                                  const Padding(
+                                    padding:
+                                        EdgeInsets.only(left: 8, bottom: 8),
                                     child: Text(
                                       'Ibs',
                                       textAlign: TextAlign.center,
@@ -130,9 +130,9 @@ class BodyMeasurementView extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 4, bottom: 14),
+                                  const Padding(
+                                    padding:
+                                        EdgeInsets.only(top: 4, bottom: 14),
                                     child: Text(
                                       'InBody SmartScale',
                                       textAlign: TextAlign.center,
@@ -157,7 +157,7 @@ class BodyMeasurementView extends StatelessWidget {
                           left: 24, right: 24, top: 8, bottom: 8),
                       child: Container(
                         height: 2,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: FintnessAppTheme.background,
                           borderRadius: BorderRadius.all(Radius.circular(4.0)),
                         ),
@@ -173,7 +173,7 @@ class BodyMeasurementView extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                Text(
+                                const Text(
                                   '185 cm',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
@@ -210,7 +210,7 @@ class BodyMeasurementView extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: <Widget>[
-                                    Text(
+                                    const Text(
                                       '27.3 BMI',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
@@ -249,7 +249,7 @@ class BodyMeasurementView extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: <Widget>[
-                                    Text(
+                                    const Text(
                                       '20%',
                                       style: TextStyle(
                                         fontFamily: FintnessAppTheme.fontName,

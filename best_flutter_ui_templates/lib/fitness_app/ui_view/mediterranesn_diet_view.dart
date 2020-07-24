@@ -1,11 +1,11 @@
+import 'dart:math' as math;
 import 'package:best_flutter_ui_templates/fitness_app/fintness_app_theme.dart';
 import 'package:best_flutter_ui_templates/main.dart';
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
 
 class MediterranesnDietView extends StatelessWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
   const MediterranesnDietView(
       {Key key, this.animationController, this.animation})
@@ -18,8 +18,8 @@ class MediterranesnDietView extends StatelessWidget {
       builder: (BuildContext context, Widget child) {
         return FadeTransition(
           opacity: animation,
-          child: new Transform(
-            transform: new Matrix4.translationValues(
+          child: Transform(
+            transform: Matrix4.translationValues(
                 0.0, 30 * (1.0 - animation.value), 0.0),
             child: Padding(
               padding: const EdgeInsets.only(
@@ -27,7 +27,7 @@ class MediterranesnDietView extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   color: FintnessAppTheme.white,
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(8.0),
                       bottomLeft: Radius.circular(8.0),
                       bottomRight: Radius.circular(8.0),
@@ -35,7 +35,7 @@ class MediterranesnDietView extends StatelessWidget {
                   boxShadow: <BoxShadow>[
                     BoxShadow(
                         color: FintnessAppTheme.grey.withOpacity(0.2),
-                        offset: Offset(1.1, 1.1),
+                        offset: const Offset(1.1, 1.1),
                         blurRadius: 10.0),
                   ],
                 ),
@@ -60,7 +60,7 @@ class MediterranesnDietView extends StatelessWidget {
                                         decoration: BoxDecoration(
                                           color: HexColor('#87A0E5')
                                               .withOpacity(0.5),
-                                          borderRadius: BorderRadius.all(
+                                          borderRadius: const BorderRadius.all(
                                               Radius.circular(4.0)),
                                         ),
                                       ),
@@ -148,7 +148,7 @@ class MediterranesnDietView extends StatelessWidget {
                                       )
                                     ],
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 8,
                                   ),
                                   Row(
@@ -159,7 +159,7 @@ class MediterranesnDietView extends StatelessWidget {
                                         decoration: BoxDecoration(
                                           color: HexColor('#F56E98')
                                               .withOpacity(0.5),
-                                          borderRadius: BorderRadius.all(
+                                          borderRadius: const BorderRadius.all(
                                               Radius.circular(4.0)),
                                         ),
                                       ),
@@ -264,10 +264,10 @@ class MediterranesnDietView extends StatelessWidget {
                                       height: 100,
                                       decoration: BoxDecoration(
                                         color: FintnessAppTheme.white,
-                                        borderRadius: BorderRadius.all(
+                                        borderRadius: const BorderRadius.all(
                                           Radius.circular(100.0),
                                         ),
-                                        border: new Border.all(
+                                        border: Border.all(
                                             width: 4,
                                             color: FintnessAppTheme
                                                 .nearlyDarkBlue
@@ -276,8 +276,6 @@ class MediterranesnDietView extends StatelessWidget {
                                       child: Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
                                         children: <Widget>[
                                           Text(
                                             '${(1503 * animation.value).toInt()}',
@@ -321,7 +319,7 @@ class MediterranesnDietView extends StatelessWidget {
                                           angle: 140 +
                                               (360 - 140) *
                                                   (1.0 - animation.value)),
-                                      child: SizedBox(
+                                      child: const SizedBox(
                                         width: 108,
                                         height: 108,
                                       ),
@@ -339,7 +337,7 @@ class MediterranesnDietView extends StatelessWidget {
                           left: 24, right: 24, top: 8, bottom: 8),
                       child: Container(
                         height: 2,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: FintnessAppTheme.background,
                           borderRadius: BorderRadius.all(Radius.circular(4.0)),
                         ),
@@ -355,7 +353,7 @@ class MediterranesnDietView extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                Text(
+                                const Text(
                                   'Carbs',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
@@ -374,13 +372,13 @@ class MediterranesnDietView extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       color:
                                           HexColor('#87A0E5').withOpacity(0.2),
-                                      borderRadius: BorderRadius.all(
+                                      borderRadius: const BorderRadius.all(
                                           Radius.circular(4.0)),
                                     ),
                                     child: Row(
                                       children: <Widget>[
                                         Container(
-                                          width: ((70 / 1.2) * animation.value),
+                                          width: (70 / 1.2) * animation.value,
                                           height: 4,
                                           decoration: BoxDecoration(
                                             gradient: LinearGradient(colors: [
@@ -388,8 +386,9 @@ class MediterranesnDietView extends StatelessWidget {
                                               HexColor('#87A0E5')
                                                   .withOpacity(0.5),
                                             ]),
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(4.0)),
+                                            borderRadius:
+                                                const BorderRadius.all(
+                                                    Radius.circular(4.0)),
                                           ),
                                         )
                                       ],
@@ -422,7 +421,7 @@ class MediterranesnDietView extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
-                                    Text(
+                                    const Text(
                                       'Protein',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
@@ -441,14 +440,14 @@ class MediterranesnDietView extends StatelessWidget {
                                         decoration: BoxDecoration(
                                           color: HexColor('#F56E98')
                                               .withOpacity(0.2),
-                                          borderRadius: BorderRadius.all(
+                                          borderRadius: const BorderRadius.all(
                                               Radius.circular(4.0)),
                                         ),
                                         child: Row(
                                           children: <Widget>[
                                             Container(
-                                              width: ((70 / 2) *
-                                                  animationController.value),
+                                              width: (70 / 2) *
+                                                  animationController.value,
                                               height: 4,
                                               decoration: BoxDecoration(
                                                 gradient:
@@ -457,8 +456,9 @@ class MediterranesnDietView extends StatelessWidget {
                                                       .withOpacity(0.1),
                                                   HexColor('#F56E98'),
                                                 ]),
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(4.0)),
+                                                borderRadius:
+                                                    const BorderRadius.all(
+                                                        Radius.circular(4.0)),
                                               ),
                                             ),
                                           ],
@@ -493,7 +493,7 @@ class MediterranesnDietView extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
-                                    Text(
+                                    const Text(
                                       'Fat',
                                       style: TextStyle(
                                         fontFamily: FintnessAppTheme.fontName,
@@ -504,22 +504,21 @@ class MediterranesnDietView extends StatelessWidget {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.only(
-                                          right: 0, top: 4),
+                                      padding: const EdgeInsets.only(top: 4),
                                       child: Container(
                                         height: 4,
                                         width: 70,
                                         decoration: BoxDecoration(
                                           color: HexColor('#F1B440')
                                               .withOpacity(0.2),
-                                          borderRadius: BorderRadius.all(
+                                          borderRadius: const BorderRadius.all(
                                               Radius.circular(4.0)),
                                         ),
                                         child: Row(
                                           children: <Widget>[
                                             Container(
-                                              width: ((70 / 2.5) *
-                                                  animationController.value),
+                                              width: (70 / 2.5) *
+                                                  animationController.value,
                                               height: 4,
                                               decoration: BoxDecoration(
                                                 gradient:
@@ -528,8 +527,9 @@ class MediterranesnDietView extends StatelessWidget {
                                                       .withOpacity(0.1),
                                                   HexColor('#F1B440'),
                                                 ]),
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(4.0)),
+                                                borderRadius:
+                                                    const BorderRadius.all(
+                                                        Radius.circular(4.0)),
                                               ),
                                             ),
                                           ],
@@ -577,23 +577,23 @@ class CurvePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    List<Color> colorsList = List<Color>();
+    List<Color> colorsList = <Color>[];
     if (colors != null) {
       colorsList = colors;
     } else {
       colorsList.addAll([Colors.white, Colors.white]);
     }
 
-    final shdowPaint = new Paint()
+    final shdowPaint = Paint()
       ..color = Colors.black.withOpacity(0.4)
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke
       ..strokeWidth = 14;
-    final shdowPaintCenter = new Offset(size.width / 2, size.height / 2);
+    final shdowPaintCenter = Offset(size.width / 2, size.height / 2);
     final shdowPaintRadius =
         math.min(size.width / 2, size.height / 2) - (14 / 2);
     canvas.drawArc(
-        new Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
+        Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
         degreeToRadians(278),
         degreeToRadians(360 - (365 - angle)),
         false,
@@ -602,7 +602,7 @@ class CurvePainter extends CustomPainter {
     shdowPaint.color = Colors.grey.withOpacity(0.3);
     shdowPaint.strokeWidth = 16;
     canvas.drawArc(
-        new Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
+        Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
         degreeToRadians(278),
         degreeToRadians(360 - (365 - angle)),
         false,
@@ -611,7 +611,7 @@ class CurvePainter extends CustomPainter {
     shdowPaint.color = Colors.grey.withOpacity(0.2);
     shdowPaint.strokeWidth = 20;
     canvas.drawArc(
-        new Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
+        Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
         degreeToRadians(278),
         degreeToRadians(360 - (365 - angle)),
         false,
@@ -620,43 +620,43 @@ class CurvePainter extends CustomPainter {
     shdowPaint.color = Colors.grey.withOpacity(0.1);
     shdowPaint.strokeWidth = 22;
     canvas.drawArc(
-        new Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
+        Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
         degreeToRadians(278),
         degreeToRadians(360 - (365 - angle)),
         false,
         shdowPaint);
 
-    final rect = new Rect.fromLTWH(0.0, 0.0, size.width, size.width);
-    final gradient = new SweepGradient(
+    final rect = Rect.fromLTWH(0.0, 0.0, size.width, size.width);
+    final gradient = SweepGradient(
       startAngle: degreeToRadians(268),
       endAngle: degreeToRadians(270.0 + 360),
       tileMode: TileMode.repeated,
       colors: colorsList,
     );
-    final paint = new Paint()
+    final paint = Paint()
       ..shader = gradient.createShader(rect)
       ..strokeCap = StrokeCap.round // StrokeCap.round is not recommended.
       ..style = PaintingStyle.stroke
       ..strokeWidth = 14;
-    final center = new Offset(size.width / 2, size.height / 2);
+    final center = Offset(size.width / 2, size.height / 2);
     final radius = math.min(size.width / 2, size.height / 2) - (14 / 2);
 
     canvas.drawArc(
-        new Rect.fromCircle(center: center, radius: radius),
+        Rect.fromCircle(center: center, radius: radius),
         degreeToRadians(278),
         degreeToRadians(360 - (365 - angle)),
         false,
         paint);
 
-    final gradient1 = new SweepGradient(
+    const gradient1 = SweepGradient(
       tileMode: TileMode.repeated,
       colors: [Colors.white, Colors.white],
     );
 
-    var cPaint = new Paint();
-    cPaint..shader = gradient1.createShader(rect);
-    cPaint..color = Colors.white;
-    cPaint..strokeWidth = 14 / 2;
+    final cPaint = Paint();
+    cPaint.shader = gradient1.createShader(rect);
+    cPaint.color = Colors.white;
+    cPaint.strokeWidth = 14 / 2;
     canvas.save();
 
     final centerToCircle = size.width / 2;
@@ -667,7 +667,7 @@ class CurvePainter extends CustomPainter {
 
     canvas.save();
     canvas.translate(0.0, -centerToCircle + 14 / 2);
-    canvas.drawCircle(new Offset(0, 0), 14 / 5, cPaint);
+    canvas.drawCircle(const Offset(0, 0), 14 / 5, cPaint);
 
     canvas.restore();
     canvas.restore();
@@ -680,7 +680,7 @@ class CurvePainter extends CustomPainter {
   }
 
   double degreeToRadians(double degree) {
-    var redian = (math.pi / 180) * degree;
+    final redian = (math.pi / 180) * degree;
     return redian;
   }
 }

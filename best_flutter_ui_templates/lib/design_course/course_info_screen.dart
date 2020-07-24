@@ -122,27 +122,25 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                                     color: DesignCourseAppTheme.nearlyBlue,
                                   ),
                                 ),
-                                Container(
-                                  child: Row(
-                                    children: <Widget>[
-                                      Text(
-                                        '4.3',
-                                        textAlign: TextAlign.left,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w200,
-                                          fontSize: 22,
-                                          letterSpacing: 0.27,
-                                          color: DesignCourseAppTheme.grey,
-                                        ),
+                                Row(
+                                  children: <Widget>[
+                                    Text(
+                                      '4.3',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w200,
+                                        fontSize: 22,
+                                        letterSpacing: 0.27,
+                                        color: DesignCourseAppTheme.grey,
                                       ),
-                                      Icon(
-                                        Icons.star,
-                                        color: DesignCourseAppTheme.nearlyBlue,
-                                        size: 24,
-                                      ),
-                                    ],
-                                  ),
-                                )
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: DesignCourseAppTheme.nearlyBlue,
+                                      size: 24,
+                                    ),
+                                  ],
+                                ),
                               ],
                             ),
                           ),
@@ -265,7 +263,6 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
               top: (MediaQuery.of(context).size.width / 1.2) - 24.0 - 35,
               right: 35,
               child: ScaleTransition(
-                alignment: Alignment.center,
                 scale: CurvedAnimation(
                     parent: animationController, curve: Curves.fastOutSlowIn),
                 child: Card(
@@ -297,13 +294,13 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                   child: InkWell(
                     borderRadius:
                         BorderRadius.circular(AppBar().preferredSize.height),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
                     child: Icon(
                       Icons.arrow_back_ios,
                       color: DesignCourseAppTheme.nearlyBlack,
                     ),
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
                   ),
                 ),
               ),

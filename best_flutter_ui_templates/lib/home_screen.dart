@@ -22,7 +22,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   }
 
   Future<bool> getData() async {
-    await Future<dynamic>.delayed(const Duration(milliseconds: 0));
+    await Future<dynamic>.delayed(const Duration());
     return true;
   }
 
@@ -58,10 +58,16 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                           return const SizedBox();
                         } else {
                           return GridView(
-                            padding: const EdgeInsets.only(
-                                top: 0, left: 12, right: 12),
+                            padding: const EdgeInsets.only(left: 12, right: 12),
                             physics: const BouncingScrollPhysics(),
                             scrollDirection: Axis.vertical,
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: multiple ? 2 : 1,
+                              mainAxisSpacing: 12.0,
+                              crossAxisSpacing: 12.0,
+                              childAspectRatio: 1.5,
+                            ),
                             children: List<Widget>.generate(
                               homeList.length,
                               (int index) {
@@ -91,13 +97,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                                 );
                               },
                             ),
-                            gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: multiple ? 2 : 1,
-                              mainAxisSpacing: 12.0,
-                              crossAxisSpacing: 12.0,
-                              childAspectRatio: 1.5,
-                            ),
                           );
                         }
                       },
@@ -125,10 +124,10 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               height: AppBar().preferredSize.height - 8,
             ),
           ),
-          Expanded(
+          const Expanded(
             child: Center(
               child: Padding(
-                padding: const EdgeInsets.only(top: 4),
+                padding: EdgeInsets.only(top: 4),
                 child: Text(
                   'Flutter UI',
                   style: TextStyle(
@@ -151,15 +150,15 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                 child: InkWell(
                   borderRadius:
                       BorderRadius.circular(AppBar().preferredSize.height),
-                  child: Icon(
-                    multiple ? Icons.dashboard : Icons.view_agenda,
-                    color: AppTheme.dark_grey,
-                  ),
                   onTap: () {
                     setState(() {
                       multiple = !multiple;
                     });
                   },
+                  child: Icon(
+                    multiple ? Icons.dashboard : Icons.view_agenda,
+                    color: AppTheme.darkGrey,
+                  ),
                 ),
               ),
             ),
@@ -182,7 +181,7 @@ class HomeListView extends StatelessWidget {
   final HomeList listData;
   final VoidCallback callBack;
   final AnimationController animationController;
-  final Animation<dynamic> animation;
+  final Animation<double> animation;
 
   @override
   Widget build(BuildContext context) {

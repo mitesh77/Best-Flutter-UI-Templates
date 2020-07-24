@@ -23,9 +23,7 @@ class HotelListData {
       titleTxt: 'Grand Royal Hotel',
       subTxt: 'Wembley, London',
       dist: 2.0,
-      reviews: 80,
       rating: 4.4,
-      perNight: 180,
     ),
     HotelListData(
       imagePath: 'assets/hotel/hotel_2.png',
@@ -33,7 +31,6 @@ class HotelListData {
       subTxt: 'Wembley, London',
       dist: 4.0,
       reviews: 74,
-      rating: 4.5,
       perNight: 200,
     ),
     HotelListData(
@@ -60,7 +57,6 @@ class HotelListData {
       subTxt: 'Wembley, London',
       dist: 2.0,
       reviews: 240,
-      rating: 4.5,
       perNight: 200,
     ),
   ];

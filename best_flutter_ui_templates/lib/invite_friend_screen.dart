@@ -31,7 +31,7 @@ class _InviteFriendState extends State<InviteFriend> {
               ),
               Container(
                 padding: const EdgeInsets.only(top: 8),
-                child: Text(
+                child: const Text(
                   'Invite Your Friends',
                   style: TextStyle(
                     fontSize: 20,
@@ -81,8 +81,8 @@ class _InviteFriendState extends State<InviteFriend> {
                                   color: Colors.white,
                                   size: 22,
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.all(4.0),
+                                const Padding(
+                                  padding: EdgeInsets.all(4.0),
                                   child: Text(
                                     'Share',
                                     style: TextStyle(

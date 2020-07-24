@@ -1,0 +1,18 @@
+# Enable all rules by default
+include: package:lint/analysis_options.yaml
+
+analyzer:
+  strong-mode:
+    implicit-casts: false
+    implicit-dynamic: false
+  errors:
+    # Otherwise cause the import of all_lint_rules to warn because of some rules conflicts.
+    # The conflicts are fixed in this file instead, so we can safely ignore the warning.
+    included_file_warning: ignore
+    todo: info
+# Explicitly disable only the rules we do not want.
+linter:
+  rules:
+    # !!! IMPORTANT: At least one rule must be uncommented for warnings to work
+    # Some explanation why we don't want this lint
+    always_put_required_named_parameters_first: true
