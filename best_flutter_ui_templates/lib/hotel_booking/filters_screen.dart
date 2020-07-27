@@ -315,7 +315,11 @@ class _FiltersScreenState extends State<FiltersScreen> {
               ],
             ),
           ));
-          count += 1;
+          if (count < popularFilterListData.length - 1) {
+            count += 1;
+          } else {
+            break;
+          }
         } catch (e) {
           print(e);
         }
