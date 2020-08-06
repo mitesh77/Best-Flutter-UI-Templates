@@ -132,7 +132,7 @@ class CategoryView extends StatelessWidget {
                                         child: Text(
                                           category.title,
                                           textAlign: TextAlign.left,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             fontWeight: FontWeight.w600,
                                             fontSize: 16,
                                             letterSpacing: 0.27,
@@ -150,13 +150,11 @@ class CategoryView extends StatelessWidget {
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
                                           children: <Widget>[
                                             Text(
                                               '${category.lessonCount} lesson',
                                               textAlign: TextAlign.left,
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                 fontWeight: FontWeight.w200,
                                                 fontSize: 12,
                                                 letterSpacing: 0.27,
@@ -169,7 +167,7 @@ class CategoryView extends StatelessWidget {
                                                 Text(
                                                   '${category.rating}',
                                                   textAlign: TextAlign.left,
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                     fontWeight: FontWeight.w200,
                                                     fontSize: 18,
                                                     letterSpacing: 0.27,
@@ -177,7 +175,7 @@ class CategoryView extends StatelessWidget {
                                                         .grey,
                                                   ),
                                                 ),
-                                                Icon(
+                                                const Icon(
                                                   Icons.star,
                                                   color: DesignCourseAppTheme
                                                       .nearlyBlue,
@@ -200,7 +198,7 @@ class CategoryView extends StatelessWidget {
                                             Text(
                                               '\$${category.money}',
                                               textAlign: TextAlign.left,
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                 fontWeight: FontWeight.w600,
                                                 fontSize: 18,
                                                 letterSpacing: 0.27,
@@ -215,9 +213,8 @@ class CategoryView extends StatelessWidget {
                                                 borderRadius: BorderRadius.all(
                                                     Radius.circular(8.0)),
                                               ),
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(4.0),
+                                              child: const Padding(
+                                                padding: EdgeInsets.all(4.0),
                                                 child: Icon(
                                                   Icons.add,
                                                   color: DesignCourseAppTheme

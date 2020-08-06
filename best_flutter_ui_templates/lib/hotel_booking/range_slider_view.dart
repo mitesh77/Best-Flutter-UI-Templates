@@ -73,7 +73,6 @@ class _RangeSliderViewState extends State<RangeSliderView> {
           ),
           child: RangeSlider(
             values: _values,
-            min: 0.0,
             max: 1000.0,
             activeColor: HotelAppTheme.buildLightTheme().primaryColor,
             inactiveColor: Colors.grey.withOpacity(0.4),

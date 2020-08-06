@@ -30,7 +30,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
       DrawerList(
         index: DrawerIndex.home,
         labelName: 'Home',
-        icon: Icon(Icons.home),
+        icon: const Icon(Icons.home),
       ),
       DrawerList(
         index: DrawerIndex.help,
@@ -41,22 +41,22 @@ class _HomeDrawerState extends State<HomeDrawer> {
       DrawerList(
         index: DrawerIndex.feedback,
         labelName: 'FeedBack',
-        icon: Icon(Icons.help),
+        icon: const Icon(Icons.help),
       ),
       DrawerList(
         index: DrawerIndex.invite,
         labelName: 'Invite Friend',
-        icon: Icon(Icons.group),
+        icon: const Icon(Icons.group),
       ),
       DrawerList(
         index: DrawerIndex.share,
         labelName: 'Rate the app',
-        icon: Icon(Icons.share),
+        icon: const Icon(Icons.share),
       ),
       DrawerList(
         index: DrawerIndex.about,
         labelName: 'About Us',
-        icon: Icon(Icons.info),
+        icon: const Icon(Icons.info),
       ),
     ];
   }
@@ -67,7 +67,6 @@ class _HomeDrawerState extends State<HomeDrawer> {
       backgroundColor: AppTheme.notWhite.withOpacity(0.5),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Container(
             width: double.infinity,
@@ -76,7 +75,6 @@ class _HomeDrawerState extends State<HomeDrawer> {
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   AnimatedBuilder(
                     animation: widget.iconAnimationController,
@@ -114,8 +112,8 @@ class _HomeDrawerState extends State<HomeDrawer> {
                       );
                     },
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8, left: 4),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 8, left: 4),
                     child: Text(
                       'Chris Hemsworth',
                       style: TextStyle(
@@ -153,7 +151,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
           Column(
             children: <Widget>[
               ListTile(
-                title: Text(
+                title: const Text(
                   'Sign Out',
                   style: TextStyle(
                     fontFamily: AppTheme.fontName,
@@ -163,7 +161,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                   ),
                   textAlign: TextAlign.left,
                 ),
-                trailing: Icon(
+                trailing: const Icon(
                   Icons.power_settings_new,
                   color: Colors.red,
                 ),

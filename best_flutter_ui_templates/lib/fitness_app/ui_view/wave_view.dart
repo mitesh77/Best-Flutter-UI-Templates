@@ -168,7 +168,8 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
               child: ScaleTransition(
                 scale: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
                     parent: animationController,
-                    curve: Interval(0.0, 1.0, curve: Curves.fastOutSlowIn))),
+                    curve:
+                        const Interval(0.0, 1.0, curve: Curves.fastOutSlowIn))),
                 child: Container(
                   width: 2,
                   height: 2,
@@ -186,7 +187,8 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
               child: ScaleTransition(
                 scale: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
                     parent: animationController,
-                    curve: Interval(0.4, 1.0, curve: Curves.fastOutSlowIn))),
+                    curve:
+                        const Interval(0.4, 1.0, curve: Curves.fastOutSlowIn))),
                 child: Container(
                   width: 4,
                   height: 4,
@@ -204,7 +206,8 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
               child: ScaleTransition(
                 scale: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
                     parent: animationController,
-                    curve: Interval(0.6, 0.8, curve: Curves.fastOutSlowIn))),
+                    curve:
+                        const Interval(0.6, 0.8, curve: Curves.fastOutSlowIn))),
                 child: Container(
                   width: 3,
                   height: 3,

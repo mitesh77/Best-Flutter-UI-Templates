@@ -74,14 +74,13 @@ class _InviteFriendState extends State<InviteFriend> {
                           child: Center(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
+                              children: const <Widget>[
                                 Icon(
                                   Icons.share,
                                   color: Colors.white,
                                   size: 22,
                                 ),
-                                const Padding(
+                                Padding(
                                   padding: EdgeInsets.all(4.0),
                                   child: Text(
                                     'Share',

@@ -28,7 +28,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
     topBarAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
         CurvedAnimation(
             parent: widget.animationController,
-            curve: Interval(0, 0.5, curve: Curves.fastOutSlowIn)));
+            curve: const Interval(0, 0.5, curve: Curves.fastOutSlowIn)));
     addAllListData();
 
     scrollController.addListener(() {
@@ -65,8 +65,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
         subTxt: 'Details',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController,
-            curve:
-                Interval((1 / count) * 0, 1.0, curve: Curves.fastOutSlowIn))),
+            curve: const Interval((1 / count) * 0, 1.0,
+                curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController,
       ),
     );
@@ -74,8 +74,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
       MediterranesnDietView(
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController,
-            curve:
-                Interval((1 / count) * 1, 1.0, curve: Curves.fastOutSlowIn))),
+            curve: const Interval((1 / count) * 1, 1.0,
+                curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController,
       ),
     );
@@ -85,8 +85,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
         subTxt: 'Customize',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController,
-            curve:
-                Interval((1 / count) * 2, 1.0, curve: Curves.fastOutSlowIn))),
+            curve: const Interval((1 / count) * 2, 1.0,
+                curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController,
       ),
     );
@@ -96,7 +96,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
         mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
             CurvedAnimation(
                 parent: widget.animationController,
-                curve: Interval((1 / count) * 3, 1.0,
+                curve: const Interval((1 / count) * 3, 1.0,
                     curve: Curves.fastOutSlowIn))),
         mainScreenAnimationController: widget.animationController,
       ),
@@ -108,8 +108,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
         subTxt: 'Today',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController,
-            curve:
-                Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
+            curve: const Interval((1 / count) * 4, 1.0,
+                curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController,
       ),
     );
@@ -118,8 +118,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
       BodyMeasurementView(
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController,
-            curve:
-                Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
+            curve: const Interval((1 / count) * 5, 1.0,
+                curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController,
       ),
     );
@@ -129,8 +129,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
         subTxt: 'Aqua SmartBottle',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController,
-            curve:
-                Interval((1 / count) * 6, 1.0, curve: Curves.fastOutSlowIn))),
+            curve: const Interval((1 / count) * 6, 1.0,
+                curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController,
       ),
     );
@@ -140,7 +140,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
         mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
             CurvedAnimation(
                 parent: widget.animationController,
-                curve: Interval((1 / count) * 7, 1.0,
+                curve: const Interval((1 / count) * 7, 1.0,
                     curve: Curves.fastOutSlowIn))),
         mainScreenAnimationController: widget.animationController,
       ),
@@ -150,7 +150,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
           animation: Tween<double>(begin: 0.0, end: 1.0).animate(
               CurvedAnimation(
                   parent: widget.animationController,
-                  curve: Interval((1 / count) * 8, 1.0,
+                  curve: const Interval((1 / count) * 8, 1.0,
                       curve: Curves.fastOutSlowIn))),
           animationController: widget.animationController),
     );
@@ -196,7 +196,6 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
               bottom: 62 + MediaQuery.of(context).padding.bottom,
             ),
             itemCount: listViews.length,
-            scrollDirection: Axis.vertical,
             itemBuilder: (BuildContext context, int index) {
               widget.animationController.forward();
               return listViews[index];
@@ -270,7 +269,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                                 borderRadius: const BorderRadius.all(
                                     Radius.circular(32.0)),
                                 onTap: () {},
-                                child: Center(
+                                child: const Center(
                                   child: Icon(
                                     Icons.keyboard_arrow_left,
                                     color: FintnessAppTheme.grey,
@@ -284,9 +283,9 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                                 right: 8,
                               ),
                               child: Row(
-                                children: <Widget>[
+                                children: const <Widget>[
                                   Padding(
-                                    padding: const EdgeInsets.only(right: 8),
+                                    padding: EdgeInsets.only(right: 8),
                                     child: Icon(
                                       Icons.calendar_today,
                                       color: FintnessAppTheme.grey,
@@ -315,7 +314,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                                 borderRadius: const BorderRadius.all(
                                     Radius.circular(32.0)),
                                 onTap: () {},
-                                child: Center(
+                                child: const Center(
                                   child: Icon(
                                     Icons.keyboard_arrow_right,
                                     color: FintnessAppTheme.grey,

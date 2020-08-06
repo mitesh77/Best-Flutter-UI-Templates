@@ -46,7 +46,7 @@ class WorkoutView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(
+                      const Text(
                         'Next workout',
                         textAlign: TextAlign.left,
                         style: TextStyle(
@@ -57,8 +57,8 @@ class WorkoutView extends StatelessWidget {
                           color: FintnessAppTheme.white,
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 8.0),
                         child: Text(
                           'Legs Toning and\nGlutes Workout at Home',
                           textAlign: TextAlign.left,

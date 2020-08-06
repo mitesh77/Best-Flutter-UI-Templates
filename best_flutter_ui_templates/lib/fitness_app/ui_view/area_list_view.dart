@@ -54,7 +54,6 @@ class _AreaListViewState extends State<AreaListView>
                   padding: const EdgeInsets.only(
                       left: 16, right: 16, top: 16, bottom: 16),
                   physics: const BouncingScrollPhysics(),
-                  scrollDirection: Axis.vertical,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     mainAxisSpacing: 24.0,

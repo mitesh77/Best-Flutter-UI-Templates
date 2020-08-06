@@ -108,7 +108,7 @@ class MediterranesnDietView extends StatelessWidget {
                                                   child: Text(
                                                     '${(1127 * animation.value).toInt()}',
                                                     textAlign: TextAlign.center,
-                                                    style: TextStyle(
+                                                    style: const TextStyle(
                                                       fontFamily:
                                                           FintnessAppTheme
                                                               .fontName,
@@ -207,7 +207,7 @@ class MediterranesnDietView extends StatelessWidget {
                                                   child: Text(
                                                     '${(102 * animation.value).toInt()}',
                                                     textAlign: TextAlign.center,
-                                                    style: TextStyle(
+                                                    style: const TextStyle(
                                                       fontFamily:
                                                           FintnessAppTheme
                                                               .fontName,
@@ -280,7 +280,7 @@ class MediterranesnDietView extends StatelessWidget {
                                           Text(
                                             '${(1503 * animation.value).toInt()}',
                                             textAlign: TextAlign.center,
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                               fontFamily:
                                                   FintnessAppTheme.fontName,
                                               fontWeight: FontWeight.normal,
@@ -415,7 +415,6 @@ class MediterranesnDietView extends StatelessWidget {
                           Expanded(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -487,7 +486,6 @@ class MediterranesnDietView extends StatelessWidget {
                           Expanded(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.center,

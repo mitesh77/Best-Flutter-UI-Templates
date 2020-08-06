@@ -133,7 +133,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                   color: AppTheme.darkGrey,
                 ),
                 cursorColor: Colors.blue,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: InputBorder.none,
                     hintText: 'Enter your feedback...'),
               ),

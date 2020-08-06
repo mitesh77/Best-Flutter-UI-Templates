@@ -62,12 +62,11 @@ class _WaterViewState extends State<WaterView> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: <Widget>[
+                                  children: const <Widget>[
                                     Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 4, bottom: 3),
+                                      padding:
+                                          EdgeInsets.only(left: 4, bottom: 3),
                                       child: Text(
                                         '2100',
                                         textAlign: TextAlign.center,
@@ -80,7 +79,7 @@ class _WaterViewState extends State<WaterView> with TickerProviderStateMixin {
                                         ),
                                       ),
                                     ),
-                                    const Padding(
+                                    Padding(
                                       padding:
                                           EdgeInsets.only(left: 8, bottom: 8),
                                       child: Text(
@@ -134,9 +133,6 @@ class _WaterViewState extends State<WaterView> with TickerProviderStateMixin {
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: <Widget>[
                                   Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
                                     children: <Widget>[
                                       Padding(
                                         padding: const EdgeInsets.only(left: 4),
@@ -169,10 +165,6 @@ class _WaterViewState extends State<WaterView> with TickerProviderStateMixin {
                                   Padding(
                                     padding: const EdgeInsets.only(top: 4),
                                     child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
                                       children: <Widget>[
                                         SizedBox(
                                           width: 24,
@@ -207,7 +199,6 @@ class _WaterViewState extends State<WaterView> with TickerProviderStateMixin {
                         width: 34,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             Container(
                               decoration: BoxDecoration(
@@ -221,8 +212,8 @@ class _WaterViewState extends State<WaterView> with TickerProviderStateMixin {
                                       blurRadius: 8.0),
                                 ],
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(6.0),
+                              child: const Padding(
+                                padding: EdgeInsets.all(6.0),
                                 child: Icon(
                                   Icons.add,
                                   color: FintnessAppTheme.nearlyDarkBlue,
@@ -245,8 +236,8 @@ class _WaterViewState extends State<WaterView> with TickerProviderStateMixin {
                                       blurRadius: 8.0),
                                 ],
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(6.0),
+                              child: const Padding(
+                                padding: EdgeInsets.all(6.0),
                                 child: Icon(
                                   Icons.remove,
                                   color: FintnessAppTheme.nearlyDarkBlue,

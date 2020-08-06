@@ -326,7 +326,6 @@ class _FiltersScreenState extends State<FiltersScreen> {
       }
       noList.add(Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: listUI,
       ));
@@ -392,14 +391,14 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  child: const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: Icon(Icons.close),
                   ),
                 ),
               ),
             ),
-            Expanded(
+            const Expanded(
               child: Center(
                 child: Text(
                   'Filters',

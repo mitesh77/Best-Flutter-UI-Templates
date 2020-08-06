@@ -60,7 +60,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                           return GridView(
                             padding: const EdgeInsets.only(left: 12, right: 12),
                             physics: const BouncingScrollPhysics(),
-                            scrollDirection: Axis.vertical,
                             gridDelegate:
                                 SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: multiple ? 2 : 1,

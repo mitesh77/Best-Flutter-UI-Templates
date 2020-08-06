@@ -156,7 +156,6 @@ class MealsView extends StatelessWidget {
                                 padding:
                                     const EdgeInsets.only(top: 8, bottom: 8),
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
                                     Text(
@@ -175,7 +174,6 @@ class MealsView extends StatelessWidget {
                             ),
                             if (mealsListData.kcal != 0)
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: <Widget>[
                                   Text(

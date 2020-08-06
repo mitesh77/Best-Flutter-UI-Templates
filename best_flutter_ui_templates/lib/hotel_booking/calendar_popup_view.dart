@@ -106,8 +106,6 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                                 Expanded(
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
                                     children: <Widget>[
                                       Text(
                                         'From',
@@ -143,8 +141,6 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                                 Expanded(
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
                                     children: <Widget>[
                                       Text(
                                         'To',

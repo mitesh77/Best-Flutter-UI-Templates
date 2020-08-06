@@ -81,16 +81,12 @@ class HotelListView extends StatelessWidget {
                                           Text(
                                             hotelData.titleTxt,
                                             textAlign: TextAlign.left,
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                               fontWeight: FontWeight.w600,
                                               fontSize: 22,
                                             ),
                                           ),
                                           Row(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
                                             children: <Widget>[
                                               Text(
                                                 hotelData.subTxt,
@@ -128,8 +124,6 @@ class HotelListView extends StatelessWidget {
                                             child: Row(
                                               children: <Widget>[
                                                 SmoothStarRating(
-                                                  allowHalfRating: true,
-                                                  starCount: 5,
                                                   rating: hotelData.rating,
                                                   size: 20,
                                                   color: HotelAppTheme
@@ -165,7 +159,7 @@ class HotelListView extends StatelessWidget {
                                         Text(
                                           '\$${hotelData.perNight}',
                                           textAlign: TextAlign.left,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             fontWeight: FontWeight.w600,
                                             fontSize: 22,
                                           ),

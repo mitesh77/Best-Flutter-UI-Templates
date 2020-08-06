@@ -61,15 +61,14 @@ class BodyMeasurementView extends StatelessWidget {
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.end,
-                                children: <Widget>[
+                                children: const <Widget>[
                                   Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 4, bottom: 3),
+                                    padding:
+                                        EdgeInsets.only(left: 4, bottom: 3),
                                     child: Text(
                                       '206.8',
                                       textAlign: TextAlign.center,
@@ -81,7 +80,7 @@ class BodyMeasurementView extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  const Padding(
+                                  Padding(
                                     padding:
                                         EdgeInsets.only(left: 8, bottom: 8),
                                     child: Text(
@@ -204,11 +203,9 @@ class BodyMeasurementView extends StatelessWidget {
                           Expanded(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: <Widget>[
                                     const Text(
                                       '27.3 BMI',
@@ -243,7 +240,6 @@ class BodyMeasurementView extends StatelessWidget {
                           Expanded(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.center,

@@ -52,8 +52,8 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(top: 8.0, left: 18, right: 16),
+        const Padding(
+          padding: EdgeInsets.only(top: 8.0, left: 18, right: 16),
           child: Text(
             'Category',
             textAlign: TextAlign.left,
@@ -106,7 +106,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(
+          const Text(
             'Popular Course',
             textAlign: TextAlign.left,
             style: TextStyle(

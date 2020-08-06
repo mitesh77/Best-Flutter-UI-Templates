@@ -39,7 +39,6 @@ class _PopularCourseListViewState extends State<PopularCourseListView>
             return GridView(
               padding: const EdgeInsets.all(8),
               physics: const BouncingScrollPhysics(),
-              scrollDirection: Axis.vertical,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 mainAxisSpacing: 32.0,
@@ -133,7 +132,7 @@ class CategoryView extends StatelessWidget {
                                         child: Text(
                                           category.title,
                                           textAlign: TextAlign.left,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             fontWeight: FontWeight.w600,
                                             fontSize: 16,
                                             letterSpacing: 0.27,
@@ -151,13 +150,11 @@ class CategoryView extends StatelessWidget {
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
                                           children: <Widget>[
                                             Text(
                                               '${category.lessonCount} lesson',
                                               textAlign: TextAlign.left,
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                 fontWeight: FontWeight.w200,
                                                 fontSize: 12,
                                                 letterSpacing: 0.27,
@@ -170,7 +167,7 @@ class CategoryView extends StatelessWidget {
                                                 Text(
                                                   '${category.rating}',
                                                   textAlign: TextAlign.left,
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                     fontWeight: FontWeight.w200,
                                                     fontSize: 18,
                                                     letterSpacing: 0.27,
@@ -178,7 +175,7 @@ class CategoryView extends StatelessWidget {
                                                         .grey,
                                                   ),
                                                 ),
-                                                Icon(
+                                                const Icon(
                                                   Icons.star,
                                                   color: DesignCourseAppTheme
                                                       .nearlyBlue,

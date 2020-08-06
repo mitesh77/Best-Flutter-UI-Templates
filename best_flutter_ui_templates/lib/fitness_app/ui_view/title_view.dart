@@ -53,7 +53,7 @@ class TitleView extends StatelessWidget {
                           Text(
                             subTxt,
                             textAlign: TextAlign.left,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontFamily: FintnessAppTheme.fontName,
                               fontWeight: FontWeight.normal,
                               fontSize: 16,
@@ -61,7 +61,7 @@ class TitleView extends StatelessWidget {
                               color: FintnessAppTheme.nearlyDarkBlue,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 38,
                             width: 26,
                             child: Icon(

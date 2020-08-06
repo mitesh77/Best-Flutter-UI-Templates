@@ -89,7 +89,6 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                         child: ListView.builder(
                           itemCount: hotelList.length,
                           padding: const EdgeInsets.only(top: 8),
-                          scrollDirection: Axis.vertical,
                           itemBuilder: (BuildContext context, int index) {
                             final int count =
                                 hotelList.length > 10 ? 10 : hotelList.length;
@@ -144,7 +143,6 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                 } else {
                   return ListView.builder(
                     itemCount: hotelList.length,
-                    scrollDirection: Axis.vertical,
                     itemBuilder: (BuildContext context, int index) {
                       final int count =
                           hotelList.length > 10 ? 10 : hotelList.length;
@@ -243,7 +241,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                           ),
                           Text(
                             '${DateFormat("dd, MMM").format(startDate)} - ${DateFormat("dd, MMM").format(endDate)}',
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontWeight: FontWeight.w100,
                               fontSize: 16,
                             ),
@@ -297,7 +295,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                           const SizedBox(
                             height: 8,
                           ),
-                          Text(
+                          const Text(
                             '1 Room - 2 Adults',
                             style: TextStyle(
                               fontWeight: FontWeight.w100,
@@ -347,7 +345,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                       fontSize: 18,
                     ),
                     cursorColor: HotelAppTheme.buildLightTheme().primaryColor,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: 'London...',
                     ),
@@ -419,9 +417,9 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                 const EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 4),
             child: Row(
               children: <Widget>[
-                Expanded(
+                const Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(8.0),
                     child: Text(
                       '530 hotels found',
                       style: TextStyle(
@@ -454,7 +452,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                       padding: const EdgeInsets.only(left: 8),
                       child: Row(
                         children: <Widget>[
-                          Text(
+                          const Text(
                             'Filter',
                             style: TextStyle(
                               fontWeight: FontWeight.w100,
@@ -538,14 +536,14 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  child: const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: Icon(Icons.arrow_back),
                   ),
                 ),
               ),
             ),
-            Expanded(
+            const Expanded(
               child: Center(
                 child: Text(
                   'Explore',
@@ -560,7 +558,6 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
               width: AppBar().preferredSize.height + 40,
               height: AppBar().preferredSize.height,
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   Material(
@@ -570,8 +567,8 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                         Radius.circular(32.0),
                       ),
                       onTap: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Icon(Icons.favorite_border),
                       ),
                     ),
@@ -583,8 +580,8 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                         Radius.circular(32.0),
                       ),
                       onTap: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Icon(FontAwesomeIcons.mapMarkerAlt),
                       ),
                     ),
