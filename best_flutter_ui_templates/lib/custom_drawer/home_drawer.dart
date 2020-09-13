@@ -16,11 +16,11 @@ class _HomeDrawerState extends State<HomeDrawer> {
   List<DrawerList> drawerList;
   @override
   void initState() {
-    setdDrawerListArray();
+    setDrawerListArray();
     super.initState();
   }
 
-  void setdDrawerListArray() {
+  void setDrawerListArray() {
     drawerList = <DrawerList>[
       DrawerList(
         index: DrawerIndex.HOME,
