@@ -30,7 +30,7 @@ class RunningView extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 16, bottom: 16),
                         child: Container(
                           decoration: BoxDecoration(
-                            color: FintnessAppTheme.white,
+                            color: FitnessAppTheme.white,
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(8.0),
                                 bottomLeft: Radius.circular(8.0),
@@ -38,7 +38,7 @@ class RunningView extends StatelessWidget {
                                 topRight: Radius.circular(8.0)),
                             boxShadow: <BoxShadow>[
                               BoxShadow(
-                                  color: FintnessAppTheme.grey.withOpacity(0.4),
+                                  color: FitnessAppTheme.grey.withOpacity(0.4),
                                   offset: Offset(1.1, 1.1),
                                   blurRadius: 10.0),
                             ],
@@ -74,12 +74,12 @@ class RunningView extends StatelessWidget {
                                           textAlign: TextAlign.left,
                                           style: TextStyle(
                                             fontFamily:
-                                                FintnessAppTheme.fontName,
+                                                FitnessAppTheme.fontName,
                                             fontWeight: FontWeight.w500,
                                             fontSize: 14,
                                             letterSpacing: 0.0,
                                             color:
-                                                FintnessAppTheme.nearlyDarkBlue,
+                                                FitnessAppTheme.nearlyDarkBlue,
                                           ),
                                         ),
                                       ),
@@ -96,11 +96,11 @@ class RunningView extends StatelessWidget {
                                       "Keep it up\nand stick to your plan!",
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
-                                        fontFamily: FintnessAppTheme.fontName,
+                                        fontFamily: FitnessAppTheme.fontName,
                                         fontWeight: FontWeight.w500,
                                         fontSize: 10,
                                         letterSpacing: 0.0,
-                                        color: FintnessAppTheme.grey
+                                        color: FitnessAppTheme.grey
                                             .withOpacity(0.5),
                                       ),
                                     ),

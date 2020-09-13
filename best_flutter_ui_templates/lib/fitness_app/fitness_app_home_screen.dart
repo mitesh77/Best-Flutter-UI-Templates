@@ -17,7 +17,7 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
   List<TabIconData> tabIconsList = TabIconData.tabIconsList;
 
   Widget tabBody = Container(
-    color: FintnessAppTheme.background,
+    color: FitnessAppTheme.background,
   );
 
   @override
@@ -42,7 +42,7 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: FintnessAppTheme.background,
+      color: FitnessAppTheme.background,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: FutureBuilder<bool>(
