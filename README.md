@@ -1,5 +1,6 @@
 # Best-Flutter-UI-Templates
-completely free for everyone. Its build-in Flutter Dart.
+Completely free for everyone.
+It's built in Flutter/Dart.
 
 ![Image](assets/hotel/hotel_booking.png)
 ![Image](assets/fitness_app/fitness_app.png)
