@@ -1,0 +1,17 @@
+include: package:lint/analysis_options.yaml
+
+analyzer:
+  strong-mode:
+    implicit-casts: false
+    implicit-dynamic: false
+  errors:
+    todo: info
+    # import_of_legacy_library_into_null_safe: ignore
+linter:
+  rules:
+    always_put_required_named_parameters_first: true
+    sort_constructors_first: true
+    prefer_single_quotes: true
+    always_specify_types: true
+    # lines_longer_than_80_chars: true
+    # public_member_api_docs: true
