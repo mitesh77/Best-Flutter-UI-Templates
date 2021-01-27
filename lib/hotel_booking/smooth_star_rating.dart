@@ -45,7 +45,8 @@ class SmoothStarRating extends StatelessWidget {
   final bool allowHalfRating;
   final IconData filledIconData;
   final IconData halfFilledIconData;
-  final IconData defaultIconData; // this is needed only when having fullRatedIconData && halfRatedIconData
+  final IconData
+      defaultIconData; // this is needed only when having fullRatedIconData && halfRatedIconData
   final double spacing;
 
   Widget buildStar(BuildContext context, int index) {
@@ -94,7 +95,9 @@ class SmoothStarRating extends StatelessWidget {
     return Material(
       color: Colors.transparent,
       child: Wrap(
-          spacing: spacing, children: List<Widget>.generate(starCount, (int index) => buildStar(context, index))),
+          spacing: spacing,
+          children: List<Widget>.generate(
+              starCount, (int index) => buildStar(context, index))),
     );
   }
 }

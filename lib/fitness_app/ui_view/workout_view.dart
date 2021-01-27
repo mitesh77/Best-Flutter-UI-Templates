@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../fitness_app_theme.dart';
 
 class WorkoutView extends StatelessWidget {
-  const WorkoutView({required this.animationController, required this.animation, Key? key}) : super(key: key);
+  const WorkoutView(
+      {required this.animationController, required this.animation, Key? key})
+      : super(key: key);
 
   final AnimationController animationController;
   final Animation<double> animation;
@@ -16,15 +18,17 @@ class WorkoutView extends StatelessWidget {
         return FadeTransition(
           opacity: animation,
           child: Transform(
-            transform: Matrix4.translationValues(0.0, 30 * (1.0 - animation.value), 0.0),
+            transform: Matrix4.translationValues(
+                0.0, 30 * (1.0 - animation.value), 0.0),
             child: Padding(
-              padding: const EdgeInsets.only(left: 24, right: 24, top: 16, bottom: 18),
+              padding: const EdgeInsets.only(
+                  left: 24, right: 24, top: 16, bottom: 18),
               child: Container(
                 decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                      colors: <Color>[FitnessAppTheme.nearlyDarkBlue, Color(0xFF6F56E8)],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight),
+                  gradient: const LinearGradient(colors: <Color>[
+                    FitnessAppTheme.nearlyDarkBlue,
+                    Color(0xFF6F56E8)
+                  ], begin: Alignment.topLeft, end: Alignment.bottomRight),
                   borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(8.0),
                       bottomLeft: Radius.circular(8.0),
@@ -104,7 +108,8 @@ class WorkoutView extends StatelessWidget {
                                 shape: BoxShape.circle,
                                 boxShadow: <BoxShadow>[
                                   BoxShadow(
-                                      color: FitnessAppTheme.nearlyBlack.withOpacity(0.4),
+                                      color: FitnessAppTheme.nearlyBlack
+                                          .withOpacity(0.4),
                                       offset: const Offset(8.0, 8.0),
                                       blurRadius: 8.0),
                                 ],

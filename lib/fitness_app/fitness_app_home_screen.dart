@@ -11,7 +11,8 @@ class FitnessAppHomeScreen extends StatefulWidget {
   _FitnessAppHomeScreenState createState() => _FitnessAppHomeScreenState();
 }
 
-class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen> with TickerProviderStateMixin {
+class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
+    with TickerProviderStateMixin {
   List<TabIconData> tabIconsList = TabIconData.tabIconsList;
 
   Widget tabBody = Container(
@@ -22,7 +23,8 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen> with Ticker
   @override
   void initState() {
     super.initState();
-    animationController = AnimationController(duration: const Duration(milliseconds: 600), vsync: this);
+    animationController = AnimationController(
+        duration: const Duration(milliseconds: 600), vsync: this);
     for (final TabIconData tab in tabIconsList) {
       tab.isSelected = false;
     }
@@ -77,7 +79,8 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen> with Ticker
               animationController.reverse().then<dynamic>((_) {
                 if (mounted) {
                   setState(() {
-                    tabBody = MyDiaryScreen(animationController: animationController);
+                    tabBody =
+                        MyDiaryScreen(animationController: animationController);
                   });
                 }
                 return;
@@ -86,7 +89,8 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen> with Ticker
               animationController.reverse().then<dynamic>((_) {
                 if (mounted) {
                   setState(() {
-                    tabBody = TrainingScreen(animationController: animationController);
+                    tabBody = TrainingScreen(
+                        animationController: animationController);
                   });
                 }
                 return;

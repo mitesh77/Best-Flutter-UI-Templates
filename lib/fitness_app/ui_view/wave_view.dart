@@ -25,8 +25,10 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    animationController = AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
-    waveAnimationController = AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
+    animationController = AnimationController(
+        duration: const Duration(milliseconds: 2000), vsync: this);
+    waveAnimationController = AnimationController(
+        duration: const Duration(milliseconds: 2000), vsync: this);
     animationController.addStatusListener((AnimationStatus status) {
       if (status == AnimationStatus.completed) {
         animationController.reverse();
@@ -40,7 +42,10 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
         animList1.add(
           Offset(
             i.toDouble() + bottleOffset1.dx.toInt(),
-            math.sin((waveAnimationController.value) % 360 * vector.degrees2Radians) * 4 +
+            math.sin((waveAnimationController.value) %
+                        360 *
+                        vector.degrees2Radians) *
+                    4 +
                 ((100 - widget.percentageValue) * 160 / 100),
           ),
         );
@@ -50,7 +55,10 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
         animList2.add(
           Offset(
             i.toDouble() + bottleOffset2.dx.toInt(),
-            math.sin((waveAnimationController.value) % 360 * vector.degrees2Radians) * 4 +
+            math.sin((waveAnimationController.value) %
+                        360 *
+                        vector.degrees2Radians) *
+                    4 +
                 ((100 - widget.percentageValue) * 160 / 100),
           ),
         );
@@ -161,8 +169,11 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
               left: 6,
               bottom: 8,
               child: ScaleTransition(
-                scale: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-                    parent: animationController, curve: const Interval(0.0, 1.0, curve: Curves.fastOutSlowIn))),
+                scale: Tween<double>(begin: 0.0, end: 1.0).animate(
+                    CurvedAnimation(
+                        parent: animationController,
+                        curve: const Interval(0.0, 1.0,
+                            curve: Curves.fastOutSlowIn))),
                 child: Container(
                   width: 2,
                   height: 2,
@@ -178,8 +189,11 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
               right: 0,
               bottom: 16,
               child: ScaleTransition(
-                scale: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-                    parent: animationController, curve: const Interval(0.4, 1.0, curve: Curves.fastOutSlowIn))),
+                scale: Tween<double>(begin: 0.0, end: 1.0).animate(
+                    CurvedAnimation(
+                        parent: animationController,
+                        curve: const Interval(0.4, 1.0,
+                            curve: Curves.fastOutSlowIn))),
                 child: Container(
                   width: 4,
                   height: 4,
@@ -195,8 +209,11 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
               right: 24,
               bottom: 32,
               child: ScaleTransition(
-                scale: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-                    parent: animationController, curve: const Interval(0.6, 0.8, curve: Curves.fastOutSlowIn))),
+                scale: Tween<double>(begin: 0.0, end: 1.0).animate(
+                    CurvedAnimation(
+                        parent: animationController,
+                        curve: const Interval(0.6, 0.8,
+                            curve: Curves.fastOutSlowIn))),
                 child: Container(
                   width: 3,
                   height: 3,
@@ -212,13 +229,16 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
               right: 20,
               bottom: 0,
               child: Transform(
-                transform: Matrix4.translationValues(0.0, 16 * (1.0 - animationController.value), 0.0),
+                transform: Matrix4.translationValues(
+                    0.0, 16 * (1.0 - animationController.value), 0.0),
                 child: Container(
                   width: 4,
                   height: 4,
                   decoration: BoxDecoration(
-                    color: FitnessAppTheme.white
-                        .withOpacity(animationController.status == AnimationStatus.reverse ? 0.0 : 0.4),
+                    color: FitnessAppTheme.white.withOpacity(
+                        animationController.status == AnimationStatus.reverse
+                            ? 0.0
+                            : 0.4),
                     shape: BoxShape.circle,
                   ),
                 ),
@@ -259,5 +279,6 @@ class WaveClipper extends CustomClipper<Path> {
   }
 
   @override
-  bool shouldReclip(WaveClipper oldClipper) => animation != oldClipper.animation;
+  bool shouldReclip(WaveClipper oldClipper) =>
+      animation != oldClipper.animation;
 }

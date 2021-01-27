@@ -18,7 +18,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    animationController = AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
+    animationController = AnimationController(
+        duration: const Duration(milliseconds: 2000), vsync: this);
   }
 
   Future<bool> getData() async {
@@ -61,10 +62,12 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                       homeList.length,
                       (int index) {
                         final int count = homeList.length;
-                        final Animation<double> animation = Tween<double>(begin: 0.0, end: 1.0).animate(
+                        final Animation<double> animation =
+                            Tween<double>(begin: 0.0, end: 1.0).animate(
                           CurvedAnimation(
                             parent: animationController,
-                            curve: Interval((1 / count) * index, 1.0, curve: Curves.fastOutSlowIn),
+                            curve: Interval((1 / count) * index, 1.0,
+                                curve: Curves.fastOutSlowIn),
                           ),
                         );
                         animationController.forward();
@@ -76,7 +79,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                             Navigator.push<dynamic>(
                               context,
                               MaterialPageRoute<dynamic>(
-                                builder: (BuildContext context) => homeList[index].navigateScreen,
+                                builder: (BuildContext context) =>
+                                    homeList[index].navigateScreen,
                               ),
                             );
                           },
@@ -130,7 +134,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               child: Material(
                 color: Colors.transparent,
                 child: InkWell(
-                  borderRadius: BorderRadius.circular(AppBar().preferredSize.height),
+                  borderRadius:
+                      BorderRadius.circular(AppBar().preferredSize.height),
                   onTap: () {
                     if (mounted) {
                       setState(() {
@@ -174,7 +179,8 @@ class HomeListView extends StatelessWidget {
         return FadeTransition(
           opacity: animation,
           child: Transform(
-            transform: Matrix4.translationValues(0.0, 50 * (1.0 - animation.value), 0.0),
+            transform: Matrix4.translationValues(
+                0.0, 50 * (1.0 - animation.value), 0.0),
             child: AspectRatio(
               aspectRatio: 1.5,
               child: ClipRRect(
@@ -190,7 +196,8 @@ class HomeListView extends StatelessWidget {
                       color: Colors.transparent,
                       child: InkWell(
                         splashColor: Colors.grey.withOpacity(0.2),
-                        borderRadius: const BorderRadius.all(Radius.circular(4.0)),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(4.0)),
                         onTap: () => callBack(),
                       ),
                     ),

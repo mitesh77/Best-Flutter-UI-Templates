@@ -4,7 +4,10 @@ import '../app_theme.dart';
 
 class HomeDrawer extends StatefulWidget {
   const HomeDrawer(
-      {required this.screenIndex, required this.iconAnimationController, required this.callBackIndex, Key? key})
+      {required this.screenIndex,
+      required this.iconAnimationController,
+      required this.callBackIndex,
+      Key? key})
       : super(key: key);
 
   final AnimationController iconAnimationController;
@@ -73,11 +76,14 @@ class _HomeDrawerState extends State<HomeDrawer> {
                     animation: widget.iconAnimationController,
                     builder: (BuildContext context, _) {
                       return ScaleTransition(
-                        scale: AlwaysStoppedAnimation<double>(1.0 - (widget.iconAnimationController.value) * 0.2),
+                        scale: AlwaysStoppedAnimation<double>(
+                            1.0 - (widget.iconAnimationController.value) * 0.2),
                         child: RotationTransition(
-                          turns: AlwaysStoppedAnimation<double>(Tween<double>(begin: 0.0, end: 24.0)
+                          turns: AlwaysStoppedAnimation<double>(Tween<double>(
+                                      begin: 0.0, end: 24.0)
                                   .animate(CurvedAnimation(
-                                      parent: widget.iconAnimationController, curve: Curves.fastOutSlowIn))
+                                      parent: widget.iconAnimationController,
+                                      curve: Curves.fastOutSlowIn))
                                   .value /
                               360),
                           child: Container(
@@ -93,7 +99,8 @@ class _HomeDrawerState extends State<HomeDrawer> {
                               ],
                             ),
                             child: ClipRRect(
-                              borderRadius: const BorderRadius.all(Radius.circular(60.0)),
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(60.0)),
                               child: Image.asset('assets/images/userImage.png'),
                             ),
                           ),
@@ -209,11 +216,15 @@ class _HomeDrawerState extends State<HomeDrawer> {
                       width: 24,
                       height: 24,
                       child: Image.asset(listData.imageName,
-                          color: widget.screenIndex == listData.index ? Colors.blue : AppTheme.nearlyBlack),
+                          color: widget.screenIndex == listData.index
+                              ? Colors.blue
+                              : AppTheme.nearlyBlack),
                     )
                   else
                     Icon(listData.icon?.icon,
-                        color: widget.screenIndex == listData.index ? Colors.blue : AppTheme.nearlyBlack),
+                        color: widget.screenIndex == listData.index
+                            ? Colors.blue
+                            : AppTheme.nearlyBlack),
                   const Padding(
                     padding: EdgeInsets.all(4.0),
                   ),
@@ -222,7 +233,9 @@ class _HomeDrawerState extends State<HomeDrawer> {
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 16,
-                      color: widget.screenIndex == listData.index ? Colors.blue : AppTheme.nearlyBlack,
+                      color: widget.screenIndex == listData.index
+                          ? Colors.blue
+                          : AppTheme.nearlyBlack,
                     ),
                     textAlign: TextAlign.left,
                   ),

@@ -9,7 +9,8 @@ import 'meals_list_view.dart';
 import 'water_view.dart';
 
 class MyDiaryScreen extends StatefulWidget {
-  const MyDiaryScreen({required this.animationController, Key? key}) : super(key: key);
+  const MyDiaryScreen({required this.animationController, Key? key})
+      : super(key: key);
 
   final AnimationController animationController;
 
@@ -17,7 +18,8 @@ class MyDiaryScreen extends StatefulWidget {
   _MyDiaryScreenState createState() => _MyDiaryScreenState();
 }
 
-class _MyDiaryScreenState extends State<MyDiaryScreen> with TickerProviderStateMixin {
+class _MyDiaryScreenState extends State<MyDiaryScreen>
+    with TickerProviderStateMixin {
   List<Widget> listViews = <Widget>[];
   double topBarOpacity = 0.0;
 
@@ -27,8 +29,10 @@ class _MyDiaryScreenState extends State<MyDiaryScreen> with TickerProviderStateM
   void initState() {
     super.initState();
     scrollController = ScrollController();
-    topBarAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-        parent: widget.animationController, curve: const Interval(0, 0.5, curve: Curves.fastOutSlowIn)));
+    topBarAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+        CurvedAnimation(
+            parent: widget.animationController,
+            curve: const Interval(0, 0.5, curve: Curves.fastOutSlowIn)));
     addAllListData();
     scrollController.addListener(() {
       if (scrollController.offset >= 24) {
@@ -39,7 +43,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen> with TickerProviderStateM
             });
           }
         }
-      } else if (scrollController.offset <= 24 && scrollController.offset >= 0) {
+      } else if (scrollController.offset <= 24 &&
+          scrollController.offset >= 0) {
         if (topBarOpacity != scrollController.offset / 24) {
           if (mounted) {
             setState(() {
@@ -74,7 +79,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen> with TickerProviderStateM
         subTxt: 'Details',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController,
-            curve: const Interval((1 / count) * 0, 1.0, curve: Curves.fastOutSlowIn))),
+            curve: const Interval((1 / count) * 0, 1.0,
+                curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController,
       ),
     );
@@ -83,7 +89,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen> with TickerProviderStateM
       MediterranesnDietView(
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController,
-            curve: const Interval((1 / count) * 1, 1.0, curve: Curves.fastOutSlowIn))),
+            curve: const Interval((1 / count) * 1, 1.0,
+                curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController,
       ),
     );
@@ -94,16 +101,19 @@ class _MyDiaryScreenState extends State<MyDiaryScreen> with TickerProviderStateM
         subTxt: 'Customize',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController,
-            curve: const Interval((1 / count) * 2, 1.0, curve: Curves.fastOutSlowIn))),
+            curve: const Interval((1 / count) * 2, 1.0,
+                curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController,
       ),
     );
 
     listViews.add(
       MealsListView(
-        mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController,
-            curve: const Interval((1 / count) * 3, 1.0, curve: Curves.fastOutSlowIn))),
+        mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
+            CurvedAnimation(
+                parent: widget.animationController,
+                curve: const Interval((1 / count) * 3, 1.0,
+                    curve: Curves.fastOutSlowIn))),
         mainScreenAnimationController: widget.animationController,
       ),
     );
@@ -114,7 +124,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen> with TickerProviderStateM
         subTxt: 'Today',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController,
-            curve: const Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
+            curve: const Interval((1 / count) * 4, 1.0,
+                curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController,
       ),
     );
@@ -123,7 +134,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen> with TickerProviderStateM
       BodyMeasurementView(
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController,
-            curve: const Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
+            curve: const Interval((1 / count) * 5, 1.0,
+                curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController,
       ),
     );
@@ -134,25 +146,30 @@ class _MyDiaryScreenState extends State<MyDiaryScreen> with TickerProviderStateM
         subTxt: 'Aqua SmartBottle',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController,
-            curve: const Interval((1 / count) * 6, 1.0, curve: Curves.fastOutSlowIn))),
+            curve: const Interval((1 / count) * 6, 1.0,
+                curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController,
       ),
     );
 
     listViews.add(
       WaterView(
-        mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController,
-            curve: const Interval((1 / count) * 7, 1.0, curve: Curves.fastOutSlowIn))),
+        mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
+            CurvedAnimation(
+                parent: widget.animationController,
+                curve: const Interval((1 / count) * 7, 1.0,
+                    curve: Curves.fastOutSlowIn))),
         mainScreenAnimationController: widget.animationController,
       ),
     );
 
     listViews.add(
       GlassView(
-          animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-              parent: widget.animationController,
-              curve: const Interval((1 / count) * 8, 1.0, curve: Curves.fastOutSlowIn))),
+          animation: Tween<double>(begin: 0.0, end: 1.0).animate(
+              CurvedAnimation(
+                  parent: widget.animationController,
+                  curve: const Interval((1 / count) * 8, 1.0,
+                      curve: Curves.fastOutSlowIn))),
           animationController: widget.animationController),
     );
   }
@@ -188,7 +205,9 @@ class _MyDiaryScreenState extends State<MyDiaryScreen> with TickerProviderStateM
           return ListView.builder(
             controller: scrollController,
             padding: EdgeInsets.only(
-              top: AppBar().preferredSize.height + MediaQuery.of(context).padding.top + 24,
+              top: AppBar().preferredSize.height +
+                  MediaQuery.of(context).padding.top +
+                  24,
               bottom: 62 + MediaQuery.of(context).padding.bottom,
             ),
             itemCount: listViews.length,
@@ -211,7 +230,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen> with TickerProviderStateM
             return FadeTransition(
               opacity: topBarAnimation,
               child: Transform(
-                transform: Matrix4.translationValues(0.0, 30 * (1.0 - topBarAnimation.value), 0.0),
+                transform: Matrix4.translationValues(
+                    0.0, 30 * (1.0 - topBarAnimation.value), 0.0),
                 child: Container(
                   decoration: BoxDecoration(
                     color: FitnessAppTheme.white.withOpacity(topBarOpacity),
@@ -220,7 +240,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen> with TickerProviderStateM
                     ),
                     boxShadow: <BoxShadow>[
                       BoxShadow(
-                          color: FitnessAppTheme.grey.withOpacity(0.4 * topBarOpacity),
+                          color: FitnessAppTheme.grey
+                              .withOpacity(0.4 * topBarOpacity),
                           offset: const Offset(1.1, 1.1),
                           blurRadius: 10.0),
                     ],
@@ -232,7 +253,10 @@ class _MyDiaryScreenState extends State<MyDiaryScreen> with TickerProviderStateM
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                            left: 16, right: 16, top: 16 - 8.0 * topBarOpacity, bottom: 12 - 8.0 * topBarOpacity),
+                            left: 16,
+                            right: 16,
+                            top: 16 - 8.0 * topBarOpacity,
+                            bottom: 12 - 8.0 * topBarOpacity),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
@@ -257,7 +281,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen> with TickerProviderStateM
                               width: 38,
                               child: InkWell(
                                 highlightColor: Colors.transparent,
-                                borderRadius: const BorderRadius.all(Radius.circular(32.0)),
+                                borderRadius: const BorderRadius.all(
+                                    Radius.circular(32.0)),
                                 onTap: () {},
                                 child: const Center(
                                   child: Icon(
@@ -301,7 +326,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen> with TickerProviderStateM
                               width: 38,
                               child: InkWell(
                                 highlightColor: Colors.transparent,
-                                borderRadius: const BorderRadius.all(Radius.circular(32.0)),
+                                borderRadius: const BorderRadius.all(
+                                    Radius.circular(32.0)),
                                 onTap: () {},
                                 child: const Center(
                                   child: Icon(

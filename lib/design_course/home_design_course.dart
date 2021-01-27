@@ -69,15 +69,18 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
           padding: const EdgeInsets.only(left: 16, right: 16),
           child: Row(
             children: <Widget>[
-              getButtonUI(CategoryType.ui, isSelected: categoryType == CategoryType.ui),
+              getButtonUI(CategoryType.ui,
+                  isSelected: categoryType == CategoryType.ui),
               const SizedBox(
                 width: 16,
               ),
-              getButtonUI(CategoryType.coding, isSelected: categoryType == CategoryType.coding),
+              getButtonUI(CategoryType.coding,
+                  isSelected: categoryType == CategoryType.coding),
               const SizedBox(
                 width: 16,
               ),
-              getButtonUI(CategoryType.basic, isSelected: categoryType == CategoryType.basic),
+              getButtonUI(CategoryType.basic,
+                  isSelected: categoryType == CategoryType.basic),
             ],
           ),
         ),
@@ -143,7 +146,9 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
     return Expanded(
       child: Container(
         decoration: BoxDecoration(
-            color: isSelected ? DesignCourseAppTheme.nearlyBlue : DesignCourseAppTheme.nearlyWhite,
+            color: isSelected
+                ? DesignCourseAppTheme.nearlyBlue
+                : DesignCourseAppTheme.nearlyWhite,
             borderRadius: const BorderRadius.all(Radius.circular(24.0)),
             border: Border.all(color: DesignCourseAppTheme.nearlyBlue)),
         child: Material(
@@ -159,7 +164,8 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
               }
             },
             child: Padding(
-              padding: const EdgeInsets.only(top: 12, bottom: 12, left: 18, right: 18),
+              padding: const EdgeInsets.only(
+                  top: 12, bottom: 12, left: 18, right: 18),
               child: Center(
                 child: Text(
                   txt,
@@ -168,7 +174,9 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
                     fontWeight: FontWeight.w600,
                     fontSize: 12,
                     letterSpacing: 0.27,
-                    color: isSelected ? DesignCourseAppTheme.nearlyWhite : DesignCourseAppTheme.nearlyBlue,
+                    color: isSelected
+                        ? DesignCourseAppTheme.nearlyWhite
+                        : DesignCourseAppTheme.nearlyBlue,
                   ),
                 ),
               ),

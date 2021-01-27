@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../fitness_app_theme.dart';
 
 class RunningView extends StatelessWidget {
-  const RunningView({required this.animationController, required this.animation, Key? key}) : super(key: key);
+  const RunningView(
+      {required this.animationController, required this.animation, Key? key})
+      : super(key: key);
 
   final AnimationController animationController;
   final Animation<double> animation;
@@ -16,7 +18,8 @@ class RunningView extends StatelessWidget {
         return FadeTransition(
           opacity: animation,
           child: Transform(
-            transform: Matrix4.translationValues(0.0, 30 * (1.0 - animation.value), 0.0),
+            transform: Matrix4.translationValues(
+                0.0, 30 * (1.0 - animation.value), 0.0),
             child: Column(
               children: <Widget>[
                 Padding(
@@ -45,12 +48,14 @@ class RunningView extends StatelessWidget {
                             alignment: Alignment.topLeft,
                             children: <Widget>[
                               ClipRRect(
-                                borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+                                borderRadius: const BorderRadius.all(
+                                    Radius.circular(8.0)),
                                 child: SizedBox(
                                   height: 74,
                                   child: AspectRatio(
                                     aspectRatio: 1.714,
-                                    child: Image.asset('assets/fitness_app/back.png'),
+                                    child: Image.asset(
+                                        'assets/fitness_app/back.png'),
                                   ),
                                 ),
                               ),
@@ -69,11 +74,13 @@ class RunningView extends StatelessWidget {
                                           "You're doing great!",
                                           textAlign: TextAlign.left,
                                           style: TextStyle(
-                                            fontFamily: FitnessAppTheme.fontName,
+                                            fontFamily:
+                                                FitnessAppTheme.fontName,
                                             fontWeight: FontWeight.w500,
                                             fontSize: 14,
                                             letterSpacing: 0.0,
-                                            color: FitnessAppTheme.nearlyDarkBlue,
+                                            color:
+                                                FitnessAppTheme.nearlyDarkBlue,
                                           ),
                                         ),
                                       ),
@@ -94,7 +101,8 @@ class RunningView extends StatelessWidget {
                                         fontWeight: FontWeight.w500,
                                         fontSize: 10,
                                         letterSpacing: 0.0,
-                                        color: FitnessAppTheme.grey.withOpacity(0.5),
+                                        color: FitnessAppTheme.grey
+                                            .withOpacity(0.5),
                                       ),
                                     ),
                                   ),

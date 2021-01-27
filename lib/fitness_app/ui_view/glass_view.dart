@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../fitness_app_theme.dart';
 
 class GlassView extends StatelessWidget {
-  const GlassView({required this.animationController, required this.animation, Key? key}) : super(key: key);
+  const GlassView(
+      {required this.animationController, required this.animation, Key? key})
+      : super(key: key);
 
   final AnimationController animationController;
   final Animation<double> animation;
@@ -16,11 +18,13 @@ class GlassView extends StatelessWidget {
         return FadeTransition(
           opacity: animation,
           child: Transform(
-            transform: Matrix4.translationValues(0.0, 30 * (1.0 - animation.value), 0.0),
+            transform: Matrix4.translationValues(
+                0.0, 30 * (1.0 - animation.value), 0.0),
             child: Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.only(left: 24, right: 24, bottom: 24),
+                  padding:
+                      const EdgeInsets.only(left: 24, right: 24, bottom: 24),
                   child: Stack(
                     clipBehavior: Clip.antiAlias,
                     children: <Widget>[
@@ -44,7 +48,8 @@ class GlassView extends StatelessWidget {
                           child: Column(
                             children: <Widget>[
                               Padding(
-                                padding: const EdgeInsets.only(left: 68, bottom: 12, right: 16, top: 12),
+                                padding: const EdgeInsets.only(
+                                    left: 68, bottom: 12, right: 16, top: 12),
                                 child: Text(
                                   'Prepare your stomach for lunch with one or two glass of water',
                                   textAlign: TextAlign.left,
@@ -53,7 +58,8 @@ class GlassView extends StatelessWidget {
                                     fontWeight: FontWeight.w500,
                                     fontSize: 14,
                                     letterSpacing: 0.0,
-                                    color: FitnessAppTheme.nearlyDarkBlue.withOpacity(0.6),
+                                    color: FitnessAppTheme.nearlyDarkBlue
+                                        .withOpacity(0.6),
                                   ),
                                 ),
                               ),
