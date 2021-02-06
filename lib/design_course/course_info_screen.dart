@@ -210,10 +210,12 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                                         color: DesignCourseAppTheme.grey
                                             .withOpacity(0.2)),
                                   ),
-                                  child: FlatButton(
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(16.0)),
+                                  child: TextButton(
+                                    style: TextButton.styleFrom(
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(16.0)),
+                                    ),
                                     onPressed: () {},
                                     child: const Icon(
                                       Icons.add,
@@ -241,12 +243,14 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                                       ],
                                     ),
                                     child: Center(
-                                      child: FlatButton(
-                                        shape: RoundedRectangleBorder(
+                                      child: TextButton(
+                                        style: TextButton.styleFrom(
+                                          shape: RoundedRectangleBorder(
                                             borderRadius:
-                                                BorderRadius.circular(16.0)),
-                                        height: 48,
-                                        minWidth: 1000,
+                                                BorderRadius.circular(16.0),
+                                          ),
+                                          minimumSize: const Size(1000, 48),
+                                        ),
                                         onPressed: () {},
                                         child: const Text(
                                           'Join Course',
@@ -292,11 +296,13 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                   width: 60,
                   height: 60,
                   child: Center(
-                    child: FlatButton(
-                      height: 60,
-                      minWidth: 60,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50.0)),
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50.0),
+                        ),
+                        minimumSize: const Size(60, 60),
+                      ),
                       onPressed: () {},
                       child: const Icon(
                         Icons.favorite,
