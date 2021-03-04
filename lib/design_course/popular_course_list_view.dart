@@ -7,7 +7,7 @@ class PopularCourseListView extends StatefulWidget {
   const PopularCourseListView({required this.callBack, Key? key})
       : super(key: key);
 
-  final Function callBack;
+  final Function() callBack;
 
   @override
   _PopularCourseListViewState createState() => _PopularCourseListViewState();

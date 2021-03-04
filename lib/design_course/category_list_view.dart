@@ -6,7 +6,7 @@ import 'models/category.dart';
 class CategoryListView extends StatefulWidget {
   const CategoryListView({required this.callBack, Key? key}) : super(key: key);
 
-  final Function callBack;
+  final Function() callBack;
 
   @override
   _CategoryListViewState createState() => _CategoryListViewState();

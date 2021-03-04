@@ -15,7 +15,7 @@ class BottomBarView extends StatefulWidget {
 
   final List<TabIconData> tabIconsList;
   final Function(int index) changeIndex;
-  final Function addClick;
+  final Function() addClick;
 
   @override
   _BottomBarViewState createState() => _BottomBarViewState();
@@ -213,7 +213,7 @@ class TabIcons extends StatefulWidget {
       : super(key: key);
 
   final TabIconData tabIconData;
-  final Function removeAllSelect;
+  final Function() removeAllSelect;
 
   @override
   _TabIconsState createState() => _TabIconsState();
