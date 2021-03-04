@@ -59,8 +59,7 @@ class _AboutScreenState extends State<AboutScreen> {
           const SizedBox(height: 16),
           GestureDetector(
             onTap: () async {
-              const String url =
-                  'https://github.com/nohli/Best-Flutter-UI-Templates';
+              const String url = 'https://github.com/nohli/flutter_templates';
               if (await canLaunch(url)) {
                 launch(url, forceWebView: true, enableJavaScript: true);
               }
