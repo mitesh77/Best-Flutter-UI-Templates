@@ -2,7 +2,7 @@ name: best_flutter_ui_templates
 
 publish_to: 'none'
 
-version: 1.4.0+1
+version: 1.0.0+1
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
