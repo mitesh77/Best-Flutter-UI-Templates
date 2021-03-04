@@ -5,20 +5,20 @@ publish_to: 'none'
 version: 1.4.0+1
 
 environment:
-  sdk: '>=2.12.0-0 <3.0.0'
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
   font_awesome_flutter: ^9.0.0-nullsafety
   intl: ^0.17.0
-  url_launcher: ^6.0.1
+  url_launcher: ^6.0.2
 
 dev_dependencies:
   flutter_launcher_icons: ^0.9.0
   flutter_test:
     sdk: flutter
-  lint: ^1.5.1
+  lint: ^1.5.2
 
 flutter_icons:
   ios: true
