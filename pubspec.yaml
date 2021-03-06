@@ -18,7 +18,7 @@ dev_dependencies:
   flutter_launcher_icons: ^0.9.0
   flutter_test:
     sdk: flutter
-  lint: ^1.5.2
+  lint: ^1.5.3
 
 flutter_icons:
   ios: true

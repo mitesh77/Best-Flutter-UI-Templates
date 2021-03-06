@@ -127,7 +127,7 @@ packages:
       name: lint
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.5.2"
+    version: "1.5.3"
   matcher:
     dependency: transitive
     description:
