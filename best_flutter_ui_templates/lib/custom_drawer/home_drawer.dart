@@ -154,7 +154,9 @@ class _HomeDrawerState extends State<HomeDrawer> {
                   Icons.power_settings_new,
                   color: Colors.red,
                 ),
-                onTap: () {},
+                onTap: () {
+                  onTapped();
+                },
               ),
               SizedBox(
                 height: MediaQuery.of(context).padding.bottom,
@@ -164,6 +166,10 @@ class _HomeDrawerState extends State<HomeDrawer> {
         ],
       ),
     );
+  }
+  
+  void onTapped() {
+    print('Doing Something...'); // Print to console.
   }
 
   Widget inkwell(DrawerList listData) {
