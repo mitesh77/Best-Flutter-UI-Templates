@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../fintness_app_theme.dart';
+import '../fitness_app_theme.dart';
 
 class RunningView extends StatelessWidget {
   final AnimationController animationController;
