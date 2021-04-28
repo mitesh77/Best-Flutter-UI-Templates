@@ -9,7 +9,7 @@ class HomeList {
     this.imagePath = '',
   });
 
-  Widget navigateScreen;
+  Widget? navigateScreen;
   String imagePath;
 
   static List<HomeList> homeList = [

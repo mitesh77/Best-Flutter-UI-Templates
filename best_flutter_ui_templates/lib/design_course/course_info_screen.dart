@@ -9,8 +9,8 @@ class CourseInfoScreen extends StatefulWidget {
 class _CourseInfoScreenState extends State<CourseInfoScreen>
     with TickerProviderStateMixin {
   final double infoHeight = 364.0;
-  AnimationController animationController;
-  Animation<double> animation;
+  AnimationController? animationController;
+  Animation<double>? animation;
   double opacity1 = 0.0;
   double opacity2 = 0.0;
   double opacity3 = 0.0;
@@ -19,14 +19,14 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
     animationController = AnimationController(
         duration: const Duration(milliseconds: 1000), vsync: this);
     animation = Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-        parent: animationController,
+        parent: animationController!,
         curve: Interval(0, 1.0, curve: Curves.fastOutSlowIn)));
     setData();
     super.initState();
   }
 
   Future<void> setData() async {
-    animationController.forward();
+    animationController?.forward();
     await Future<dynamic>.delayed(const Duration(milliseconds: 200));
     setState(() {
       opacity1 = 1.0;
@@ -267,7 +267,7 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
               child: ScaleTransition(
                 alignment: Alignment.center,
                 scale: CurvedAnimation(
-                    parent: animationController, curve: Curves.fastOutSlowIn),
+                    parent: animationController!, curve: Curves.fastOutSlowIn),
                 child: Card(
                   color: DesignCourseAppTheme.nearlyBlue,
                   shape: RoundedRectangleBorder(

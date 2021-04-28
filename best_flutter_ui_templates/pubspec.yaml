@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -27,10 +27,14 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.3
-  font_awesome_flutter: ^8.8.1
-  smooth_star_rating: ^1.1.1
-  intl: ^0.16.0
+  cupertino_icons: ^1.0.2
+  font_awesome_flutter: ^9.0.0
+  # smooth_star_rating: ^1.1.1
+  smooth_star_rating:
+                 git:
+                    url: https://github.com/bhavin-concetto/smoothratingbar.git
+                    ref: dev
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:

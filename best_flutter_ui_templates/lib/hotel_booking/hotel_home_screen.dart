@@ -15,7 +15,7 @@ class HotelHomeScreen extends StatefulWidget {
 
 class _HotelHomeScreenState extends State<HotelHomeScreen>
     with TickerProviderStateMixin {
-  AnimationController animationController;
+  AnimationController? animationController;
   List<HotelListData> hotelList = HotelListData.hotelList;
   final ScrollController _scrollController = ScrollController();
 
@@ -36,7 +36,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
 
   @override
   void dispose() {
-    animationController.dispose();
+    animationController?.dispose();
     super.dispose();
   }
 
@@ -98,16 +98,16 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                               final Animation<double> animation =
                                   Tween<double>(begin: 0.0, end: 1.0).animate(
                                       CurvedAnimation(
-                                          parent: animationController,
+                                          parent: animationController!,
                                           curve: Interval(
                                               (1 / count) * index, 1.0,
                                               curve: Curves.fastOutSlowIn)));
-                              animationController.forward();
+                              animationController?.forward();
                               return HotelListView(
                                 callback: () {},
                                 hotelData: hotelList[index],
                                 animation: animation,
-                                animationController: animationController,
+                                animationController: animationController!,
                               );
                             },
                           ),
@@ -154,16 +154,16 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                       final Animation<double> animation =
                           Tween<double>(begin: 0.0, end: 1.0).animate(
                               CurvedAnimation(
-                                  parent: animationController,
+                                  parent: animationController!,
                                   curve: Interval((1 / count) * index, 1.0,
                                       curve: Curves.fastOutSlowIn)));
-                      animationController.forward();
+                      animationController?.forward();
 
                       return HotelListView(
                         callback: () {},
                         hotelData: hotelList[index],
                         animation: animation,
-                        animationController: animationController,
+                        animationController: animationController!,
                       );
                     },
                   );
@@ -183,7 +183,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
       final Animation<double> animation =
           Tween<double>(begin: 0.0, end: 1.0).animate(
         CurvedAnimation(
-          parent: animationController,
+          parent: animationController!,
           curve: Interval((1 / count) * i, 1.0, curve: Curves.fastOutSlowIn),
         ),
       );
@@ -192,11 +192,11 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
           callback: () {},
           hotelData: hotelList[i],
           animation: animation,
-          animationController: animationController,
+          animationController: animationController!,
         ),
       );
     }
-    animationController.forward();
+    animationController?.forward();
     return Column(
       children: hotelListViews,
     );
@@ -491,9 +491,9 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
     );
   }
 
-  void showDemoDialog({BuildContext context}) {
+  void showDemoDialog({BuildContext? context}) {
     showDialog<dynamic>(
-      context: context,
+      context: context!,
       builder: (BuildContext context) => CalendarPopupView(
         barrierDismissible: true,
         minimumDate: DateTime.now(),
@@ -502,10 +502,8 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
         initialStartDate: startDate,
         onApplyClick: (DateTime startData, DateTime endData) {
           setState(() {
-            if (startData != null && endData != null) {
-              startDate = startData;
-              endDate = endData;
-            }
+            startDate = startData;
+            endDate = endData;
           });
         },
         onCancelClick: () {},

@@ -13,8 +13,8 @@ class NavigationHomeScreen extends StatefulWidget {
 }
 
 class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
-  Widget screenView;
-  DrawerIndex drawerIndex;
+  Widget? screenView;
+  DrawerIndex? drawerIndex;
 
   @override
   void initState() {
