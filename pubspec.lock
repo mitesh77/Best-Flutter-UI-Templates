@@ -223,7 +223,7 @@ packages:
       name: url_launcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.0.2"
+    version: "6.0.4"
   url_launcher_linux:
     dependency: transitive
     description:
