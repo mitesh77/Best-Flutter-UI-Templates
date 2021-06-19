@@ -7,16 +7,16 @@ import 'package:flutter/material.dart';
 import '../fitness_app_theme.dart';
 
 class TrainingScreen extends StatefulWidget {
-  const TrainingScreen({Key key, this.animationController}) : super(key: key);
+  const TrainingScreen({Key? key, this.animationController}) : super(key: key);
 
-  final AnimationController animationController;
+  final AnimationController? animationController;
   @override
   _TrainingScreenState createState() => _TrainingScreenState();
 }
 
 class _TrainingScreenState extends State<TrainingScreen>
     with TickerProviderStateMixin {
-  Animation<double> topBarAnimation;
+  Animation<double>? topBarAnimation;
 
   List<Widget> listViews = <Widget>[];
   final ScrollController scrollController = ScrollController();
@@ -26,7 +26,7 @@ class _TrainingScreenState extends State<TrainingScreen>
   void initState() {
     topBarAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
         CurvedAnimation(
-            parent: widget.animationController,
+            parent: widget.animationController!,
             curve: Interval(0, 0.5, curve: Curves.fastOutSlowIn)));
     addAllListData();
 
@@ -63,29 +63,29 @@ class _TrainingScreenState extends State<TrainingScreen>
         titleTxt: 'Your program',
         subTxt: 'Details',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController,
+            parent: widget.animationController!,
             curve:
                 Interval((1 / count) * 0, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController,
+        animationController: widget.animationController!,
       ),
     );
 
     listViews.add(
       WorkoutView(
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController,
+            parent: widget.animationController!,
             curve:
                 Interval((1 / count) * 2, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController,
+        animationController: widget.animationController!,
       ),
     );
     listViews.add(
       RunningView(
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController,
+            parent: widget.animationController!,
             curve:
                 Interval((1 / count) * 3, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController,
+        animationController: widget.animationController!,
       ),
     );
 
@@ -94,10 +94,10 @@ class _TrainingScreenState extends State<TrainingScreen>
         titleTxt: 'Area of focus',
         subTxt: 'more',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController,
+            parent: widget.animationController!,
             curve:
                 Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController,
+        animationController: widget.animationController!,
       ),
     );
 
@@ -105,10 +105,10 @@ class _TrainingScreenState extends State<TrainingScreen>
       AreaListView(
         mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
             CurvedAnimation(
-                parent: widget.animationController,
+                parent: widget.animationController!,
                 curve: Interval((1 / count) * 5, 1.0,
                     curve: Curves.fastOutSlowIn))),
-        mainScreenAnimationController: widget.animationController,
+        mainScreenAnimationController: widget.animationController!,
       ),
     );
   }
@@ -155,7 +155,7 @@ class _TrainingScreenState extends State<TrainingScreen>
             itemCount: listViews.length,
             scrollDirection: Axis.vertical,
             itemBuilder: (BuildContext context, int index) {
-              widget.animationController.forward();
+              widget.animationController?.forward();
               return listViews[index];
             },
           );
@@ -168,13 +168,13 @@ class _TrainingScreenState extends State<TrainingScreen>
     return Column(
       children: <Widget>[
         AnimatedBuilder(
-          animation: widget.animationController,
-          builder: (BuildContext context, Widget child) {
+          animation: widget.animationController!,
+          builder: (BuildContext context, Widget? child) {
             return FadeTransition(
-              opacity: topBarAnimation,
+              opacity: topBarAnimation!,
               child: Transform(
                 transform: Matrix4.translationValues(
-                    0.0, 30 * (1.0 - topBarAnimation.value), 0.0),
+                    0.0, 30 * (1.0 - topBarAnimation!.value), 0.0),
                 child: Container(
                   decoration: BoxDecoration(
                     color: FitnessAppTheme.white.withOpacity(topBarOpacity),

@@ -2,18 +2,18 @@ import 'package:best_flutter_ui_templates/hotel_booking/hotel_app_theme.dart';
 import 'package:flutter/material.dart';
 
 class RangeSliderView extends StatefulWidget {
-  const RangeSliderView({Key key, this.values, this.onChangeRangeValues})
+  const RangeSliderView({Key? key, this.values, this.onChangeRangeValues})
       : super(key: key);
 
-  final Function(RangeValues) onChangeRangeValues;
-  final RangeValues values;
+  final Function(RangeValues)? onChangeRangeValues;
+  final RangeValues? values;
 
   @override
   _RangeSliderViewState createState() => _RangeSliderViewState();
 }
 
 class _RangeSliderViewState extends State<RangeSliderView> {
-  RangeValues _values;
+  RangeValues? _values;
 
   @override
   void initState() {
@@ -31,18 +31,18 @@ class _RangeSliderViewState extends State<RangeSliderView> {
               Row(
                 children: <Widget>[
                   Expanded(
-                    flex: _values.start.round(),
+                    flex: _values!.start.round(),
                     child: const SizedBox(),
                   ),
                   Container(
                     width: 54,
                     child: Text(
-                      '\$${_values.start.round()}',
+                      '\$${_values!.start.round()}',
                       textAlign: TextAlign.center,
                     ),
                   ),
                   Expanded(
-                    flex: 1000 - _values.start.round(),
+                    flex: 1000 - _values!.start.round(),
                     child: const SizedBox(),
                   ),
                 ],
@@ -50,18 +50,18 @@ class _RangeSliderViewState extends State<RangeSliderView> {
               Row(
                 children: <Widget>[
                   Expanded(
-                    flex: _values.end.round(),
+                    flex: _values!.end.round(),
                     child: const SizedBox(),
                   ),
                   Container(
                     width: 54,
                     child: Text(
-                      '\$${_values.end.round()}',
+                      '\$${_values!.end.round()}',
                       textAlign: TextAlign.center,
                     ),
                   ),
                   Expanded(
-                    flex: 1000 - _values.end.round(),
+                    flex: 1000 - _values!.end.round(),
                     child: const SizedBox(),
                   ),
                 ],
@@ -73,7 +73,7 @@ class _RangeSliderViewState extends State<RangeSliderView> {
               rangeThumbShape: CustomRangeThumbShape(),
             ),
             child: RangeSlider(
-              values: _values,
+              values: _values!,
               min: 0.0,
               max: 1000.0,
               activeColor: HotelAppTheme.buildLightTheme().primaryColor,
@@ -84,7 +84,7 @@ class _RangeSliderViewState extends State<RangeSliderView> {
                   setState(() {
                     _values = values;
                   });
-                  widget.onChangeRangeValues(_values);
+                  widget.onChangeRangeValues!(_values!);
                 } catch (_) {}
               },
             ),
@@ -115,15 +115,15 @@ class CustomRangeThumbShape extends RangeSliderThumbShape {
   void paint(
     PaintingContext context,
     Offset center, {
-    @required Animation<double> activationAnimation,
-    @required Animation<double> enableAnimation,
+    required Animation<double> activationAnimation,
+    required Animation<double> enableAnimation,
     bool isDiscrete = false,
     bool isEnabled = false,
-    bool isOnTop,
-    bool isPressed,
-    @required SliderThemeData sliderTheme,
-    TextDirection textDirection,
-    Thumb thumb,
+    bool? isOnTop,
+    bool? isPressed,
+    required SliderThemeData sliderTheme,
+    TextDirection textDirection = TextDirection.ltr,
+    Thumb thumb = Thumb.start,
   }) {
     final Canvas canvas = context.canvas;
     final ColorTween colorTween = ColorTween(
@@ -170,7 +170,7 @@ class CustomRangeThumbShape extends RangeSliderThumbShape {
     cPaint..color = Colors.white;
     cPaint..strokeWidth = 14 / 2;
     canvas.drawCircle(Offset(center.dx, center.dy), 12, cPaint);
-    cPaint..color = colorTween.evaluate(enableAnimation);
+    cPaint..color = colorTween.evaluate(enableAnimation)!;
     canvas.drawCircle(Offset(center.dx, center.dy), 10, cPaint);
     canvas.drawPath(thumbPath, Paint()..color = Colors.white);
   }

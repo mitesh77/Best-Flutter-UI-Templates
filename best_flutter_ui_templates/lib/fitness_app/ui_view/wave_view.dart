@@ -6,14 +6,14 @@ import 'package:vector_math/vector_math.dart' as vector;
 class WaveView extends StatefulWidget {
   final double percentageValue;
 
-  const WaveView({Key key, this.percentageValue = 100.0}) : super(key: key);
+  const WaveView({Key? key, this.percentageValue = 100.0}) : super(key: key);
   @override
   _WaveViewState createState() => _WaveViewState();
 }
 
 class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
-  AnimationController animationController;
-  AnimationController waveAnimationController;
+  AnimationController? animationController;
+  AnimationController? waveAnimationController;
   Offset bottleOffset1 = Offset(0, 0);
   List<Offset> animList1 = [];
   Offset bottleOffset2 = Offset(60, 0);
@@ -25,21 +25,21 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
         duration: Duration(milliseconds: 2000), vsync: this);
     waveAnimationController = AnimationController(
         duration: Duration(milliseconds: 2000), vsync: this);
-    animationController
+    animationController!
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
-          animationController.reverse();
+          animationController?.reverse();
         } else if (status == AnimationStatus.dismissed) {
-          animationController.forward();
+          animationController?.forward();
         }
       });
-    waveAnimationController.addListener(() {
+    waveAnimationController!.addListener(() {
       animList1.clear();
       for (int i = -2 - bottleOffset1.dx.toInt(); i <= 60 + 2; i++) {
         animList1.add(
           new Offset(
             i.toDouble() + bottleOffset1.dx.toInt(),
-            math.sin((waveAnimationController.value * 360 - i) %
+            math.sin((waveAnimationController!.value * 360 - i) %
                         360 *
                         vector.degrees2Radians) *
                     4 +
@@ -52,7 +52,7 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
         animList2.add(
           new Offset(
             i.toDouble() + bottleOffset2.dx.toInt(),
-            math.sin((waveAnimationController.value * 360 - i) %
+            math.sin((waveAnimationController!.value * 360 - i) %
                         360 *
                         vector.degrees2Radians) *
                     4 +
@@ -61,15 +61,15 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
         );
       }
     });
-    waveAnimationController.repeat();
-    animationController.forward();
+    waveAnimationController?.repeat();
+    animationController?.forward();
     super.initState();
   }
 
   @override
   void dispose() {
-    animationController.dispose();
-    waveAnimationController.dispose();
+    animationController?.dispose();
+    waveAnimationController?.dispose();
     super.dispose();
   }
 
@@ -79,7 +79,7 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
       alignment: Alignment.center,
       child: new AnimatedBuilder(
         animation: new CurvedAnimation(
-          parent: animationController,
+          parent: animationController!,
           curve: Curves.easeInOut,
         ),
         builder: (context, child) => new Stack(
@@ -103,7 +103,7 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
                   ),
                 ),
               ),
-              clipper: new WaveClipper(animationController.value, animList1),
+              clipper: new WaveClipper(animationController!.value, animList1),
             ),
             new ClipPath(
               child: new Container(
@@ -124,7 +124,7 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
                       topRight: Radius.circular(80.0)),
                 ),
               ),
-              clipper: new WaveClipper(animationController.value, animList2),
+              clipper: new WaveClipper(animationController!.value, animList2),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 48),
@@ -169,7 +169,7 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
               child: new ScaleTransition(
                 alignment: Alignment.center,
                 scale: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-                    parent: animationController,
+                    parent: animationController!,
                     curve: Interval(0.0, 1.0, curve: Curves.fastOutSlowIn))),
                 child: Container(
                   width: 2,
@@ -188,7 +188,7 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
               child: new ScaleTransition(
                 alignment: Alignment.center,
                 scale: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-                    parent: animationController,
+                    parent: animationController!,
                     curve: Interval(0.4, 1.0, curve: Curves.fastOutSlowIn))),
                 child: Container(
                   width: 4,
@@ -207,7 +207,7 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
               child: new ScaleTransition(
                 alignment: Alignment.center,
                 scale: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-                    parent: animationController,
+                    parent: animationController!,
                     curve: Interval(0.6, 0.8, curve: Curves.fastOutSlowIn))),
                 child: Container(
                   width: 3,
@@ -225,13 +225,13 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
               bottom: 0,
               child: new Transform(
                 transform: new Matrix4.translationValues(
-                    0.0, 16 * (1.0 - animationController.value), 0.0),
+                    0.0, 16 * (1.0 - animationController!.value), 0.0),
                 child: Container(
                   width: 4,
                   height: 4,
                   decoration: BoxDecoration(
                     color: FitnessAppTheme.white.withOpacity(
-                        animationController.status == AnimationStatus.reverse
+                        animationController!.status == AnimationStatus.reverse
                             ? 0.0
                             : 0.4),
                     shape: BoxShape.circle,

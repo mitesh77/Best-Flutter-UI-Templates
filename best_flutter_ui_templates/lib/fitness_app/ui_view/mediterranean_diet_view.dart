@@ -4,23 +4,23 @@ import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
 class MediterranesnDietView extends StatelessWidget {
-  final AnimationController animationController;
-  final Animation animation;
+  final AnimationController? animationController;
+  final Animation<double>? animation;
 
   const MediterranesnDietView(
-      {Key key, this.animationController, this.animation})
+      {Key? key, this.animationController, this.animation})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation: animationController,
-      builder: (BuildContext context, Widget child) {
+      animation: animationController!,
+      builder: (BuildContext context, Widget? child) {
         return FadeTransition(
-          opacity: animation,
+          opacity: animation!,
           child: new Transform(
             transform: new Matrix4.translationValues(
-                0.0, 30 * (1.0 - animation.value), 0.0),
+                0.0, 30 * (1.0 - animation!.value), 0.0),
             child: Padding(
               padding: const EdgeInsets.only(
                   left: 24, right: 24, top: 16, bottom: 18),
@@ -106,7 +106,7 @@ class MediterranesnDietView extends StatelessWidget {
                                                       const EdgeInsets.only(
                                                           left: 4, bottom: 3),
                                                   child: Text(
-                                                    '${(1127 * animation.value).toInt()}',
+                                                    '${(1127 * animation!.value).toInt()}',
                                                     textAlign: TextAlign.center,
                                                     style: TextStyle(
                                                       fontFamily:
@@ -205,7 +205,7 @@ class MediterranesnDietView extends StatelessWidget {
                                                       const EdgeInsets.only(
                                                           left: 4, bottom: 3),
                                                   child: Text(
-                                                    '${(102 * animation.value).toInt()}',
+                                                    '${(102 * animation!.value).toInt()}',
                                                     textAlign: TextAlign.center,
                                                     style: TextStyle(
                                                       fontFamily:
@@ -255,7 +255,7 @@ class MediterranesnDietView extends StatelessWidget {
                             padding: const EdgeInsets.only(right: 16),
                             child: Center(
                               child: Stack(
-                                overflow: Overflow.visible,
+                                clipBehavior: Clip.none,
                                 children: <Widget>[
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
@@ -280,7 +280,7 @@ class MediterranesnDietView extends StatelessWidget {
                                             CrossAxisAlignment.center,
                                         children: <Widget>[
                                           Text(
-                                            '${(1503 * animation.value).toInt()}',
+                                            '${(1503 * animation!.value).toInt()}',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               fontFamily:
@@ -320,7 +320,7 @@ class MediterranesnDietView extends StatelessWidget {
                                           ],
                                           angle: 140 +
                                               (360 - 140) *
-                                                  (1.0 - animation.value)),
+                                                  (1.0 - animation!.value)),
                                       child: SizedBox(
                                         width: 108,
                                         height: 108,
@@ -380,7 +380,7 @@ class MediterranesnDietView extends StatelessWidget {
                                     child: Row(
                                       children: <Widget>[
                                         Container(
-                                          width: ((70 / 1.2) * animation.value),
+                                          width: ((70 / 1.2) * animation!.value),
                                           height: 4,
                                           decoration: BoxDecoration(
                                             gradient: LinearGradient(colors: [
@@ -448,7 +448,7 @@ class MediterranesnDietView extends StatelessWidget {
                                           children: <Widget>[
                                             Container(
                                               width: ((70 / 2) *
-                                                  animationController.value),
+                                                  animationController!.value),
                                               height: 4,
                                               decoration: BoxDecoration(
                                                 gradient:
@@ -519,7 +519,7 @@ class MediterranesnDietView extends StatelessWidget {
                                           children: <Widget>[
                                             Container(
                                               width: ((70 / 2.5) *
-                                                  animationController.value),
+                                                  animationController!.value),
                                               height: 4,
                                               decoration: BoxDecoration(
                                                 gradient:
@@ -570,16 +570,16 @@ class MediterranesnDietView extends StatelessWidget {
 }
 
 class CurvePainter extends CustomPainter {
-  final double angle;
-  final List<Color> colors;
+  final double? angle;
+  final List<Color>? colors;
 
   CurvePainter({this.colors, this.angle = 140});
 
   @override
   void paint(Canvas canvas, Size size) {
-    List<Color> colorsList = List<Color>();
+    List<Color> colorsList = [];
     if (colors != null) {
-      colorsList = colors;
+      colorsList = colors ?? [];
     } else {
       colorsList.addAll([Colors.white, Colors.white]);
     }
@@ -595,7 +595,7 @@ class CurvePainter extends CustomPainter {
     canvas.drawArc(
         new Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
         degreeToRadians(278),
-        degreeToRadians(360 - (365 - angle)),
+        degreeToRadians(360 - (365 - angle!)),
         false,
         shdowPaint);
 
@@ -604,7 +604,7 @@ class CurvePainter extends CustomPainter {
     canvas.drawArc(
         new Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
         degreeToRadians(278),
-        degreeToRadians(360 - (365 - angle)),
+        degreeToRadians(360 - (365 - angle!)),
         false,
         shdowPaint);
 
@@ -613,7 +613,7 @@ class CurvePainter extends CustomPainter {
     canvas.drawArc(
         new Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
         degreeToRadians(278),
-        degreeToRadians(360 - (365 - angle)),
+        degreeToRadians(360 - (365 - angle!)),
         false,
         shdowPaint);
 
@@ -622,7 +622,7 @@ class CurvePainter extends CustomPainter {
     canvas.drawArc(
         new Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
         degreeToRadians(278),
-        degreeToRadians(360 - (365 - angle)),
+        degreeToRadians(360 - (365 - angle!)),
         false,
         shdowPaint);
 
@@ -644,7 +644,7 @@ class CurvePainter extends CustomPainter {
     canvas.drawArc(
         new Rect.fromCircle(center: center, radius: radius),
         degreeToRadians(278),
-        degreeToRadians(360 - (365 - angle)),
+        degreeToRadians(360 - (365 - angle!)),
         false,
         paint);
 
@@ -663,7 +663,7 @@ class CurvePainter extends CustomPainter {
     canvas.save();
 
     canvas.translate(centerToCircle, centerToCircle);
-    canvas.rotate(degreeToRadians(angle + 2));
+    canvas.rotate(degreeToRadians(angle! + 2));
 
     canvas.save();
     canvas.translate(0.0, -centerToCircle + 14 / 2);

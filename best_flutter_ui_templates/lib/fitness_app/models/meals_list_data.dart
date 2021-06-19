@@ -12,7 +12,7 @@ class MealsListData {
   String titleTxt;
   String startColor;
   String endColor;
-  List<String> meals;
+  List<String>? meals;
   int kacl;
 
   static List<MealsListData> tabIconsList = <MealsListData>[
