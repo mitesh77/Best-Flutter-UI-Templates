@@ -201,9 +201,11 @@ class HomeListView extends StatelessWidget {
                 child: Stack(
                   alignment: AlignmentDirectional.center,
                   children: <Widget>[
-                    Image.asset(
-                      listData!.imagePath,
-                      fit: BoxFit.cover,
+                    Positioned.fill(
+                      child: Image.asset(
+                        listData!.imagePath,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                     Material(
                       color: Colors.transparent,

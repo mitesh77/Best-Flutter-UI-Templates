@@ -31,6 +31,7 @@ dependencies:
     font_awesome_flutter: ^9.0.0
     flutter_rating_bar: ^4.0.0
     intl: ^0.17.0
+    animations: ^2.0.0
 
 dev_dependencies:
     flutter_test:
@@ -52,6 +53,7 @@ flutter:
         - assets/design_course/
         - assets/fitness_app/
         - assets/hotel/
+        - assets/introduction_animation/
 
     # An image asset can refer to one or more resolution-specific "variants", see
     # https://flutter.dev/assets-and-images/#resolution-aware.
