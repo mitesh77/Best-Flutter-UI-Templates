@@ -1,13 +1,5 @@
 include: package:flutter_lints/flutter.yaml
 
 analyzer:
-  strong-mode:
-    implicit-casts: false
-    implicit-dynamic: false
   errors:
     todo: info
-linter:
-  rules:
-    - always_put_required_named_parameters_first
-    - sort_constructors_first
-    - sort_pub_dependencies
