@@ -11,6 +11,8 @@ import 'hotel_list_view.dart';
 import 'model/hotel_list_data.dart';
 
 class HotelHomeScreen extends StatefulWidget {
+  const HotelHomeScreen({Key? key}) : super(key: key);
+
   @override
   _HotelHomeScreenState createState() => _HotelHomeScreenState();
 }
@@ -442,7 +444,8 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                       Navigator.push<dynamic>(
                         context,
                         MaterialPageRoute<dynamic>(
-                            builder: (BuildContext context) => FiltersScreen(),
+                            builder: (BuildContext context) =>
+                                const FiltersScreen(),
                             fullscreenDialog: true),
                       );
                     },

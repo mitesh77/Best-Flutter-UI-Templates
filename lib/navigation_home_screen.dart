@@ -9,6 +9,8 @@ import 'home_screen.dart';
 import 'invite_friend_screen.dart';
 
 class NavigationHomeScreen extends StatefulWidget {
+  const NavigationHomeScreen({Key? key}) : super(key: key);
+
   @override
   _NavigationHomeScreenState createState() => _NavigationHomeScreenState();
 }
@@ -43,25 +45,25 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
       } else if (drawerIndex == DrawerIndex.help) {
         if (mounted) {
           setState(() {
-            screenView = HelpScreen();
+            screenView = const HelpScreen();
           });
         }
       } else if (drawerIndex == DrawerIndex.feedback) {
         if (mounted) {
           setState(() {
-            screenView = FeedbackScreen();
+            screenView = const FeedbackScreen();
           });
         }
       } else if (drawerIndex == DrawerIndex.invite) {
         if (mounted) {
           setState(() {
-            screenView = InviteFriend();
+            screenView = const InviteFriend();
           });
         }
       } else if (drawerIndex == DrawerIndex.about) {
         if (mounted) {
           setState(() {
-            screenView = AboutScreen();
+            screenView = const AboutScreen();
           });
         }
       }

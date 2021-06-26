@@ -7,6 +7,8 @@ import 'my_diary/my_diary_screen.dart';
 import 'training/training_screen.dart';
 
 class FitnessAppHomeScreen extends StatefulWidget {
+  const FitnessAppHomeScreen({Key? key}) : super(key: key);
+
   @override
   _FitnessAppHomeScreenState createState() => _FitnessAppHomeScreenState();
 }

@@ -6,6 +6,8 @@ import 'design_course_app_theme.dart';
 import 'popular_course_list_view.dart';
 
 class DesignCourseHomeScreen extends StatefulWidget {
+  const DesignCourseHomeScreen({Key? key}) : super(key: key);
+
   @override
   _DesignCourseHomeScreenState createState() => _DesignCourseHomeScreenState();
 }
@@ -129,7 +131,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
     Navigator.push<dynamic>(
       context,
       MaterialPageRoute<dynamic>(
-        builder: (BuildContext context) => CourseInfoScreen(),
+        builder: (BuildContext context) => const CourseInfoScreen(),
       ),
     );
   }

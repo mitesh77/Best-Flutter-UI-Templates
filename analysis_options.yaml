@@ -1,4 +1,4 @@
-include: package:lint/analysis_options.yaml
+include: package:flutter_lints/flutter.yaml
 
 analyzer:
   strong-mode:
@@ -6,12 +6,8 @@ analyzer:
     implicit-dynamic: false
   errors:
     todo: info
-    # import_of_legacy_library_into_null_safe: ignore
 linter:
   rules:
-    always_put_required_named_parameters_first: true
-    sort_constructors_first: true
-    prefer_single_quotes: true
-    always_specify_types: true
-    # lines_longer_than_80_chars: true
-    # public_member_api_docs: true
+    - always_put_required_named_parameters_first
+    - sort_constructors_first
+    - sort_pub_dependencies

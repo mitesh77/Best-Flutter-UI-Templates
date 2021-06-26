@@ -92,7 +92,7 @@ class CustomThumbShape extends SliderComponentShape {
   @override
   void paint(
     PaintingContext context,
-    Offset thumbCenter, {
+    Offset center, {
     required Animation<double> activationAnimation,
     required Animation<double> enableAnimation,
     required bool isDiscrete,
@@ -111,9 +111,8 @@ class CustomThumbShape extends SliderComponentShape {
     );
     canvas.drawPath(
         Path()
-          ..addOval(Rect.fromPoints(
-              Offset(thumbCenter.dx + 12, thumbCenter.dy + 12),
-              Offset(thumbCenter.dx - 12, thumbCenter.dy - 12)))
+          ..addOval(Rect.fromPoints(Offset(center.dx + 12, center.dy + 12),
+              Offset(center.dx - 12, center.dy - 12)))
           ..fillType = PathFillType.evenOdd,
         Paint()
           ..color = Colors.black.withOpacity(0.5)
@@ -123,9 +122,9 @@ class CustomThumbShape extends SliderComponentShape {
     final Paint cPaint = Paint();
     cPaint.color = Colors.white;
     cPaint.strokeWidth = 14 / 2;
-    canvas.drawCircle(Offset(thumbCenter.dx, thumbCenter.dy), 12, cPaint);
+    canvas.drawCircle(Offset(center.dx, center.dy), 12, cPaint);
     cPaint.color = colorTween.evaluate(enableAnimation) ?? Colors.white;
-    canvas.drawCircle(Offset(thumbCenter.dx, thumbCenter.dy), 10, cPaint);
+    canvas.drawCircle(Offset(center.dx, center.dy), 10, cPaint);
   }
 
   double convertRadiusToSigma(double radius) {

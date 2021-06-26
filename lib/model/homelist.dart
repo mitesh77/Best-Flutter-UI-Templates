@@ -12,15 +12,15 @@ class HomeList {
 
   static List<HomeList> homeList = <HomeList>[
     HomeList(
-      navigateScreen: HotelHomeScreen(),
+      navigateScreen: const HotelHomeScreen(),
       imagePath: 'assets/hotel/hotel_booking.png',
     ),
     HomeList(
-      navigateScreen: FitnessAppHomeScreen(),
+      navigateScreen: const FitnessAppHomeScreen(),
       imagePath: 'assets/fitness_app/fitness_app.png',
     ),
     HomeList(
-      navigateScreen: DesignCourseHomeScreen(),
+      navigateScreen: const DesignCourseHomeScreen(),
       imagePath: 'assets/design_course/design_course.png',
     ),
   ];
