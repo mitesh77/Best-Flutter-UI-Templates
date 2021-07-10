@@ -34,23 +34,10 @@ class _AboutScreenState extends State<AboutScreen> {
             style: TextStyle(fontSize: 16),
           ),
           const SizedBox(height: 16),
-          GestureDetector(
-            onTap: () async {
-              const String url =
-                  'https://github.com/mitesh77/Best-Flutter-UI-Templates';
-              if (await canLaunch(url)) {
-                launch(url, forceWebView: true, enableJavaScript: true);
-              }
-            },
-            child: const Text(
-              'Best Flutter UI Templates',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.blue,
-                fontSize: 16,
-                decoration: TextDecoration.underline,
-              ),
-            ),
+          const Text(
+            'Best Flutter UI Templates',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 16),
           ),
           const SizedBox(height: 20),
           const Text(
