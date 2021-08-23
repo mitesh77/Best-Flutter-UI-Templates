@@ -82,7 +82,7 @@ packages:
       name: flutter_launcher_icons
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.9.1"
+    version: "0.9.2"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -258,7 +258,7 @@ packages:
       name: url_launcher_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.2"
+    version: "2.0.4"
   url_launcher_windows:
     dependency: transitive
     description:
