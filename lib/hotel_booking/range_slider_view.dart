@@ -15,7 +15,7 @@ class RangeSliderView extends StatefulWidget {
 }
 
 class _RangeSliderViewState extends State<RangeSliderView> {
-  late final RangeValues _values;
+  late RangeValues _values;
   @override
   void initState() {
     super.initState();
