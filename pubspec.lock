@@ -113,7 +113,7 @@ packages:
       name: image
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.2"
+    version: "3.0.4"
   intl:
     dependency: "direct main"
     description:
