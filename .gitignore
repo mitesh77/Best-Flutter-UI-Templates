@@ -61,3 +61,4 @@ android/app/release/app-release.aab
 # Other
 ios/Flutter/flutter_export_environment.sh
 local.properties
+**/dgph
