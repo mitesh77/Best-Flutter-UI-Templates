@@ -53,12 +53,7 @@ class _AboutScreenState extends State<AboutScreen> {
                 host: 'github.com',
                 path: '/nohli/flutter_templates',
               );
-              if (await canLaunchUrl(url)) {
-                launchUrl(
-                  url,
-                  mode: LaunchMode.inAppWebView,
-                );
-              }
+              if (await canLaunchUrl(url)) launchUrl(url);
             },
             child: const Text(
               'Its code can be found here.',
