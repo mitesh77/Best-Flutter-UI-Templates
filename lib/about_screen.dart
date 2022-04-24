@@ -48,9 +48,16 @@ class _AboutScreenState extends State<AboutScreen> {
           const SizedBox(height: 16),
           GestureDetector(
             onTap: () async {
-              const String url = 'https://github.com/nohli/flutter_templates';
-              if (await canLaunch(url)) {
-                launch(url, forceWebView: true, enableJavaScript: true);
+              final url = Uri(
+                scheme: 'https',
+                host: 'github.com',
+                path: '/nohli/flutter_templates',
+              );
+              if (await canLaunchUrl(url)) {
+                launchUrl(
+                  url,
+                  mode: LaunchMode.inAppWebView,
+                );
               }
             },
             child: const Text(
