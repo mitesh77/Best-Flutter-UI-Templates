@@ -10,7 +10,7 @@ class FitnessAppHomeScreen extends StatefulWidget {
   const FitnessAppHomeScreen({Key? key}) : super(key: key);
 
   @override
-  _FitnessAppHomeScreenState createState() => _FitnessAppHomeScreenState();
+  State<FitnessAppHomeScreen> createState() => _FitnessAppHomeScreenState();
 }
 
 class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>

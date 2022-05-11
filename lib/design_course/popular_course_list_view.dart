@@ -10,7 +10,7 @@ class PopularCourseListView extends StatefulWidget {
   final Function() callBack;
 
   @override
-  _PopularCourseListViewState createState() => _PopularCourseListViewState();
+  State<PopularCourseListView> createState() => _PopularCourseListViewState();
 }
 
 class _PopularCourseListViewState extends State<PopularCourseListView>

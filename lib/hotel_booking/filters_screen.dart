@@ -10,7 +10,7 @@ class FiltersScreen extends StatefulWidget {
   const FiltersScreen({Key? key}) : super(key: key);
 
   @override
-  _FiltersScreenState createState() => _FiltersScreenState();
+  State<FiltersScreen> createState() => _FiltersScreenState();
 }
 
 class _FiltersScreenState extends State<FiltersScreen> {

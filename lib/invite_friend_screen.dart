@@ -4,7 +4,7 @@ class InviteFriend extends StatefulWidget {
   const InviteFriend({Key? key}) : super(key: key);
 
   @override
-  _InviteFriendState createState() => _InviteFriendState();
+  State<InviteFriend> createState() => _InviteFriendState();
 }
 
 class _InviteFriendState extends State<InviteFriend> {

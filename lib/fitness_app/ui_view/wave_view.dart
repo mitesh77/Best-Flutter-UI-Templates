@@ -11,7 +11,7 @@ class WaveView extends StatefulWidget {
   final double percentageValue;
 
   @override
-  _WaveViewState createState() => _WaveViewState();
+  State<WaveView> createState() => _WaveViewState();
 }
 
 class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {

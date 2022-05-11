@@ -12,7 +12,7 @@ class HotelHomeScreen extends StatefulWidget {
   const HotelHomeScreen({Key? key}) : super(key: key);
 
   @override
-  _HotelHomeScreenState createState() => _HotelHomeScreenState();
+  State<HotelHomeScreen> createState() => _HotelHomeScreenState();
 }
 
 class _HotelHomeScreenState extends State<HotelHomeScreen>

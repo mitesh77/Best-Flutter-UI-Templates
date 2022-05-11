@@ -15,7 +15,7 @@ class MyDiaryScreen extends StatefulWidget {
   final AnimationController animationController;
 
   @override
-  _MyDiaryScreenState createState() => _MyDiaryScreenState();
+  State<MyDiaryScreen> createState() => _MyDiaryScreenState();
 }
 
 class _MyDiaryScreenState extends State<MyDiaryScreen>

@@ -14,7 +14,7 @@ class MealsListView extends StatefulWidget {
   final Animation<double> mainScreenAnimation;
 
   @override
-  _MealsListViewState createState() => _MealsListViewState();
+  State<MealsListView> createState() => _MealsListViewState();
 }
 
 class _MealsListViewState extends State<MealsListView>

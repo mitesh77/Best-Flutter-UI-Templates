@@ -13,7 +13,7 @@ class TrainingScreen extends StatefulWidget {
   final AnimationController animationController;
 
   @override
-  _TrainingScreenState createState() => _TrainingScreenState();
+  State<TrainingScreen> createState() => _TrainingScreenState();
 }
 
 class _TrainingScreenState extends State<TrainingScreen>

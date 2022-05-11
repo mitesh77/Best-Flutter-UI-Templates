@@ -21,7 +21,7 @@ class CustomCalendarView extends StatefulWidget {
   final Function(DateTime, DateTime) startEndDateChange;
 
   @override
-  _CustomCalendarViewState createState() => _CustomCalendarViewState();
+  State<CustomCalendarView> createState() => _CustomCalendarViewState();
 }
 
 class _CustomCalendarViewState extends State<CustomCalendarView> {
@@ -352,10 +352,8 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
   }
 
   bool getIsInRange(DateTime date) {
-    final DateTime? _startDate = startDate;
-    final DateTime? _endDate = endDate;
-    if (_startDate != null && _endDate != null) {
-      if (date.isAfter(_startDate) && date.isBefore(_endDate)) {
+    if (startDate != null && endDate != null) {
+      if (date.isAfter(startDate!) && date.isBefore(endDate!)) {
         return true;
       }
     }
@@ -363,24 +361,21 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
   }
 
   bool getIsItStartAndEndDate(DateTime date) {
-    final DateTime? _startDate = startDate;
-    final DateTime? _endDate = endDate;
-    if ((_startDate != null &&
-            _startDate.day == date.day &&
-            _startDate.month == date.month &&
-            _startDate.year == date.year) ||
-        (_endDate != null &&
-            _endDate.day == date.day &&
-            _endDate.month == date.month &&
-            _endDate.year == date.year)) return true;
+    if ((startDate != null &&
+            startDate!.day == date.day &&
+            startDate!.month == date.month &&
+            startDate!.year == date.year) ||
+        (endDate != null &&
+            endDate!.day == date.day &&
+            endDate!.month == date.month &&
+            endDate!.year == date.year)) return true;
     return false;
   }
 
   bool isStartDateRadius(DateTime date) {
-    final DateTime? _startDate = startDate;
-    if (_startDate != null &&
-        _startDate.day == date.day &&
-        _startDate.month == date.month) {
+    if (startDate != null &&
+        startDate!.day == date.day &&
+        startDate!.month == date.month) {
       return true;
     } else if (date.weekday == 1) {
       return true;
@@ -390,10 +385,9 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
   }
 
   bool isEndDateRadius(DateTime date) {
-    final DateTime? _endDate = endDate;
-    if (_endDate != null &&
-        _endDate.day == date.day &&
-        _endDate.month == date.month) {
+    if (endDate != null &&
+        endDate!.day == date.day &&
+        endDate!.month == date.month) {
       return true;
     } else if (date.weekday == 7) {
       return true;
@@ -403,45 +397,43 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
   }
 
   void onDateClick(DateTime date) {
-    final DateTime? _startDate = startDate;
-    final DateTime? _endDate = endDate;
-    if (_startDate == null) {
+    if (startDate == null) {
       startDate = date;
     } else if (startDate != date && endDate == null) {
       endDate = date;
-    } else if (_startDate.day == date.day && _startDate.month == date.month) {
+    } else if (startDate!.day == date.day && startDate!.month == date.month) {
       startDate = null;
-    } else if (_endDate != null &&
-        _endDate.day == date.day &&
-        _endDate.month == date.month) {
+    } else if (endDate != null &&
+        endDate!.day == date.day &&
+        endDate!.month == date.month) {
       endDate = null;
     }
     if (startDate == null && endDate != null) {
       startDate = endDate;
       endDate = null;
     }
-    if (_startDate != null && _endDate != null) {
-      if (!_endDate.isAfter(_startDate)) {
-        final DateTime d = _startDate;
+    if (startDate != null && endDate != null) {
+      if (!endDate!.isAfter(startDate!)) {
+        final DateTime d = startDate!;
         startDate = endDate;
         endDate = d;
       }
-      if (date.isBefore(_startDate)) {
+      if (date.isBefore(startDate!)) {
         startDate = date;
-      } else if (date.isAfter(_endDate)) {
+      } else if (date.isAfter(endDate!)) {
         endDate = date;
       } else {
-        final int daysToStartDate = _startDate.difference(date).inDays.abs();
-        final int daysToEndDate = _endDate.difference(date).inDays.abs();
+        final int daysToStartDate = startDate!.difference(date).inDays.abs();
+        final int daysToEndDate = endDate!.difference(date).inDays.abs();
         daysToStartDate > daysToEndDate ? endDate = date : startDate = date;
       }
     }
     if (mounted) {
       setState(
         () {
-          if (_startDate != null && _endDate != null) {
+          if (startDate != null && endDate != null) {
             try {
-              widget.startEndDateChange(_startDate, _endDate);
+              widget.startEndDateChange(startDate!, endDate!);
             } catch (_) {}
           }
         },

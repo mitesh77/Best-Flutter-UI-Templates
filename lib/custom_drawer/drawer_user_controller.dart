@@ -24,7 +24,7 @@ class DrawerUserController extends StatefulWidget {
   final DrawerIndex screenIndex;
 
   @override
-  _DrawerUserControllerState createState() => _DrawerUserControllerState();
+  State<DrawerUserController> createState() => _DrawerUserControllerState();
 }
 
 class _DrawerUserControllerState extends State<DrawerUserController>
@@ -81,7 +81,7 @@ class _DrawerUserControllerState extends State<DrawerUserController>
             duration: const Duration(), curve: Curves.fastOutSlowIn);
       }
     });
-    WidgetsBinding.instance?.addPostFrameCallback((_) => getInitState());
+    WidgetsBinding.instance.addPostFrameCallback((_) => getInitState());
   }
 
   @override

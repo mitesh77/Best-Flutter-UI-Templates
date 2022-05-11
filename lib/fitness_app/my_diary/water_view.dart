@@ -14,7 +14,7 @@ class WaterView extends StatefulWidget {
   final Animation<double> mainScreenAnimation;
 
   @override
-  _WaterViewState createState() => _WaterViewState();
+  State<WaterView> createState() => _WaterViewState();
 }
 
 class _WaterViewState extends State<WaterView> with TickerProviderStateMixin {

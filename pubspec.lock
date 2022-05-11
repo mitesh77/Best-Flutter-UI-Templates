@@ -288,7 +288,7 @@ packages:
     source: hosted
     version: "2.0.2"
   vector_math:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: vector_math
       url: "https://pub.dartlang.org"

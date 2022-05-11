@@ -4,7 +4,7 @@ class HelpScreen extends StatefulWidget {
   const HelpScreen({Key? key}) : super(key: key);
 
   @override
-  _HelpScreenState createState() => _HelpScreenState();
+  State<HelpScreen> createState() => _HelpScreenState();
 }
 
 class _HelpScreenState extends State<HelpScreen> {

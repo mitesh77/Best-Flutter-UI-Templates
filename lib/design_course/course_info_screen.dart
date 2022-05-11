@@ -6,7 +6,7 @@ class CourseInfoScreen extends StatefulWidget {
   const CourseInfoScreen({Key? key}) : super(key: key);
 
   @override
-  _CourseInfoScreenState createState() => _CourseInfoScreenState();
+  State<CourseInfoScreen> createState() => _CourseInfoScreenState();
 }
 
 class _CourseInfoScreenState extends State<CourseInfoScreen>

@@ -13,6 +13,7 @@ dependencies:
   font_awesome_flutter: ^10.1.0
   intl: ^0.17.0
   url_launcher: ^6.1.2
+  vector_math: ^2.1.2
 
 dev_dependencies:
   flutter_launcher_icons: ^0.9.2

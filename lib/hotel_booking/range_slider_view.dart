@@ -11,7 +11,7 @@ class RangeSliderView extends StatefulWidget {
   final RangeValues values;
 
   @override
-  _RangeSliderViewState createState() => _RangeSliderViewState();
+  State<RangeSliderView> createState() => _RangeSliderViewState();
 }
 
 class _RangeSliderViewState extends State<RangeSliderView> {

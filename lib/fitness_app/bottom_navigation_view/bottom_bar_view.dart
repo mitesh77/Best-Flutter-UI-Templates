@@ -18,7 +18,7 @@ class BottomBarView extends StatefulWidget {
   final Function() addClick;
 
   @override
-  _BottomBarViewState createState() => _BottomBarViewState();
+  State<BottomBarView> createState() => _BottomBarViewState();
 }
 
 class _BottomBarViewState extends State<BottomBarView>
@@ -216,7 +216,7 @@ class TabIcons extends StatefulWidget {
   final Function() removeAllSelect;
 
   @override
-  _TabIconsState createState() => _TabIconsState();
+  State<TabIcons> createState() => _TabIconsState();
 }
 
 class _TabIconsState extends State<TabIcons> with TickerProviderStateMixin {

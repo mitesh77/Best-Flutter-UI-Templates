@@ -9,7 +9,7 @@ class CategoryListView extends StatefulWidget {
   final Function() callBack;
 
   @override
-  _CategoryListViewState createState() => _CategoryListViewState();
+  State<CategoryListView> createState() => _CategoryListViewState();
 }
 
 class _CategoryListViewState extends State<CategoryListView>

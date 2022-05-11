@@ -25,7 +25,7 @@ class CalendarPopupView extends StatefulWidget {
 
   final Function onCancelClick;
   @override
-  _CalendarPopupViewState createState() => _CalendarPopupViewState();
+  State<CalendarPopupView> createState() => _CalendarPopupViewState();
 }
 
 class _CalendarPopupViewState extends State<CalendarPopupView>
