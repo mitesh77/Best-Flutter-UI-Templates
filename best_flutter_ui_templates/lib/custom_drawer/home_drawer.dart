@@ -242,7 +242,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                       fontWeight: FontWeight.w500,
                       fontSize: 16,
                       color: widget.screenIndex == listData.index
-                          ? Colors.blue
+                          ? Colors.black
                           : AppTheme.nearlyBlack,
                     ),
                     textAlign: TextAlign.left,

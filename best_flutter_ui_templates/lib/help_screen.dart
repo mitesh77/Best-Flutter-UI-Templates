@@ -17,11 +17,12 @@ class _HelpScreenState extends State<HelpScreen> {
     var brightness = MediaQuery.of(context).platformBrightness;
     bool isLightMode = brightness == Brightness.light;
     return Container(
-      color: AppTheme.nearlyWhite,
+      color: isLightMode ? AppTheme.nearlyWhite : AppTheme.nearlyBlack,
       child: SafeArea(
         top: false,
         child: Scaffold(
-          backgroundColor: AppTheme.nearlyWhite,
+          backgroundColor:
+              isLightMode ? AppTheme.nearlyWhite : AppTheme.nearlyBlack,
           body: Column(
             children: <Widget>[
               Container(
@@ -36,19 +37,19 @@ class _HelpScreenState extends State<HelpScreen> {
                 child: Text(
                   'How can we help you?',
                   style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: isLightMode ? Colors.black : Colors.white),
                 ),
               ),
               Container(
                 padding: const EdgeInsets.only(top: 16),
-                child: const Text(
+                child: Text(
                   'It looks like you are experiencing problems\nwith our sign up process. We are here to\nhelp so please get in touch with us',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 16,
-                  ),
+                      fontSize: 16,
+                      color: isLightMode ? Colors.black : Colors.white),
                 ),
               ),
               Expanded(
@@ -59,7 +60,7 @@ class _HelpScreenState extends State<HelpScreen> {
                       width: 140,
                       height: 40,
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: isLightMode ? Colors.blue : Colors.white,
                         borderRadius:
                             const BorderRadius.all(Radius.circular(4.0)),
                         boxShadow: <BoxShadow>[
@@ -80,7 +81,8 @@ class _HelpScreenState extends State<HelpScreen> {
                                 'Chat with Us',
                                 style: TextStyle(
                                   fontWeight: FontWeight.w500,
-                                  color: Colors.white,
+                                  color:
+                                      isLightMode ? Colors.white : Colors.black,
                                 ),
                               ),
                             ),
