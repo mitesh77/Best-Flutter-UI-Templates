@@ -66,7 +66,7 @@ class _DrawerUserControllerState extends State<DrawerUserController> with Ticker
           iconAnimationController?.animateTo(1.0, duration: const Duration(milliseconds: 0), curve: Curves.fastOutSlowIn);
         }
       });
-    WidgetsBinding.instance?.addPostFrameCallback((_) => getInitState());
+    WidgetsBinding.instance.addPostFrameCallback((_) => getInitState());
     super.initState();
   }
 
