@@ -14,12 +14,15 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = MediaQuery.of(context).platformBrightness;
+    bool isLightMode = brightness == Brightness.light;
     return Container(
-      color: AppTheme.nearlyWhite,
+      color: isLightMode ? AppTheme.nearlyWhite : AppTheme.nearlyBlack,
       child: SafeArea(
         top: false,
         child: Scaffold(
-          backgroundColor: AppTheme.nearlyWhite,
+          backgroundColor:
+              isLightMode ? AppTheme.nearlyWhite : AppTheme.nearlyBlack,
           body: SingleChildScrollView(
             child: SizedBox(
               height: MediaQuery.of(context).size.height,
@@ -37,19 +40,19 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                     child: Text(
                       'Your FeedBack',
                       style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: isLightMode ? Colors.black : Colors.white),
                     ),
                   ),
                   Container(
                     padding: const EdgeInsets.only(top: 16),
-                    child: const Text(
+                    child: Text(
                       'Give your best time for this moment.',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 16,
-                      ),
+                          fontSize: 16,
+                          color: isLightMode ? Colors.black : Colors.white),
                     ),
                   ),
                   _buildComposer(),
@@ -60,7 +63,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                         width: 120,
                         height: 40,
                         decoration: BoxDecoration(
-                          color: Colors.blue,
+                          color: isLightMode ? Colors.blue : Colors.white,
                           borderRadius:
                               const BorderRadius.all(Radius.circular(4.0)),
                           boxShadow: <BoxShadow>[
@@ -83,7 +86,9 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                                   'Send',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
-                                    color: Colors.white,
+                                    color: isLightMode
+                                        ? Colors.white
+                                        : Colors.black,
                                   ),
                                 ),
                               ),
