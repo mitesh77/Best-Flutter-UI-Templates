@@ -16,12 +16,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
-    - uses: subosito/flutter-action@v1
+    - uses: subosito/flutter-action@v2
       with:
-        channel: ${{ env.flutter_channel }}
-        flutter-version: ${{ env.flutter_version }}
+        channel: 'stable' # or: 'beta', 'dev' or 'master'
 
     - uses: actions/setup-java@v1
       with:
