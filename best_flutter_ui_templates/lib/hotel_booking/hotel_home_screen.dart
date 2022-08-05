@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:best_flutter_ui_templates/hotel_booking/calendar_popup_view.dart';
 import 'package:best_flutter_ui_templates/hotel_booking/hotel_list_view.dart';
 import 'package:best_flutter_ui_templates/hotel_booking/model/hotel_list_data.dart';
@@ -383,7 +382,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: Icon(FontAwesomeIcons.search,
+                  child: Icon(FontAwesomeIcons.magnifyingGlass,
                       size: 20,
                       color: HotelAppTheme.buildLightTheme().backgroundColor),
                 ),
@@ -587,7 +586,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                       onTap: () {},
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Icon(FontAwesomeIcons.mapMarkerAlt),
+                        child: Icon(FontAwesomeIcons.locationDot),
                       ),
                     ),
                   ),
