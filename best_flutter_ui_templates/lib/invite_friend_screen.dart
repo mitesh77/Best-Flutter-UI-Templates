@@ -14,12 +14,14 @@ class _InviteFriendState extends State<InviteFriend> {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = MediaQuery.of(context).platformBrightness;
+    bool isLightMode = brightness == Brightness.light;
     return Container(
-      color: AppTheme.nearlyWhite,
+      color: isLightMode ? AppTheme.white : AppTheme.nearlyBlack,
       child: SafeArea(
         top: false,
         child: Scaffold(
-          backgroundColor: AppTheme.nearlyWhite,
+          backgroundColor: isLightMode ? AppTheme.white : AppTheme.nearlyBlack,
           body: Column(
             children: <Widget>[
               Container(
@@ -36,16 +38,18 @@ class _InviteFriendState extends State<InviteFriend> {
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
+                    color: isLightMode ? Colors.black : Colors.white,
                   ),
                 ),
               ),
               Container(
                 padding: const EdgeInsets.only(top: 16),
-                child: const Text(
+                child: Text(
                   'Are you one of those who makes everything\n at the last moment?',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16,
+                    color: isLightMode ? Colors.black : Colors.white,
                   ),
                 ),
               ),
@@ -57,7 +61,7 @@ class _InviteFriendState extends State<InviteFriend> {
                       width: 120,
                       height: 40,
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: isLightMode ? Colors.blue : Colors.white,
                         borderRadius:
                             const BorderRadius.all(Radius.circular(4.0)),
                         boxShadow: <BoxShadow>[
@@ -81,7 +85,8 @@ class _InviteFriendState extends State<InviteFriend> {
                               children: <Widget>[
                                 Icon(
                                   Icons.share,
-                                  color: Colors.white,
+                                  color:
+                                      isLightMode ? Colors.white : Colors.black,
                                   size: 22,
                                 ),
                                 Padding(
@@ -90,7 +95,9 @@ class _InviteFriendState extends State<InviteFriend> {
                                     'Share',
                                     style: TextStyle(
                                       fontWeight: FontWeight.w500,
-                                      color: Colors.white,
+                                      color: isLightMode
+                                          ? Colors.white
+                                          : Colors.black,
                                     ),
                                   ),
                                 ),
