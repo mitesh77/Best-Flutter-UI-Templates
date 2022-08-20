@@ -6,7 +6,10 @@ import 'package:vector_math/vector_math.dart' as vector;
 import '../fitness_app_theme.dart';
 
 class WaveView extends StatefulWidget {
-  const WaveView({Key? key, this.percentageValue = 100.0}) : super(key: key);
+  const WaveView({
+    super.key,
+    this.percentageValue = 100.0,
+  });
 
   final double percentageValue;
 

@@ -9,8 +9,10 @@ import 'meals_list_view.dart';
 import 'water_view.dart';
 
 class MyDiaryScreen extends StatefulWidget {
-  const MyDiaryScreen({required this.animationController, Key? key})
-      : super(key: key);
+  const MyDiaryScreen({
+    required this.animationController,
+    super.key,
+  });
 
   final AnimationController animationController;
 

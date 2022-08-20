@@ -4,16 +4,16 @@ import '../app_theme.dart';
 import '../custom_drawer/home_drawer.dart';
 
 class DrawerUserController extends StatefulWidget {
-  const DrawerUserController(
-      {required this.onDrawerCall,
-      required this.screenView,
-      this.menuView,
-      this.drawerIsOpen,
-      this.animatedIconData = AnimatedIcons.arrow_menu,
-      this.drawerWidth = 250,
-      this.screenIndex = DrawerIndex.home,
-      Key? key})
-      : super(key: key);
+  const DrawerUserController({
+    required this.onDrawerCall,
+    required this.screenView,
+    this.menuView,
+    this.drawerIsOpen,
+    this.animatedIconData = AnimatedIcons.arrow_menu,
+    this.drawerWidth = 250,
+    this.screenIndex = DrawerIndex.home,
+    super.key,
+  });
 
   final double drawerWidth;
   final Function(DrawerIndex) onDrawerCall;

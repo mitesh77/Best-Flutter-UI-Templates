@@ -4,7 +4,7 @@ import 'app_theme.dart';
 import 'model/homelist.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -158,13 +158,13 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 }
 
 class HomeListView extends StatelessWidget {
-  const HomeListView(
-      {required this.listData,
-      required this.callBack,
-      required this.animationController,
-      required this.animation,
-      Key? key})
-      : super(key: key);
+  const HomeListView({
+    required this.listData,
+    required this.callBack,
+    required this.animationController,
+    required this.animation,
+    super.key,
+  });
 
   final HomeList listData;
   final VoidCallback callBack;

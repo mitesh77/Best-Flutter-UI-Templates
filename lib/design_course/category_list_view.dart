@@ -4,7 +4,7 @@ import 'design_course_app_theme.dart';
 import 'models/category.dart';
 
 class CategoryListView extends StatefulWidget {
-  const CategoryListView({required this.callBack, Key? key}) : super(key: key);
+  const CategoryListView({required this.callBack, super.key});
 
   final Function() callBack;
 
@@ -81,13 +81,13 @@ class _CategoryListViewState extends State<CategoryListView>
 }
 
 class CategoryView extends StatelessWidget {
-  const CategoryView(
-      {required this.category,
-      required this.animationController,
-      required this.animation,
-      required this.callback,
-      Key? key})
-      : super(key: key);
+  const CategoryView({
+    required this.category,
+    required this.animationController,
+    required this.animation,
+    required this.callback,
+    super.key,
+  });
 
   final VoidCallback callback;
   final Category category;

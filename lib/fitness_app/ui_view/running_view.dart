@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import '../fitness_app_theme.dart';
 
 class RunningView extends StatelessWidget {
-  const RunningView(
-      {required this.animationController, required this.animation, Key? key})
-      : super(key: key);
+  const RunningView({
+    required this.animationController,
+    required this.animation,
+    super.key,
+  });
 
   final AnimationController animationController;
   final Animation<double> animation;

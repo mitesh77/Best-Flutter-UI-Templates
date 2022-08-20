@@ -4,11 +4,11 @@ import '../fitness_app_theme.dart';
 import '../models/meals_list_data.dart';
 
 class MealsListView extends StatefulWidget {
-  const MealsListView(
-      {required this.mainScreenAnimationController,
-      required this.mainScreenAnimation,
-      Key? key})
-      : super(key: key);
+  const MealsListView({
+    required this.mainScreenAnimationController,
+    required this.mainScreenAnimation,
+    super.key,
+  });
 
   final AnimationController mainScreenAnimationController;
   final Animation<double> mainScreenAnimation;
@@ -84,12 +84,12 @@ class _MealsListViewState extends State<MealsListView>
 }
 
 class MealsView extends StatelessWidget {
-  const MealsView(
-      {required this.mealsListData,
-      required this.animationController,
-      required this.animation,
-      Key? key})
-      : super(key: key);
+  const MealsView({
+    required this.mealsListData,
+    required this.animationController,
+    required this.animation,
+    super.key,
+  });
 
   final MealsListData mealsListData;
   final AnimationController animationController;

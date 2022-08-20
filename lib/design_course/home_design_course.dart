@@ -6,7 +6,7 @@ import 'design_course_app_theme.dart';
 import 'popular_course_list_view.dart';
 
 class DesignCourseHomeScreen extends StatefulWidget {
-  const DesignCourseHomeScreen({Key? key}) : super(key: key);
+  const DesignCourseHomeScreen({super.key});
 
   @override
   State<DesignCourseHomeScreen> createState() => _DesignCourseHomeScreenState();

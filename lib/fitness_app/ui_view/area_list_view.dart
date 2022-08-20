@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import '../fitness_app_theme.dart';
 
 class AreaListView extends StatefulWidget {
-  const AreaListView(
-      {required this.mainScreenAnimationController,
-      required this.mainScreenAnimation,
-      Key? key})
-      : super(key: key);
+  const AreaListView({
+    required this.mainScreenAnimationController,
+    required this.mainScreenAnimation,
+    super.key,
+  });
 
   final AnimationController mainScreenAnimationController;
   final Animation<double> mainScreenAnimation;
@@ -92,12 +92,12 @@ class _AreaListViewState extends State<AreaListView>
 }
 
 class AreaView extends StatelessWidget {
-  const AreaView(
-      {required this.imagepath,
-      required this.animationController,
-      required this.animation,
-      Key? key})
-      : super(key: key);
+  const AreaView({
+    required this.imagepath,
+    required this.animationController,
+    required this.animation,
+    super.key,
+  });
 
   final String imagepath;
   final AnimationController animationController;

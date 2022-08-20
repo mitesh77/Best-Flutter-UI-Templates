@@ -4,14 +4,14 @@ import 'package:intl/intl.dart';
 import 'hotel_app_theme.dart';
 
 class CustomCalendarView extends StatefulWidget {
-  const CustomCalendarView(
-      {required this.initialStartDate,
-      required this.initialEndDate,
-      required this.startEndDateChange,
-      this.minimumDate,
-      this.maximumDate,
-      Key? key})
-      : super(key: key);
+  const CustomCalendarView({
+    required this.initialStartDate,
+    required this.initialEndDate,
+    required this.startEndDateChange,
+    this.minimumDate,
+    this.maximumDate,
+    super.key,
+  });
 
   final DateTime? minimumDate;
   final DateTime? maximumDate;

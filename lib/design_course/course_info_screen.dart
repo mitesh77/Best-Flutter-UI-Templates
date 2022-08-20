@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'design_course_app_theme.dart';
 
 class CourseInfoScreen extends StatefulWidget {
-  const CourseInfoScreen({Key? key}) : super(key: key);
+  const CourseInfoScreen({super.key});
 
   @override
   State<CourseInfoScreen> createState() => _CourseInfoScreenState();

@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import '../fitness_app_theme.dart';
 
 class GlassView extends StatelessWidget {
-  const GlassView(
-      {required this.animationController, required this.animation, Key? key})
-      : super(key: key);
+  const GlassView({
+    required this.animationController,
+    required this.animation,
+    super.key,
+  });
 
   final AnimationController animationController;
   final Animation<double> animation;

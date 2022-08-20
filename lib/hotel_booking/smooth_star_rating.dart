@@ -22,20 +22,20 @@ import 'package:flutter/material.dart';
 typedef RatingChangeCallback = void Function(double rating);
 
 class SmoothStarRating extends StatelessWidget {
-  const SmoothStarRating(
-      {required this.onRatingChanged,
-      this.starCount = 5,
-      this.spacing = 0.0,
-      this.rating = 0.0,
-      this.defaultIconData = Icons.star_border,
-      this.color,
-      this.borderColor,
-      this.size = 25,
-      this.filledIconData = Icons.star,
-      this.halfFilledIconData = Icons.star_half,
-      this.allowHalfRating = true,
-      Key? key})
-      : super(key: key);
+  const SmoothStarRating({
+    required this.onRatingChanged,
+    this.starCount = 5,
+    this.spacing = 0.0,
+    this.rating = 0.0,
+    this.defaultIconData = Icons.star_border,
+    this.color,
+    this.borderColor,
+    this.size = 25,
+    this.filledIconData = Icons.star,
+    this.halfFilledIconData = Icons.star_half,
+    this.allowHalfRating = true,
+    super.key,
+  });
 
   final int starCount;
   final double rating;

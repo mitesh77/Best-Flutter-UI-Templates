@@ -6,13 +6,13 @@ import 'model/hotel_list_data.dart';
 import 'smooth_star_rating.dart';
 
 class HotelListView extends StatelessWidget {
-  const HotelListView(
-      {required this.hotelData,
-      required this.animationController,
-      required this.animation,
-      required this.callback,
-      Key? key})
-      : super(key: key);
+  const HotelListView({
+    required this.hotelData,
+    required this.animationController,
+    required this.animation,
+    required this.callback,
+    super.key,
+  });
 
   final VoidCallback callback;
   final HotelListData hotelData;

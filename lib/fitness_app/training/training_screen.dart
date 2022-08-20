@@ -7,8 +7,10 @@ import '../ui_view/title_view.dart';
 import '../ui_view/workout_view.dart';
 
 class TrainingScreen extends StatefulWidget {
-  const TrainingScreen({required this.animationController, Key? key})
-      : super(key: key);
+  const TrainingScreen({
+    required this.animationController,
+    super.key,
+  });
 
   final AnimationController animationController;
 

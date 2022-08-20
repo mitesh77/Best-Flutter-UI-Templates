@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import '../app_theme.dart';
 
 class HomeDrawer extends StatefulWidget {
-  const HomeDrawer(
-      {required this.screenIndex,
-      required this.iconAnimationController,
-      required this.callBackIndex,
-      Key? key})
-      : super(key: key);
+  const HomeDrawer({
+    required this.screenIndex,
+    required this.iconAnimationController,
+    required this.callBackIndex,
+    super.key,
+  });
 
   final AnimationController iconAnimationController;
   final DrawerIndex screenIndex;

@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import '../fitness_app_theme.dart';
 
 class TitleView extends StatelessWidget {
-  const TitleView(
-      {required this.animationController,
-      required this.animation,
-      this.titleTxt = '',
-      this.subTxt = '',
-      Key? key})
-      : super(key: key);
+  const TitleView({
+    required this.animationController,
+    required this.animation,
+    this.titleTxt = '',
+    this.subTxt = '',
+    super.key,
+  });
 
   final String titleTxt;
   final String subTxt;

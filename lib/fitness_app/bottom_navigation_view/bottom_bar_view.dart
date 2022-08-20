@@ -6,12 +6,12 @@ import '../fitness_app_theme.dart';
 import '../models/tab_icon_data.dart';
 
 class BottomBarView extends StatefulWidget {
-  const BottomBarView(
-      {required this.tabIconsList,
-      required this.changeIndex,
-      required this.addClick,
-      Key? key})
-      : super(key: key);
+  const BottomBarView({
+    required this.tabIconsList,
+    required this.changeIndex,
+    required this.addClick,
+    super.key,
+  });
 
   final List<TabIconData> tabIconsList;
   final Function(int index) changeIndex;
@@ -208,9 +208,11 @@ class _BottomBarViewState extends State<BottomBarView>
 }
 
 class TabIcons extends StatefulWidget {
-  const TabIcons(
-      {required this.tabIconData, required this.removeAllSelect, Key? key})
-      : super(key: key);
+  const TabIcons({
+    required this.tabIconData,
+    required this.removeAllSelect,
+    super.key,
+  });
 
   final TabIconData tabIconData;
   final Function() removeAllSelect;

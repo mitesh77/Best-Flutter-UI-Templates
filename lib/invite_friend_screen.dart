@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class InviteFriend extends StatefulWidget {
-  const InviteFriend({Key? key}) : super(key: key);
+  const InviteFriend({super.key});
 
   @override
   State<InviteFriend> createState() => _InviteFriendState();

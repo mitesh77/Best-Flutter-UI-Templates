@@ -5,16 +5,16 @@ import 'custom_calendar.dart';
 import 'hotel_app_theme.dart';
 
 class CalendarPopupView extends StatefulWidget {
-  const CalendarPopupView(
-      {required this.initialStartDate,
-      required this.initialEndDate,
-      required this.onApplyClick,
-      required this.onCancelClick,
-      this.minimumDate,
-      this.maximumDate,
-      this.barrierDismissible = true,
-      Key? key})
-      : super(key: key);
+  const CalendarPopupView({
+    required this.initialStartDate,
+    required this.initialEndDate,
+    required this.onApplyClick,
+    required this.onCancelClick,
+    this.minimumDate,
+    this.maximumDate,
+    this.barrierDismissible = true,
+    super.key,
+  });
 
   final DateTime? minimumDate;
   final DateTime? maximumDate;

@@ -9,7 +9,7 @@ import 'home_screen.dart';
 import 'invite_friend_screen.dart';
 
 class NavigationHomeScreen extends StatefulWidget {
-  const NavigationHomeScreen({Key? key}) : super(key: key);
+  const NavigationHomeScreen({super.key});
 
   @override
   State<NavigationHomeScreen> createState() => _NavigationHomeScreenState();

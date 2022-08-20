@@ -4,11 +4,11 @@ import '../fitness_app_theme.dart';
 import '../ui_view/wave_view.dart';
 
 class WaterView extends StatefulWidget {
-  const WaterView(
-      {required this.mainScreenAnimationController,
-      required this.mainScreenAnimation,
-      Key? key})
-      : super(key: key);
+  const WaterView({
+    required this.mainScreenAnimationController,
+    required this.mainScreenAnimation,
+    super.key,
+  });
 
   final AnimationController mainScreenAnimationController;
   final Animation<double> mainScreenAnimation;

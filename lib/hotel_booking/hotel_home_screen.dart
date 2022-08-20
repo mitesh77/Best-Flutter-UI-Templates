@@ -9,7 +9,7 @@ import 'hotel_list_view.dart';
 import 'model/hotel_list_data.dart';
 
 class HotelHomeScreen extends StatefulWidget {
-  const HotelHomeScreen({Key? key}) : super(key: key);
+  const HotelHomeScreen({super.key});
 
   @override
   State<HotelHomeScreen> createState() => _HotelHomeScreenState();
