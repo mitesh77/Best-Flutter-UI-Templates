@@ -1,4 +1,4 @@
-# Best-Flutter-UI-Templates
+# Flutter Templates
 Completely free for everyone.
 Built with Flutter.
 
