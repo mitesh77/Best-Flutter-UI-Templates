@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.flutter_templates">
+    package="com.example.templates">
 
    <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -12,7 +12,7 @@
    </queries>
 
    <application
-        android:label="flutter_templates"
+        android:label="Templates"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
-project(best_flutter_ui_templates LANGUAGES CXX)
+project(templates LANGUAGES CXX)
 
-set(BINARY_NAME "best_flutter_ui_templates")
+set(BINARY_NAME "templates")
 
 cmake_policy(SET CMP0063 NEW)
 
