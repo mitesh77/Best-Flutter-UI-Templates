@@ -8,7 +8,7 @@ on:
 
 jobs:
   check_pub_dependencies:
-    name: "Check pub dependencies"
+    name: "Check dependencies"
     timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
