@@ -1,0 +1,86 @@
+name: flutter_checks
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  check_pub_dependencies:
+    name: "Check pub dependencies"
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout repository"
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: "Install Flutter"
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+      - name: "Disable analytics"
+        run: flutter config --no-analytics
+      - name: "Flutter pub get"
+        run: flutter pub get
+
+  check_formatting:
+    name: "Check formatting"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: "Checkout repository"
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: "Install Flutter"
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+      - name: "Disable analytics"
+        run: flutter config --no-analytics
+      - name: "Flutter pub get"
+        run: flutter pub get
+      - name: "Check Flutter formatting"
+        run: flutter format --line-length 80 --set-exit-if-changed .
+
+  analyze:
+    name: "Dart analyze"
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout repository"
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: "Install Flutter"
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+      - name: "Disable analytics"
+        run: flutter config --no-analytics
+      - name: "Flutter pub get"
+        run: flutter pub get
+      - name: "Run Dart analyze"
+        uses: invertase/github-action-dart-analyzer@v1
+
+  test:
+    name: "Flutter test"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: "Checkout repository"
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: "Install Flutter"
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+      - name: "Disable analytics"
+        run: flutter config --no-analytics
+      - name: "Flutter pub get"
+        run: flutter pub get
+      - name: "Flutter Test"
+        run: flutter test
