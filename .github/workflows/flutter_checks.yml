@@ -1,4 +1,4 @@
-name: flutter_checks
+name: Flutter checks
 
 on:
   pull_request:
