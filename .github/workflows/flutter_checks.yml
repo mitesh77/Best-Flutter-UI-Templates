@@ -82,5 +82,5 @@ jobs:
         run: flutter config --no-analytics
       - name: Flutter pub get
         run: flutter pub get
-      - name: Flutter Test
+      - name: Flutter test
         run: flutter test
