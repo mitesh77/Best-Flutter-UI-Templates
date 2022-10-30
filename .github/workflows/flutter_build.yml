@@ -1,0 +1,31 @@
+name: Flutter build
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_android:
+    name: Build for Android
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: '17'
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+      - name: Disable analytics
+        run: flutter config --no-analytics
+      - name: Flutter pub get
+        run: flutter pub get
+      - name: Flutter build appbundle
+        run: |
+          cd example
+          flutter build appbundle --release
