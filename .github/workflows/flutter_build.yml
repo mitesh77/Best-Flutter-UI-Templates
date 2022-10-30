@@ -26,6 +26,4 @@ jobs:
       - name: Flutter pub get
         run: flutter pub get
       - name: Flutter build appbundle
-        run: |
-          cd example
-          flutter build appbundle --release
+        run: flutter build appbundle --release
