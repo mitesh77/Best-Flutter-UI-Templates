@@ -59,6 +59,7 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+    namespace 'com.example.best_flutter_ui_templates'
 }
 
 flutter {
