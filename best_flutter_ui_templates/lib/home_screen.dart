@@ -38,14 +38,14 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     bool isLightMode = brightness == Brightness.light;
     return Scaffold(
       backgroundColor:
-          isLightMode == true ? AppTheme.white : AppTheme.nearlyBlack,
+          isLightMode == true ? AppTheme.white : Color.fromARGB(255, 158, 112, 162),
       body: FutureBuilder<bool>(
         future: getData(),
         builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
           if (!snapshot.hasData) {
             return const SizedBox();
           } else {
-            return Padding(
+            return Padding(   
               padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -135,7 +135,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               child: Padding(
                 padding: const EdgeInsets.only(top: 4),
                 child: Text(
-                  'Flutter UI',
+                  'Femme',
                   style: TextStyle(
                     fontSize: 22,
                     color: isLightMode ? AppTheme.darkText : AppTheme.white,
