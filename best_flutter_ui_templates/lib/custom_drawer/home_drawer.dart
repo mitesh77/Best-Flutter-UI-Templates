@@ -28,34 +28,29 @@ class _HomeDrawerState extends State<HomeDrawer> {
   void setDrawerListArray() {
     drawerList = <DrawerList>[
       DrawerList(
-        index: DrawerIndex.HOME,
-        labelName: 'Home',
-        icon: Icon(Icons.home),
-      ),
-      DrawerList(
-        index: DrawerIndex.Help,
-        labelName: 'Help',
+        index: DrawerIndex.Inicio,
+        labelName: 'Inicio',
         isAssetsImage: true,
-        imageName: 'assets/images/supportIcon.png',
+        imageName: 'assets/images/logo.png',
       ),
       DrawerList(
-        index: DrawerIndex.FeedBack,
-        labelName: 'FeedBack',
-        icon: Icon(Icons.help),
+        index: DrawerIndex.Contactos,
+        labelName: 'Contactos',
+        icon: Icon(Icons.account_circle_rounded),
       ),
       DrawerList(
-        index: DrawerIndex.Invite,
-        labelName: 'Invite Friend',
-        icon: Icon(Icons.group),
+        index: DrawerIndex.Donar,
+        labelName: 'Donar',
+        icon: Icon(Icons.favorite_sharp),
       ),
       DrawerList(
-        index: DrawerIndex.Share,
-        labelName: 'Rate the app',
+        index: DrawerIndex.Calificar,
+        labelName: 'Calificanos',
         icon: Icon(Icons.share),
       ),
       DrawerList(
-        index: DrawerIndex.About,
-        labelName: 'About Us',
+        index: DrawerIndex.Sobre,
+        labelName: 'Sobra nosotros',
         icon: Icon(Icons.info),
       ),
     ];
@@ -119,7 +114,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                   Padding(
                     padding: const EdgeInsets.only(top: 8, left: 4),
                     child: Text(
-                      'Chris Hemsworth',
+                      'Laura Aguilera',
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         color: isLightMode ? AppTheme.grey : AppTheme.white,
@@ -205,17 +200,6 @@ class _HomeDrawerState extends State<HomeDrawer> {
                   Container(
                     width: 6.0,
                     height: 46.0,
-                    // decoration: BoxDecoration(
-                    //   color: widget.screenIndex == listData.index
-                    //       ? Colors.blue
-                    //       : Colors.transparent,
-                    //   borderRadius: new BorderRadius.only(
-                    //     topLeft: Radius.circular(0),
-                    //     topRight: Radius.circular(16),
-                    //     bottomLeft: Radius.circular(0),
-                    //     bottomRight: Radius.circular(16),
-                    //   ),
-                    // ),
                   ),
                   const Padding(
                     padding: EdgeInsets.all(4.0),
@@ -295,13 +279,11 @@ class _HomeDrawerState extends State<HomeDrawer> {
 }
 
 enum DrawerIndex {
-  HOME,
-  FeedBack,
-  Help,
-  Share,
-  About,
-  Invite,
-  Testing,
+  Inicio,
+  Contactos,
+  Donar,
+  Calificar,
+  Sobre,
 }
 
 class DrawerList {

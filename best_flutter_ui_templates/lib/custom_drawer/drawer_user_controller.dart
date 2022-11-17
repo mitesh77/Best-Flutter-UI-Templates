@@ -120,7 +120,7 @@ class _DrawerUserControllerState extends State<DrawerUserController>
                           scrollController!.offset, 0.0, 0.0),
                       child: HomeDrawer(
                         screenIndex: widget.screenIndex == null
-                            ? DrawerIndex.HOME
+                            ? DrawerIndex.Inicio
                             : widget.screenIndex,
                         iconAnimationController: iconAnimationController,
                         callBackIndex: (DrawerIndex indexType) {

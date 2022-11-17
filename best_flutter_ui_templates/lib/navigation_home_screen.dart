@@ -18,7 +18,7 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
 
   @override
   void initState() {
-    drawerIndex = DrawerIndex.HOME;
+    drawerIndex = DrawerIndex.Inicio;
     screenView = const MyHomePage();
     super.initState();
   }
@@ -51,26 +51,31 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
     if (drawerIndex != drawerIndexdata) {
       drawerIndex = drawerIndexdata;
       switch (drawerIndex) {
-        case DrawerIndex.HOME:
+        case DrawerIndex.Inicio:
           setState(() {
             screenView = const MyHomePage();
           });
           break;
-        case DrawerIndex.Help:
+        case DrawerIndex.Contactos:
           setState(() {
             screenView = HelpScreen();
           });
           break;
-        case DrawerIndex.FeedBack:
-          setState(() {
-            screenView = FeedbackScreen();
-          });
-          break;
-        case DrawerIndex.Invite:
+        case DrawerIndex.Donar:
           setState(() {
             screenView = InviteFriend();
           });
           break;
+        case DrawerIndex.Calificar:
+          setState(() {
+            screenView = InviteFriend();
+          });
+          break;
+        //case DrawerIndex.Sobre:
+        //setState(() {
+        //screenView = FeedbackScreen();
+        //});
+        //break;
         default:
           break;
       }
