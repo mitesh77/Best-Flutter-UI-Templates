@@ -1,10 +1,11 @@
 import 'package:best_flutter_ui_templates/app_theme.dart';
 import 'package:best_flutter_ui_templates/custom_drawer/drawer_user_controller.dart';
 import 'package:best_flutter_ui_templates/custom_drawer/home_drawer.dart';
-import 'package:best_flutter_ui_templates/feedback_screen.dart';
-import 'package:best_flutter_ui_templates/help_screen.dart';
+import 'package:best_flutter_ui_templates/rate_screen.dart';
+import 'package:best_flutter_ui_templates/contact_screen.dart';
 import 'package:best_flutter_ui_templates/home_screen.dart';
-import 'package:best_flutter_ui_templates/invite_friend_screen.dart';
+import 'package:best_flutter_ui_templates/contribution_screen.dart';
+import 'package:best_flutter_ui_templates/about_screen.dart';
 import 'package:flutter/material.dart';
 
 class NavigationHomeScreen extends StatefulWidget {
@@ -40,7 +41,7 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
               //callback from drawer for replace screen as user need with passing DrawerIndex(Enum index)
             },
             screenView: screenView,
-            //we replace screen view as we need on navigate starting screens like MyHomePage, HelpScreen, FeedbackScreen, etc...
+            //we replace screen view as we need on navigate starting screens like MyHomePage, ContactScreen, AboutScreen, etc...
           ),
         ),
       ),
@@ -58,24 +59,24 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
           break;
         case DrawerIndex.Contactos:
           setState(() {
-            screenView = HelpScreen();
+            screenView = ContactScreen();
           });
           break;
         case DrawerIndex.Donar:
           setState(() {
-            screenView = InviteFriend();
+            screenView = ContributionScreen();
           });
           break;
         case DrawerIndex.Calificar:
           setState(() {
-            screenView = InviteFriend();
+            screenView = RateScreen();
           });
           break;
-        //case DrawerIndex.Sobre:
-        //setState(() {
-        //screenView = FeedbackScreen();
-        //});
-        //break;
+        case DrawerIndex.Sobre:
+          setState(() {
+            screenView = AboutScreen();
+          });
+          break;
         default:
           break;
       }

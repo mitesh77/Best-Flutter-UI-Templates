@@ -1,12 +1,12 @@
 import 'package:best_flutter_ui_templates/app_theme.dart';
 import 'package:flutter/material.dart';
 
-class HelpScreen extends StatefulWidget {
+class ContributionScreen extends StatefulWidget {
   @override
-  _HelpScreenState createState() => _HelpScreenState();
+  _ContributionScreenState createState() => _ContributionScreenState();
 }
 
-class _HelpScreenState extends State<HelpScreen> {
+class _ContributionScreenState extends State<ContributionScreen> {
   @override
   void initState() {
     super.initState();
@@ -17,12 +17,11 @@ class _HelpScreenState extends State<HelpScreen> {
     var brightness = MediaQuery.of(context).platformBrightness;
     bool isLightMode = brightness == Brightness.light;
     return Container(
-      color: isLightMode ? AppTheme.nearlyWhite : AppTheme.nearlyBlack,
+      color: isLightMode ? AppTheme.white : AppTheme.nearlyBlack,
       child: SafeArea(
         top: false,
         child: Scaffold(
-          backgroundColor:
-              isLightMode ? AppTheme.nearlyWhite : AppTheme.nearlyBlack,
+          backgroundColor: isLightMode ? AppTheme.white : AppTheme.nearlyBlack,
           body: Column(
             children: <Widget>[
               Container(
@@ -30,26 +29,28 @@ class _HelpScreenState extends State<HelpScreen> {
                     top: MediaQuery.of(context).padding.top,
                     left: 16,
                     right: 16),
-                child: Image.asset('assets/images/helpImage.png'),
+                child: Image.asset('assets/images/inviteImage.png'),
               ),
               Container(
                 padding: const EdgeInsets.only(top: 8),
                 child: Text(
-                  'How can we help you?',
+                  'Invite Your Friends',
                   style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: isLightMode ? Colors.black : Colors.white),
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: isLightMode ? Colors.black : Colors.white,
+                  ),
                 ),
               ),
               Container(
                 padding: const EdgeInsets.only(top: 16),
                 child: Text(
-                  'It looks like you are experiencing problems\nwith our sign up process. We are here to\nhelp so please get in touch with us',
+                  'Are you one of those who makes everything\n at the last moment?',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      fontSize: 16,
-                      color: isLightMode ? Colors.black : Colors.white),
+                    fontSize: 16,
+                    color: isLightMode ? Colors.black : Colors.white,
+                  ),
                 ),
               ),
               Expanded(
@@ -57,7 +58,7 @@ class _HelpScreenState extends State<HelpScreen> {
                   padding: const EdgeInsets.all(8.0),
                   child: Center(
                     child: Container(
-                      width: 140,
+                      width: 120,
                       height: 40,
                       decoration: BoxDecoration(
                         color: isLightMode ? Colors.blue : Colors.white,
@@ -73,18 +74,34 @@ class _HelpScreenState extends State<HelpScreen> {
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            //method here for functionality
+                            print('Share Action.');
+                          },
                           child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(4.0),
-                              child: Text(
-                                'Chat with Us',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w500,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(
+                                  Icons.share,
                                   color:
                                       isLightMode ? Colors.white : Colors.black,
+                                  size: 22,
                                 ),
-                              ),
+                                Padding(
+                                  padding: const EdgeInsets.all(4.0),
+                                  child: Text(
+                                    'Share',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      color: isLightMode
+                                          ? Colors.white
+                                          : Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ),

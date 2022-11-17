@@ -1,12 +1,12 @@
 import 'package:best_flutter_ui_templates/app_theme.dart';
 import 'package:flutter/material.dart';
 
-class FeedbackScreen extends StatefulWidget {
+class AboutScreen extends StatefulWidget {
   @override
-  _FeedbackScreenState createState() => _FeedbackScreenState();
+  _AboutScreenState createState() => _AboutScreenState();
 }
 
-class _FeedbackScreenState extends State<FeedbackScreen> {
+class _AboutScreenState extends State<AboutScreen> {
   @override
   void initState() {
     super.initState();

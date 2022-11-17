@@ -1,12 +1,12 @@
 import 'package:best_flutter_ui_templates/app_theme.dart';
 import 'package:flutter/material.dart';
 
-class InviteFriend extends StatefulWidget {
+class ContactScreen extends StatefulWidget {
   @override
-  _InviteFriendState createState() => _InviteFriendState();
+  _ContactScreenState createState() => _ContactScreenState();
 }
 
-class _InviteFriendState extends State<InviteFriend> {
+class _ContactScreenState extends State<ContactScreen> {
   @override
   void initState() {
     super.initState();
@@ -17,11 +17,12 @@ class _InviteFriendState extends State<InviteFriend> {
     var brightness = MediaQuery.of(context).platformBrightness;
     bool isLightMode = brightness == Brightness.light;
     return Container(
-      color: isLightMode ? AppTheme.white : AppTheme.nearlyBlack,
+      color: isLightMode ? AppTheme.nearlyWhite : AppTheme.nearlyBlack,
       child: SafeArea(
         top: false,
         child: Scaffold(
-          backgroundColor: isLightMode ? AppTheme.white : AppTheme.nearlyBlack,
+          backgroundColor:
+              isLightMode ? AppTheme.nearlyWhite : AppTheme.nearlyBlack,
           body: Column(
             children: <Widget>[
               Container(
@@ -29,28 +30,26 @@ class _InviteFriendState extends State<InviteFriend> {
                     top: MediaQuery.of(context).padding.top,
                     left: 16,
                     right: 16),
-                child: Image.asset('assets/images/inviteImage.png'),
+                child: Image.asset('assets/images/helpImage.png'),
               ),
               Container(
                 padding: const EdgeInsets.only(top: 8),
                 child: Text(
-                  'Invite Your Friends',
+                  'How can we help you?',
                   style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: isLightMode ? Colors.black : Colors.white,
-                  ),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: isLightMode ? Colors.black : Colors.white),
                 ),
               ),
               Container(
                 padding: const EdgeInsets.only(top: 16),
                 child: Text(
-                  'Are you one of those who makes everything\n at the last moment?',
+                  'It looks like you are experiencing problems\nwith our sign up process. We are here to\nhelp so please get in touch with us',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 16,
-                    color: isLightMode ? Colors.black : Colors.white,
-                  ),
+                      fontSize: 16,
+                      color: isLightMode ? Colors.black : Colors.white),
                 ),
               ),
               Expanded(
@@ -58,7 +57,7 @@ class _InviteFriendState extends State<InviteFriend> {
                   padding: const EdgeInsets.all(8.0),
                   child: Center(
                     child: Container(
-                      width: 120,
+                      width: 140,
                       height: 40,
                       decoration: BoxDecoration(
                         color: isLightMode ? Colors.blue : Colors.white,
@@ -74,34 +73,18 @@ class _InviteFriendState extends State<InviteFriend> {
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          onTap: () {
-                            //method here for functionality
-                            print('Share Action.');
-                          },
+                          onTap: () {},
                           child: Center(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                Icon(
-                                  Icons.share,
+                            child: Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: Text(
+                                'Chat with Us',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
                                   color:
                                       isLightMode ? Colors.white : Colors.black,
-                                  size: 22,
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.all(4.0),
-                                  child: Text(
-                                    'Share',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      color: isLightMode
-                                          ? Colors.white
-                                          : Colors.black,
-                                    ),
-                                  ),
-                                ),
-                              ],
+                              ),
                             ),
                           ),
                         ),
