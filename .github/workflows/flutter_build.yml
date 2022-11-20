@@ -27,3 +27,23 @@ jobs:
         run: flutter pub get
       - name: Flutter build appbundle
         run: flutter build appbundle --release
+
+  build_ios:
+    name: Build for iOS
+    runs-on: macos-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+      - name: Disable analytics
+        run: flutter config --no-analytics
+      - name: Flutter pub get
+        run: flutter pub get
+      - name: Pod install
+        run: |
+          cd ios
+          pod install
+      - name: Flutter build iOS
+        run: flutter build ios --release --no-codesign
