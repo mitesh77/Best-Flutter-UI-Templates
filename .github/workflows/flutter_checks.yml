@@ -20,6 +20,12 @@ jobs:
         run: flutter config --no-analytics
       - name: Flutter pub get
         run: flutter pub get
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Flutter pub get
+          commit_author: Joachim Nohl <43643339+nohli@users.noreply.github.com>
+          commit_user_name: GitHub Actions Bot
 
   check_formatting:
     name: Check formatting
