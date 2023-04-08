@@ -11,6 +11,8 @@ jobs:
     name: Check dependencies
     timeout-minutes: 10
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
