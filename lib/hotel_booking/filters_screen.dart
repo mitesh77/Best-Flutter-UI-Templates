@@ -14,8 +14,10 @@ class FiltersScreen extends StatefulWidget {
 }
 
 class _FiltersScreenState extends State<FiltersScreen> {
-  List<PopularFilterListData> popularFilterListData = PopularFilterListData.popularFList;
-  List<PopularFilterListData> accomodationListData = PopularFilterListData.accomodationList;
+  List<PopularFilterListData> popularFilterListData =
+      PopularFilterListData.popularFList;
+  List<PopularFilterListData> accomodationListData =
+      PopularFilterListData.accomodationList;
 
   RangeValues _values = const RangeValues(100, 600);
   double distValue = 50.0;
@@ -52,7 +54,8 @@ class _FiltersScreenState extends State<FiltersScreen> {
             height: 1,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16, top: 8),
+            padding:
+                const EdgeInsets.only(left: 16, right: 16, bottom: 16, top: 8),
             child: Container(
               height: 48,
               decoration: BoxDecoration(
@@ -75,7 +78,10 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   child: const Center(
                     child: Text(
                       'Apply',
-                      style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18, color: Colors.white),
+                      style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 18,
+                          color: Colors.white),
                     ),
                   ),
                 ),
@@ -93,7 +99,8 @@ class _FiltersScreenState extends State<FiltersScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 8),
+          padding:
+              const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 8),
           child: Text(
             'Type of Accommodation',
             textAlign: TextAlign.left,
@@ -141,8 +148,9 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   ),
                 ),
                 CupertinoSwitch(
-                  activeColor:
-                      date.isSelected ? HotelAppTheme.buildLightTheme().primaryColor : Colors.grey.withOpacity(0.6),
+                  activeColor: date.isSelected
+                      ? HotelAppTheme.buildLightTheme().primaryColor
+                      : Colors.grey.withOpacity(0.6),
                   onChanged: (bool value) {
                     if (mounted) {
                       setState(() {
@@ -178,7 +186,8 @@ class _FiltersScreenState extends State<FiltersScreen> {
         }
       }
     } else {
-      accomodationListData[index].isSelected = !accomodationListData[index].isSelected;
+      accomodationListData[index].isSelected =
+          !accomodationListData[index].isSelected;
 
       int count = 0;
       for (int i = 0; i < accomodationListData.length; i++) {
@@ -204,7 +213,8 @@ class _FiltersScreenState extends State<FiltersScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 8),
+          padding:
+              const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 8),
           child: Text(
             'Distance from city center',
             textAlign: TextAlign.left,
@@ -233,7 +243,8 @@ class _FiltersScreenState extends State<FiltersScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 8),
+          padding:
+              const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 8),
           child: Text(
             'Popular filters',
             textAlign: TextAlign.left,
@@ -282,7 +293,9 @@ class _FiltersScreenState extends State<FiltersScreen> {
                     child: Row(
                       children: <Widget>[
                         Icon(
-                          date.isSelected ? Icons.check_box : Icons.check_box_outline_blank,
+                          date.isSelected
+                              ? Icons.check_box
+                              : Icons.check_box_outline_blank,
                           color: date.isSelected
                               ? HotelAppTheme.buildLightTheme().primaryColor
                               : Colors.grey.withOpacity(0.6),
@@ -352,11 +365,15 @@ class _FiltersScreenState extends State<FiltersScreen> {
       decoration: BoxDecoration(
         color: HotelAppTheme.buildLightTheme().colorScheme.background,
         boxShadow: <BoxShadow>[
-          BoxShadow(color: Colors.grey.withOpacity(0.2), offset: const Offset(0, 2), blurRadius: 4.0),
+          BoxShadow(
+              color: Colors.grey.withOpacity(0.2),
+              offset: const Offset(0, 2),
+              blurRadius: 4.0),
         ],
       ),
       child: Padding(
-        padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top, left: 8, right: 8),
+        padding: EdgeInsets.only(
+            top: MediaQuery.of(context).padding.top, left: 8, right: 8),
         child: Row(
           children: <Widget>[
             Container(
