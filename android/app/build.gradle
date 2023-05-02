@@ -28,6 +28,13 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 android {
     compileSdkVersion flutter.compileSdkVersion
 
+    namespace 'com.example.templates'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
@@ -48,7 +55,6 @@ android {
             signingConfig signingConfigs.debug
         }
     }
-    namespace 'com.example.templates'
 }
 
 flutter {
