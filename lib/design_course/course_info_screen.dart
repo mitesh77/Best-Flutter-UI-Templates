@@ -118,13 +118,13 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(
+                        const Padding(
+                          padding: EdgeInsets.only(
                               left: 16, right: 16, bottom: 8, top: 16),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              const Text(
+                              Text(
                                 '\$28.99',
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
@@ -135,7 +135,7 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                                 ),
                               ),
                               Row(
-                                children: const <Widget>[
+                                children: <Widget>[
                                   Text(
                                     '4.3',
                                     textAlign: TextAlign.left,

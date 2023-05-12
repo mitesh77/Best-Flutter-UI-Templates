@@ -58,10 +58,10 @@ class _InviteFriendState extends State<InviteFriend> {
                   color: Colors.transparent,
                   child: InkWell(
                     onTap: () {},
-                    child: Center(
+                    child: const Center(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const <Widget>[
+                        children: <Widget>[
                           Icon(
                             Icons.share,
                             color: Colors.white,

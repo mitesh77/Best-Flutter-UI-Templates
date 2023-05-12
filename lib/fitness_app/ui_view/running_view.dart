@@ -64,8 +64,8 @@ class RunningView extends StatelessWidget {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
-                                  Row(
-                                    children: const <Widget>[
+                                  const Row(
+                                    children: <Widget>[
                                       Padding(
                                         padding: EdgeInsets.only(
                                           left: 100,

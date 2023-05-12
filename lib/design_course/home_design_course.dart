@@ -265,11 +265,11 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
       padding: const EdgeInsets.only(top: 8.0, left: 18, right: 18),
       child: Row(
         children: <Widget>[
-          Expanded(
+          const Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const <Widget>[
+              children: <Widget>[
                 Text(
                   'Choose your',
                   textAlign: TextAlign.left,

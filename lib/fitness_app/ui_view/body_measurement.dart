@@ -66,10 +66,10 @@ class BodyMeasurementView extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              Row(
+                              const Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.end,
-                                children: const <Widget>[
+                                children: <Widget>[
                                   Padding(
                                     padding:
                                         EdgeInsets.only(left: 4, bottom: 3),

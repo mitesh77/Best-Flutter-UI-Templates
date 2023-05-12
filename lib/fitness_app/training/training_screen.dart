@@ -247,13 +247,13 @@ class _TrainingScreenState extends State<TrainingScreen>
                                 ),
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(
+                            const Padding(
+                              padding: EdgeInsets.only(
                                 left: 8,
                                 right: 8,
                               ),
                               child: Row(
-                                children: const <Widget>[
+                                children: <Widget>[
                                   Padding(
                                     padding: EdgeInsets.only(right: 8),
                                     child: Icon(
