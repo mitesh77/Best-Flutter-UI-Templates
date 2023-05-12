@@ -42,8 +42,8 @@ jobs:
         run: flutter config --no-analytics
       - name: Flutter pub get
         run: flutter pub get
-      - name: Check Flutter formatting
-        run: flutter format --line-length 80 --set-exit-if-changed .
+      - name: Check Dart formatting
+        run: dart format --line-length 80 --set-exit-if-changed .
 
   analyze:
     name: Dart analyze
