@@ -40,12 +40,6 @@ class _AboutScreenState extends State<AboutScreen> {
             style: TextStyle(fontSize: 16),
           ),
           const SizedBox(height: 20),
-          const Text(
-            "This app makes use of Dart's Sound Null Safety.",
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 16),
-          ),
-          const SizedBox(height: 16),
           GestureDetector(
             onTap: () async {
               final url = Uri(
@@ -56,7 +50,7 @@ class _AboutScreenState extends State<AboutScreen> {
               if (await canLaunchUrl(url)) launchUrl(url);
             },
             child: const Text(
-              'Its code can be found here.',
+              'The code can be found here.',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.blue,
