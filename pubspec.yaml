@@ -10,13 +10,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  font_awesome_flutter: ^10.4.0
+  font_awesome_flutter: ^10.5.0
   intl: ^0.18.1
   url_launcher: ^6.1.11
   vector_math: ^2.1.4
 
 dev_dependencies:
-  flutter_lints: ^2.0.1
+  flutter_lints: ^2.0.2
   flutter_test:
     sdk: flutter
 
