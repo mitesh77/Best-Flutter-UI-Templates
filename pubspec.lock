@@ -193,10 +193,10 @@ packages:
     dependency: "direct main"
     description:
       name: url_launcher
-      sha256: "781bd58a1eb16069412365c98597726cd8810ae27435f04b3b4d3a470bacd61e"
+      sha256: "38d8e783681bc342e92dc9799cbe4421d08c4d210a67ee9d61d0f7310491a465"
       url: "https://pub.dev"
     source: hosted
-    version: "6.1.12"
+    version: "6.1.13"
   url_launcher_android:
     dependency: transitive
     description:
