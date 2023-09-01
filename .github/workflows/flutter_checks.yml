@@ -1,6 +1,7 @@
 name: Flutter checks
 
 on:
+  workflow_dispatch:
   pull_request:
   push:
     branches:
@@ -11,71 +12,17 @@ jobs:
     name: Check dependencies
     timeout-minutes: 10
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Install Flutter
-        uses: subosito/flutter-action@v2
-      - name: Disable analytics
-        run: flutter config --no-analytics
-      - name: Flutter pub get
-        run: flutter pub get
-      - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Flutter pub get
-          commit_author: Joachim Nohl <43643339+nohli@users.noreply.github.com>
-          commit_user_name: GitHub Actions Bot
-
-  check_formatting:
-    name: Check formatting
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+          ref: ${{ github.head_ref }}
       - name: Install Flutter
         uses: subosito/flutter-action@v2
       - name: Disable analytics
         run: flutter config --no-analytics
       - name: Flutter pub get
         run: flutter pub get
-      - name: Check Dart formatting
-        run: dart format --line-length 80 --set-exit-if-changed .
-
-  analyze:
-    name: Dart analyze
-    timeout-minutes: 10
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Install Flutter
-        uses: subosito/flutter-action@v2
-      - name: Disable analytics
-        run: flutter config --no-analytics
-      - name: Flutter pub get
-        run: flutter pub get
-      - name: Run Dart analyze
-        uses: invertase/github-action-dart-analyzer@v2.0.0
-
-  test:
-    name: Flutter test
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Install Flutter
-        uses: subosito/flutter-action@v2
-      - name: Disable analytics
-        run: flutter config --no-analytics
-      - name: Flutter pub get
-        run: flutter pub get
-      - name: Flutter test
-        run: flutter test
 
   pod_install:
     name: Pod install
@@ -94,3 +41,57 @@ jobs:
         run: |
           cd ios
           pod install
+
+  check_formatting:
+    name: Check formatting
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+      - name: Disable analytics
+        run: flutter config --no-analytics
+      - name: Flutter pub get
+        run: flutter pub get
+      - name: Check Dart formatting
+        run: dart format --line-length 80 --set-exit-if-changed .
+
+  analyze:
+    name: Dart analyze
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+      - name: Disable analytics
+        run: flutter config --no-analytics
+      - name: Flutter pub get
+        run: flutter pub get
+      - name: Run Dart analyze
+        uses: invertase/github-action-dart-analyzer@v2.0.0
+
+  test:
+    name: Flutter test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+      - name: Disable analytics
+        run: flutter config --no-analytics
+      - name: Flutter pub get
+        run: flutter pub get
+      - name: Flutter test
+        run: flutter test

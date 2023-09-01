@@ -1,6 +1,7 @@
 name: Flutter build
 
 on:
+  workflow_dispatch:
   pull_request:
   push:
     branches:
@@ -14,10 +15,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
       - name: Setup Java
         uses: actions/setup-java@v3
         with:
-          distribution: 'adopt'
+          distribution: 'temurin'
           java-version: '17'
       - name: Install Flutter
         uses: subosito/flutter-action@v2
@@ -35,6 +38,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
       - name: Install Flutter
         uses: subosito/flutter-action@v2
       - name: Disable analytics
