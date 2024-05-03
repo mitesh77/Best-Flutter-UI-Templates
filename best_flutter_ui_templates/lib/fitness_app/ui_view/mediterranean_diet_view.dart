@@ -380,7 +380,8 @@ class MediterranesnDietView extends StatelessWidget {
                                     child: Row(
                                       children: <Widget>[
                                         Container(
-                                          width: ((70 / 1.2) * animation!.value),
+                                          width:
+                                              ((70 / 1.2) * animation!.value),
                                           height: 4,
                                           decoration: BoxDecoration(
                                             gradient: LinearGradient(colors: [
@@ -569,6 +570,7 @@ class MediterranesnDietView extends StatelessWidget {
   }
 }
 
+// Very cool Curve Painter Brian.  This is to the right of the Kcal left
 class CurvePainter extends CustomPainter {
   final double? angle;
   final List<Color>? colors;
