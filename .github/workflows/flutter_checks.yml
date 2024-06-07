@@ -76,7 +76,7 @@ jobs:
       - name: Flutter pub get
         run: flutter pub get
       - name: Run Dart analyze
-        uses: invertase/github-action-dart-analyzer@v2.0.0
+        uses: invertase/github-action-dart-analyzer@v3.0.0
 
   test:
     name: Flutter test
