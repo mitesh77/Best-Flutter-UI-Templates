@@ -3,7 +3,6 @@ import 'package:best_flutter_ui_templates/fitness_app/models/meals_list_data.dar
 import 'package:best_flutter_ui_templates/main.dart';
 import 'package:flutter/material.dart';
 
-import '../../main.dart';
 
 class MealsListView extends StatefulWidget {
   const MealsListView(
