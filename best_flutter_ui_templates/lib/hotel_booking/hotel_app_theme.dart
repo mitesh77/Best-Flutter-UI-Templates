@@ -2,22 +2,37 @@ import 'package:best_flutter_ui_templates/main.dart';
 import 'package:flutter/material.dart';
 
 class HotelAppTheme {
+  static const Color backgroundColor = Color(0xFFFFFFFF);
+
   static TextTheme _buildTextTheme(TextTheme base) {
     const String fontName = 'WorkSans';
     return base.copyWith(
-      headline1: base.headline1?.copyWith(fontFamily: fontName),
-      headline2: base.headline2?.copyWith(fontFamily: fontName),
-      headline3: base.headline3?.copyWith(fontFamily: fontName),
-      headline4: base.headline4?.copyWith(fontFamily: fontName),
-      headline5: base.headline5?.copyWith(fontFamily: fontName),
-      headline6: base.headline6?.copyWith(fontFamily: fontName),
-      button: base.button?.copyWith(fontFamily: fontName),
-      caption: base.caption?.copyWith(fontFamily: fontName),
-      bodyText1: base.bodyText1?.copyWith(fontFamily: fontName),
-      bodyText2: base.bodyText2?.copyWith(fontFamily: fontName),
-      subtitle1: base.subtitle1?.copyWith(fontFamily: fontName),
-      subtitle2: base.subtitle2?.copyWith(fontFamily: fontName),
-      overline: base.overline?.copyWith(fontFamily: fontName),
+      displayLarge: base.displayLarge
+          ?.copyWith(fontFamily: fontName), // headline1 -> displayLarge
+      displayMedium: base.displayMedium
+          ?.copyWith(fontFamily: fontName), // headline2 -> displayMedium
+      displaySmall: base.displaySmall
+          ?.copyWith(fontFamily: fontName), // headline3 -> displaySmall
+      headlineMedium: base.headlineMedium
+          ?.copyWith(fontFamily: fontName), // headline4 -> headlineMedium
+      headlineSmall: base.headlineSmall
+          ?.copyWith(fontFamily: fontName), // headline5 -> headlineSmall
+      titleLarge: base.titleLarge
+          ?.copyWith(fontFamily: fontName), // headline6 -> titleLarge
+      labelLarge: base.labelLarge
+          ?.copyWith(fontFamily: fontName), // button -> labelLarge
+      bodySmall: base.bodySmall
+          ?.copyWith(fontFamily: fontName), // caption -> bodySmall
+      bodyLarge: base.bodyLarge
+          ?.copyWith(fontFamily: fontName), // bodyText1 -> bodyLarge
+      bodyMedium: base.bodyMedium
+          ?.copyWith(fontFamily: fontName), // bodyText2 -> bodyMedium
+      titleMedium: base.titleMedium
+          ?.copyWith(fontFamily: fontName), // subtitle1 -> titleMedium
+      titleSmall: base.titleSmall
+          ?.copyWith(fontFamily: fontName), // subtitle2 -> titleSmall
+      labelSmall: base.labelSmall
+          ?.copyWith(fontFamily: fontName), // overline -> labelSmall
     );
   }
 
@@ -27,6 +42,8 @@ class HotelAppTheme {
     final ColorScheme colorScheme = const ColorScheme.light().copyWith(
       primary: primaryColor,
       secondary: secondaryColor,
+      surface: const Color(0xFFFFFFFF),
+      error: const Color(0xFFB00020),
     );
     final ThemeData base = ThemeData.light();
     return base.copyWith(
@@ -36,9 +53,7 @@ class HotelAppTheme {
       splashColor: Colors.white24,
       splashFactory: InkRipple.splashFactory,
       canvasColor: Colors.white,
-      backgroundColor: const Color(0xFFFFFFFF),
       scaffoldBackgroundColor: const Color(0xFFF6F6F6),
-      errorColor: const Color(0xFFB00020),
       buttonTheme: ButtonThemeData(
         colorScheme: colorScheme,
         textTheme: ButtonTextTheme.primary,
