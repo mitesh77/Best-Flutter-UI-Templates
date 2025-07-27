@@ -24,7 +24,7 @@ jobs:
 
     - uses: actions/setup-java@v4
       with:
-        java-version: '12'
+        java-version: '11'
 
     - run: flutter pub get
       working-directory: best_flutter_ui_templates
