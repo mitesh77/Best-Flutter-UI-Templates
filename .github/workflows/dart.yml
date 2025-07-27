@@ -24,6 +24,7 @@ jobs:
 
     - uses: actions/setup-java@v4
       with:
+        distribution: 'zulu' # Or 'temurin', 'oracle', etc.
         java-version: '11'
 
     - run: flutter pub get
