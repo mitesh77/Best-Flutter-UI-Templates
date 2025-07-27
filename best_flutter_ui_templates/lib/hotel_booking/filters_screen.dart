@@ -22,7 +22,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: HotelAppTheme.buildLightTheme().backgroundColor,
+      color: HotelAppTheme.buildLightTheme().colorScheme.background,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Column(
@@ -150,7 +150,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                     ),
                   ),
                   CupertinoSwitch(
-                    activeColor: date.isSelected
+                    activeTrackColor: date.isSelected
                         ? HotelAppTheme.buildLightTheme().primaryColor
                         : Colors.grey.withOpacity(0.6),
                     onChanged: (bool value) {
@@ -366,7 +366,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
   Widget getAppBarUI() {
     return Container(
       decoration: BoxDecoration(
-        color: HotelAppTheme.buildLightTheme().backgroundColor,
+        color: HotelAppTheme.buildLightTheme().colorScheme.background,
         boxShadow: <BoxShadow>[
           BoxShadow(
               color: Colors.grey.withOpacity(0.2),

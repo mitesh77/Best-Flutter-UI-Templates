@@ -18,7 +18,9 @@ class _CategoryListViewState extends State<CategoryListView>
   @override
   void initState() {
     animationController = AnimationController(
-        duration: const Duration(milliseconds: 2000), vsync: this);
+      duration: const Duration(milliseconds: 2000),
+      vsync: this,
+    );
     super.initState();
   }
 
@@ -37,8 +39,8 @@ class _CategoryListViewState extends State<CategoryListView>
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 16, bottom: 16),
-      child: Container(
-        height: 134,
+      child: SizedBox(
+        height: 144,
         width: double.infinity,
         child: FutureBuilder<bool>(
           future: getData(),
@@ -48,7 +50,11 @@ class _CategoryListViewState extends State<CategoryListView>
             } else {
               return ListView.builder(
                 padding: const EdgeInsets.only(
-                    top: 0, bottom: 0, right: 16, left: 16),
+                  top: 0,
+                  bottom: 0,
+                  right: 16,
+                  left: 16,
+                ),
                 itemCount: Category.categoryList.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (BuildContext context, int index) {
@@ -57,10 +63,15 @@ class _CategoryListViewState extends State<CategoryListView>
                       : Category.categoryList.length;
                   final Animation<double> animation =
                       Tween<double>(begin: 0.0, end: 1.0).animate(
-                          CurvedAnimation(
-                              parent: animationController!,
-                              curve: Interval((1 / count) * index, 1.0,
-                                  curve: Curves.fastOutSlowIn)));
+                        CurvedAnimation(
+                          parent: animationController!,
+                          curve: Interval(
+                            (1 / count) * index,
+                            1.0,
+                            curve: Curves.fastOutSlowIn,
+                          ),
+                        ),
+                      );
                   animationController?.forward();
 
                   return CategoryView(
@@ -80,13 +91,13 @@ class _CategoryListViewState extends State<CategoryListView>
 }
 
 class CategoryView extends StatelessWidget {
-  const CategoryView(
-      {Key? key,
-      this.category,
-      this.animationController,
-      this.animation,
-      this.callback})
-      : super(key: key);
+  const CategoryView({
+    Key? key,
+    this.category,
+    this.animationController,
+    this.animation,
+    this.callback,
+  }) : super(key: key);
 
   final VoidCallback? callback;
   final Category? category;
@@ -102,7 +113,10 @@ class CategoryView extends StatelessWidget {
           opacity: animation!,
           child: Transform(
             transform: Matrix4.translationValues(
-                100 * (1.0 - animation!.value), 0.0, 0.0),
+              100 * (1.0 - animation!.value),
+              0.0,
+              0.0,
+            ),
             child: InkWell(
               splashColor: Colors.transparent,
               onTap: callback,
@@ -113,28 +127,26 @@ class CategoryView extends StatelessWidget {
                     Container(
                       child: Row(
                         children: <Widget>[
-                          const SizedBox(
-                            width: 48,
-                          ),
+                          const SizedBox(width: 48),
                           Expanded(
                             child: Container(
                               decoration: BoxDecoration(
                                 color: HexColor('#F8FAFB'),
                                 borderRadius: const BorderRadius.all(
-                                    Radius.circular(16.0)),
+                                  Radius.circular(16.0),
+                                ),
                               ),
                               child: Row(
                                 children: <Widget>[
-                                  const SizedBox(
-                                    width: 48 + 24.0,
-                                  ),
+                                  const SizedBox(width: 48 + 24.0),
                                   Expanded(
                                     child: Container(
                                       child: Column(
                                         children: <Widget>[
                                           Padding(
-                                            padding:
-                                                const EdgeInsets.only(top: 16),
+                                            padding: const EdgeInsets.only(
+                                              top: 16,
+                                            ),
                                             child: Text(
                                               category!.title,
                                               textAlign: TextAlign.left,
@@ -147,12 +159,12 @@ class CategoryView extends StatelessWidget {
                                               ),
                                             ),
                                           ),
-                                          const Expanded(
-                                            child: SizedBox(),
-                                          ),
+                                          const Expanded(child: SizedBox()),
                                           Padding(
                                             padding: const EdgeInsets.only(
-                                                right: 16, bottom: 8),
+                                              right: 16,
+                                              bottom: 8,
+                                            ),
                                             child: Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment
@@ -197,13 +209,15 @@ class CategoryView extends StatelessWidget {
                                                       ),
                                                     ],
                                                   ),
-                                                )
+                                                ),
                                               ],
                                             ),
                                           ),
                                           Padding(
                                             padding: const EdgeInsets.only(
-                                                bottom: 16, right: 16),
+                                              bottom: 16,
+                                              right: 16,
+                                            ),
                                             child: Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment
@@ -228,13 +242,14 @@ class CategoryView extends StatelessWidget {
                                                         .nearlyBlue,
                                                     borderRadius:
                                                         const BorderRadius.all(
-                                                            Radius.circular(
-                                                                8.0)),
+                                                          Radius.circular(8.0),
+                                                        ),
                                                   ),
                                                   child: Padding(
                                                     padding:
                                                         const EdgeInsets.all(
-                                                            4.0),
+                                                          4.0,
+                                                        ),
                                                     child: Icon(
                                                       Icons.add,
                                                       color:
@@ -242,7 +257,7 @@ class CategoryView extends StatelessWidget {
                                                               .nearlyWhite,
                                                     ),
                                                   ),
-                                                )
+                                                ),
                                               ],
                                             ),
                                           ),
@@ -253,23 +268,28 @@ class CategoryView extends StatelessWidget {
                                 ],
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
                     Container(
                       child: Padding(
                         padding: const EdgeInsets.only(
-                            top: 24, bottom: 24, left: 16),
+                          top: 24,
+                          bottom: 24,
+                          left: 16,
+                        ),
                         child: Row(
                           children: <Widget>[
                             ClipRRect(
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(16.0)),
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(16.0),
+                              ),
                               child: AspectRatio(
-                                  aspectRatio: 1.0,
-                                  child: Image.asset(category!.imagePath)),
-                            )
+                                aspectRatio: 1.0,
+                                child: Image.asset(category!.imagePath),
+                              ),
+                            ),
                           ],
                         ),
                       ),
