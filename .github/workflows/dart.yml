@@ -25,7 +25,7 @@ jobs:
     - uses: actions/setup-java@v4
       with:
         distribution: 'zulu' # Or 'temurin', 'oracle', etc.
-        java-version: '11'
+        java-version: '17'
 
     - run: flutter pub get
       working-directory: best_flutter_ui_templates
