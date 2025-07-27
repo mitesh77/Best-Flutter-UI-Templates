@@ -16,15 +16,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-
+    - uses: actions/checkout@v4
+    # No additional steps needed here; actions/checkout@v4 is already the latest major version.
     - uses: subosito/flutter-action@v2
       with:
         channel: 'stable' # or: 'beta', 'dev' or 'master'
 
-    - uses: actions/setup-java@v1
+    - uses: actions/setup-java@v4
       with:
-        java-version: '12.x'
+        java-version: '12'
 
     - run: flutter pub get
       working-directory: best_flutter_ui_templates
@@ -35,7 +35,7 @@ jobs:
       working-directory: best_flutter_ui_templates
 
     - name: upload APK
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         name: apk
         path: best_flutter_ui_templates/build/app/outputs/apk/release/app-release.apk
