@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class DrawerUserController extends StatefulWidget {
   const DrawerUserController({
-    Key? key,
+    super.key,
     this.drawerWidth = 250,
     this.onDrawerCall,
     this.screenView,
@@ -12,7 +12,7 @@ class DrawerUserController extends StatefulWidget {
     this.menuView,
     this.drawerIsOpen,
     this.screenIndex,
-  }) : super(key: key);
+  });
 
   final double drawerWidth;
   final Function(DrawerIndex)? onDrawerCall;
@@ -23,6 +23,7 @@ class DrawerUserController extends StatefulWidget {
   final DrawerIndex? screenIndex;
 
   @override
+  // ignore: library_private_types_in_public_api
   _DrawerUserControllerState createState() => _DrawerUserControllerState();
 }
 
@@ -44,7 +45,7 @@ class _DrawerUserControllerState extends State<DrawerUserController>
       vsync: this,
       duration: const Duration(milliseconds: 0),
     );
-    iconAnimationController?..animateTo(
+    iconAnimationController?.animateTo(
       1.0,
       duration: const Duration(milliseconds: 0),
       curve: Curves.fastOutSlowIn,
@@ -52,7 +53,7 @@ class _DrawerUserControllerState extends State<DrawerUserController>
     scrollController = ScrollController(
       initialScrollOffset: widget.drawerWidth,
     );
-    scrollController!..addListener(() {
+    scrollController!.addListener(() {
       if (scrollController!.offset <= 0) {
         if (scrolloffset != 1.0) {
           setState(() {
@@ -84,7 +85,7 @@ class _DrawerUserControllerState extends State<DrawerUserController>
           });
         }
         iconAnimationController?.animateTo(
-          1.0,
+          2.0,
           duration: const Duration(milliseconds: 0),
           curve: Curves.fastOutSlowIn,
         );
